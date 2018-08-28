@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center.iml" filepath="$PROJECT_DIR$/auth-center/auth-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" filepath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back-support/back-support.iml" filepath="$PROJECT_DIR$/back-support/back-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hyproject.iml" filepath="$PROJECT_DIR$/hyproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/splider-center/splider-center.iml" filepath="$PROJECT_DIR$/splider-center/splider-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service-provider/user-service-provider.iml" filepath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wx-mp/wx-mp.iml" filepath="$PROJECT_DIR$/wx-mp/wx-mp.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.user.dao.SysRoleAuthoritiesMapper">
+  <resultMap id="BaseResultMap" type="com.hao.user.entity.SysRoleAuthorities">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="sys_role_id" jdbcType="VARCHAR" property="sysRoleId" />
+    <result column="authorities_id" jdbcType="VARCHAR" property="authoritiesId" />
+  </resultMap>
+</mapper>

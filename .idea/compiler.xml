@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="auth-center-provider" />
+        <module name="back-support" />
+        <module name="common" />
+        <module name="splider-center" />
+        <module name="user-service-provider" />
+        <module name="wx-mp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-center" target="1.8" />
+      <module name="auth-center-provider" target="1.8" />
+      <module name="back-support" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="hyproject" target="1.8" />
+      <module name="splider-center" target="1.8" />
+      <module name="user-service-provider" target="1.8" />
+      <module name="wx-mp" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
