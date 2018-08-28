@@ -42,9 +42,12 @@ public class OutputWriterUtils {
 	public static<T> void deleteDir(Class<T> clazz){
 		String dir=clazz.getName().replace(".", "_");
 		File dirFile = new File("data/"+dir);
+		dirFile.mkdirs();
 		File[] listFiles = dirFile.listFiles();
-		for (File file : listFiles) {
-			file.delete();
+		if(listFiles!=null&&listFiles.length>0){
+			for (File file : listFiles) {
+				file.delete();
+			}
 		}
 	}
 	
