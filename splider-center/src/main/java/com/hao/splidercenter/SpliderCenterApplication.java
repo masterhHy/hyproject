@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.hao.splidercenter.domain.CodeDayDataSplider;
 import com.hao.splidercenter.domain.IndustrySplider;
+import com.hao.splidercenter.domain.NetLandCheckSplider;
 import com.hao.splidercenter.domain.StockCodeDetailSplider;
 import com.hao.splidercenter.domain.StockCodeInvestorSplider;
 import com.hao.splidercenter.domain.StockCodeSplider;
@@ -32,11 +33,13 @@ public class SpliderCenterApplication {
 	   private StockCodeDetailSplider stockCodeDetailSplider;
 	   @Autowired
 	   private CodeDayDataSplider codeDayDataSplider;
+	   @Autowired
+	   private NetLandCheckSplider netLandCheckSplider;
 	   
 	@Override
 	public void run(String... args) throws Exception {
 		
-		//更新股票代码（已有则不更新 判断依据：code）
+		/*//更新股票代码（已有则不更新 判断依据：code）
 		
 		stockCodeSplider.run();
 		
@@ -55,9 +58,9 @@ public class SpliderCenterApplication {
 		
 		//更新股票每日盘中数据 （已有则不更新 判断依据：表中codeId 和 时间段  存在 ）输入 日期
 		
-		codeDayDataSplider.run();
+		codeDayDataSplider.run();*/
 		
-		
+		netLandCheckSplider.run();
 		
 		
 		
