@@ -8,7 +8,7 @@
      </i-navbar-item>
      <i-navbar-item>
          <view>这是第二个页面</view>
-         <view wx:for="{{mydata}}"> 第二个页面子{{index}}</view>
+         <view wx:for="{{mydata2}}"> 第二个页面子{{index}}</view>
      </i-navbar-item>
   </i-navbar>
    

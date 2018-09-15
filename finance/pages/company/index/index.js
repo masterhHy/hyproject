@@ -6,7 +6,8 @@ Page({
    */
   data: {
     tabs:["111","222","333","444"],
-    mydata:[]
+    mydata:[],
+    mydata2: []
   },
 
   /**
@@ -32,6 +33,11 @@ Page({
 
     }
     this.setData({ 'mydata': this.data.mydata });
+    for (let i = 0; i < 50; i++) {
+      this.data.mydata2.push(i);
+
+    }
+    this.setData({ 'mydata2': this.data.mydata2 });
   },
 
   /**
