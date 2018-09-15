@@ -156,3 +156,6 @@ page{
   background-color: #409eff!important;
   color: #fff!important;
 }
+.app-main-fz-color{
+  color: #409eff!important;
+}

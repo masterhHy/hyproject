@@ -1,2 +1,15 @@
 <!--pages/company/index/index.wxml-->
-
+<view >
+ 
+  <i-navbar tabs="{{tabs}}" bg-class="app-main-bg-color" fz-class="app-main-fz-color" >
+     <i-navbar-item>
+        <view>这是第一个页面</view>
+        <view wx:for="{{mydata}}"> 第一个页面子{{item}}</view>
+     </i-navbar-item>
+     <i-navbar-item>
+         <view>这是第二个页面</view>
+         <view wx:for="{{mydata}}"> 第二个页面子{{index}}</view>
+     </i-navbar-item>
+  </i-navbar>
+   
+</view>

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    tabs:["111","222","333","444"],
+    mydata:[]
   },
 
   /**
@@ -19,14 +20,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    for (let i = 0; i < 100; i++) {
+      this.data.mydata.push(i);
+
+    }
+    this.setData({ 'mydata': this.data.mydata });
   },
 
   /**
@@ -54,7 +59,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    
   },
 
   /**

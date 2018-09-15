@@ -1,0 +1,4 @@
+<view hidden="{{!show}}">
+  <slot></slot>
+</view>
+
