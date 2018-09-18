@@ -28,7 +28,6 @@ Component({
     this.setData({ barWidth: width / this.data.tabs.length});
 
     this.watchActiveIndex();
-
   },
   
   /**
@@ -42,6 +41,8 @@ Component({
     windowWith: 0,//常亮，可视窗口
     activeIndex: 0,//当前活跃选项卡
     scrollOffset:0,//横向滚动窗口偏移
+
+    
 
   },
 
@@ -59,6 +60,7 @@ Component({
       this.setData({ sliderOffset: this.data.barWidth * this.data.activeIndex })
       this.setData({ scrollOffset: this.data.windowWith * this.data.activeIndex });
       this.data.currentLeft = this.data.scrollOffset;
+      this.infoIndexToParent();
     },
     
     itemScroll(e){
@@ -110,6 +112,13 @@ Component({
       
 
 
+    },
+    infoIndexToParent(){
+      if (this.data.infoIndexToParent == undefined || this.data.infoIndexToParent!=this.data.activeIndex){
+        this.triggerEvent('change', { currantIndex: this.data.activeIndex })
+        this.data.infoIndexToParent = this.data.activeIndex;
+      }
     }
+
   }
 })
