@@ -10,7 +10,7 @@ Page({
     mydata2: []
   },
   ichange(e){
-    console.log(e);
+    
   },
 
   /**
