@@ -1,4 +1,6 @@
 <view class='scroll-view-item_H'>
-  <slot></slot>
+  <i-scroll binddownLoading="downLoading" bindupLoading="upLoading" loading="{{loading}}" noMoreData="{{noMoreData}}" isAjax="{{isAjax}}">
+    <slot></slot>
+  </i-scroll>
 </view>
 

@@ -28,7 +28,10 @@ Component({
     this.setData({ barWidth: width / this.data.tabs.length});
 
     this.watchActiveIndex();
+
+    
   },
+  
   
   /**
    * 组件的初始数据

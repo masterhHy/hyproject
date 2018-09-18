@@ -1,6 +1,6 @@
 <!--component/wx/navbar/index.wxml-->
-<view class="weui-tab" >
-    <view class="weui-navbar">
+<view class="weui-tab">
+    <view class="weui-navbar fixed" >
         <block wx:for="{{tabs}}" wx:key="*this">
             <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on fz-class' : ''}}" bindtap="tabClick">
                 <view class="weui-navbar__title">{{item}}</view>

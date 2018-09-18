@@ -1,35 +1,19 @@
 <!--pages/company/index/index.wxml-->
 <view >
- 
   <i-navbar tabs="{{tabs}}" bg-class="app-main-bg-color" fz-class="app-main-fz-color" bindchange="ichange" >
-    <i-navbar-item >
+    <i-navbar-item binddownLoading="downLoading"  loading="{{company.loading}}" noMoreData="{{company.noMoreData}}" isAjax>
         <view>
-          
-          <view wx:for="{{mydata}}"> 第一个页面子{{item}}</view>
+          <view wx:for="{{company.data}}"> 第一个页面子{{item}}</view>
         </view>
-        
      </i-navbar-item>
-     <i-navbar-item >
+     <i-navbar-item binddownLoading="downLoading" loading="{{inventor.loading}}" noMoreData="{{inventor.noMoreData}}" >
          <view>
           
-          <view wx:for="{{mydata2}}"> 第2个页面子{{item}}</view>
+          <view wx:for="{{inventor.data}}"> 第2个页面子{{item}}</view>
          </view>
           
      </i-navbar-item>
-     <i-navbar-item >
-         <view>
-           
-           <view wx:for="{{mydata2}}"> 第3个页面子{{item}}</view>
-         </view>
-          
-     </i-navbar-item>
-     <i-navbar-item >
-         <view>
-          
-           <view wx:for="{{mydata2}}"> 第4个页面子{{item}}</view>
-         </view>
-         
-     </i-navbar-item>
+     
   </i-navbar>
 
    

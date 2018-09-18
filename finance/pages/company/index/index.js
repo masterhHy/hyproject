@@ -5,9 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs:["111","222","333","444"],
-    mydata:[],
-    mydata2: []
+    tabs:["公司分析","投资者分析"],
+    company:{
+      data:[],
+      loading:false,
+      noMoreData:false
+    },
+    inventor:{
+      data: [],
+      loading: false,
+      noMoreData: false
+    },
   },
   ichange(e){
     
@@ -24,24 +32,26 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    for (let i = 0; i < 50; i++) {
+      this.data.company.data.push(i);
+
+    }
+    this.setData({ 'company.data': this.data.company.data });
+    for (let i = 0; i < 25; i++) {
+      this.data.inventor.data.push(i);
+
+    }
+    this.setData({ 'inventor.data': this.data.inventor.data });
+  },
+
+  downLoading(e){
     
+    setTimeout(()=>{
+      this.setData({"company.loading":false});
+     
+    },3000);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    for (let i = 0; i < 10; i++) {
-      this.data.mydata.push(i);
-
-    }
-    this.setData({ 'mydata': this.data.mydata });
-    for (let i = 0; i < 5; i++) {
-      this.data.mydata2.push(i);
-
-    }
-    this.setData({ 'mydata2': this.data.mydata2 });
-  },
+  
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -9,12 +9,24 @@ Component({
       }
     }
   },
+  
 
   /**
    * 组件的属性列表
    */
   properties: {
-
+    loading: {
+      type: Boolean,
+      value: false
+    },
+    noMoreData: {
+      type: Boolean,
+      value: false
+    },
+    isAjax: {
+      type: Boolean,
+      value: false
+    },
   },
 
   /**
@@ -28,6 +40,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    upLoading(e) {
+      this.triggerEvent("upLoading", e.detail);
 
+    },
+    downLoading(e) {
+      this.triggerEvent("downLoading", e.detail);
+    }
   }
 })
