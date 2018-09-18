@@ -28,12 +28,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
       this.data.mydata.push(i);
 
     }
     this.setData({ 'mydata': this.data.mydata });
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 5; i++) {
       this.data.mydata2.push(i);
 
     }

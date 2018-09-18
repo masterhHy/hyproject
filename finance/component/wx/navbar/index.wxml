@@ -6,10 +6,13 @@
                 <view class="weui-navbar__title">{{item}}</view>
             </view>
         </block>
-        <view class="weui-navbar__slider bg-class" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);width:{{barWidth}}"></view>
+        <view class="weui-navbar__slider bg-class" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);width:{{barWidth}}px;"></view>
     </view>
-    <view class="weui-tab__panel ">
-        <slot></slot>
+    <view class="weui-tab__panel " >
+      <scroll-view class="scroll-view_H"  scroll-left="{{scrollOffset}}" scroll-with-animation  scroll-x bindscroll="itemScroll">
+        <slot ></slot>
+      </scroll-view>
+  
     </view>
     
 </view>

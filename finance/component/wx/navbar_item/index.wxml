@@ -1,4 +1,4 @@
-<view hidden="{{!show}}">
+<view class='scroll-view-item_H'>
   <slot></slot>
 </view>
 

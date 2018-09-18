@@ -1,1 +1,6 @@
 /* component/wx/navbar_item/index.wxss */
+.scroll-view-item_H{
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+}

@@ -2,14 +2,23 @@
 <view >
  
   <i-navbar tabs="{{tabs}}" bg-class="app-main-bg-color" fz-class="app-main-fz-color" >
-     <i-navbar-item>
+    <i-navbar-item id="aa">
         <view>这是第一个页面</view>
         <view wx:for="{{mydata}}"> 第一个页面子{{item}}</view>
      </i-navbar-item>
-     <i-navbar-item>
+     <i-navbar-item id="bb">
          <view>这是第二个页面</view>
-         <view wx:for="{{mydata2}}"> 第二个页面子{{index}}</view>
+          <view wx:for="{{mydata}}"> 第2个页面子{{item}}</view>
+     </i-navbar-item>
+     <i-navbar-item id="bb">
+         <view>这是第3个页面</view>
+          <view wx:for="{{mydata}}"> 第3个页面子{{item}}</view>
+     </i-navbar-item>
+     <i-navbar-item id="bb">
+         <view>这是第4个页面</view>
+          <view wx:for="{{mydata}}"> 第4个页面子{{item}}</view>
      </i-navbar-item>
   </i-navbar>
+
    
 </view>
