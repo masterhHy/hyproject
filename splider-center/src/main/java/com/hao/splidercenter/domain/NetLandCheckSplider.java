@@ -28,14 +28,16 @@ public class NetLandCheckSplider implements SpliderTask {
 		s.readUrl(url, "get", params);
 		String token = handler.token;
 		System.out.println("当前账户token=========》"+token);
+		
+		//token="f96f391990aa1dafc67aa9db66612bf9";
 		params.clear();
-		params.put("address", "广东省广州市天河区科韵路");
+		params.put("address", "广州市天河区中山大道建工路15号首层");
 		params.put("isAuto", 2);
-		params.put("latitude", "23.12893443393708");
-		params.put("longitude", "113.3998720191501");
+		params.put("latitude", "23.1291279654196");
+		params.put("longitude", "113.3795327359311");
 		params.put("token", token);
 		params.put("type", 1);
-		params.put("wifi", "FAST_5AD8");
+		params.put("wifi", "netland-office");
 		url = "http://101.132.78.92:8080/longstron-company-app-rest/api/workday/add";
 		s.readUrl(url, "post", params);
 				

@@ -47,7 +47,8 @@ spring:
 
 logging:
   file: logs/splider-center.log
-  
+  level:
+    root: info
 
     
     
