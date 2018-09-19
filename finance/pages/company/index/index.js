@@ -49,13 +49,13 @@ Page({
     setTimeout(()=>{
       this.setData({"company.loading":false});
       for (let i = 50; i < 100; i++) {
-        this.data.inventor.data.push(i);
+        this.data.company.data.push(i);
 
       }
-      this.setData({ 'company.data': this.data.inventor.data });
+      this.setData({ 'company.data': this.data.company.data });
     },3000);
   },
-  
+
   
 
   /**
