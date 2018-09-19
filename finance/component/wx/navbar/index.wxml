@@ -1,0 +1,18 @@
+<!--component/wx/navbar/index.wxml-->
+<view class="weui-tab">
+    <view class="weui-navbar" >
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on fz-class' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+            </view>
+        </block>
+        <view class="weui-navbar__slider bg-class" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);width:{{barWidth}}px;"></view>
+    </view>
+    <view class="weui-tab__panel "  >
+      <scroll-view class="scroll-view_H" style='max-height:{{viewHeight}}px;' scroll-left="{{scrollOffset}}" scroll-with-animation  scroll-x="{{scrollx}}" bindscroll="itemScroll">
+        <slot ></slot>
+      </scroll-view>
+  
+    </view>
+    
+</view>

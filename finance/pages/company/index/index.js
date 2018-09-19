@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    tabs:["公司分析","投资者分析"],
+    company:{
+      data:[],
+      
+    },
+    inventor:{
+      data: [],
+    },
+  },
+  ichange(e){
+    
   },
 
   /**
@@ -19,15 +29,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    for (let i = 0; i < 50; i++) {
+      this.data.company.data.push(i);
+
+    }
+    this.setData({ 'company.data': this.data.company.data });
+    for (let i = 0; i < 25; i++) {
+      this.data.inventor.data.push(i);
+
+    }
+    this.setData({ 'inventor.data': this.data.inventor.data });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  downLoading(e){
+      
+      for (let i = 50; i < 100; i++) {
+        this.data.company.data.push(i);
+
+      }
+      this.setData({ 'company.data': this.data.company.data });
   },
+
+  
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -54,7 +77,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    
   },
 
   /**
