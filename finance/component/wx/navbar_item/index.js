@@ -15,13 +15,21 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    loading: {
-      type: Boolean,
-      value: false
+    url: {
+      type: String,
+      value: ""
     },
-    noMoreData: {
-      type: Boolean,
-      value: false
+    method: {
+      type: String,
+      value: "GET"
+    },
+    param: {
+      type: JSON,
+      value: {}
+    },
+    pageSize: {
+      type: Number,
+      value: 5
     },
     isAjax: {
       type: Boolean,

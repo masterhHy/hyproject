@@ -1,5 +1,5 @@
 <view class='scroll-view-item_H'>
-  <i-scroll binddownLoading="downLoading" bindupLoading="upLoading" loading="{{loading}}" noMoreData="{{noMoreData}}" isAjax="{{isAjax}}">
+  <i-scroll binddownLoading="downLoading" bindupLoading="upLoading" isAjax="{{isAjax}}" url="{{url}}" method="{{method}}" param="{{param}}" pageSize="{{pageSize}}">
     <slot></slot>
   </i-scroll>
 </view>

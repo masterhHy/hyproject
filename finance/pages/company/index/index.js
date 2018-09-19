@@ -8,13 +8,10 @@ Page({
     tabs:["公司分析","投资者分析"],
     company:{
       data:[],
-      loading:false,
-      noMoreData:false
+      
     },
     inventor:{
       data: [],
-      loading: false,
-      noMoreData: false
     },
   },
   ichange(e){
@@ -45,15 +42,12 @@ Page({
   },
 
   downLoading(e){
-    
-    setTimeout(()=>{
-      this.setData({"company.loading":false});
+      
       for (let i = 50; i < 100; i++) {
         this.data.company.data.push(i);
 
       }
       this.setData({ 'company.data': this.data.company.data });
-    },3000);
   },
 
   
