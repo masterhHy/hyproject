@@ -5,16 +5,15 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import router from './router'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+import axios from './plugins__config/axios_config.js'
 import {AlertPlugin, ToastPlugin} from 'vux'
 
 Vue.use(AlertPlugin)
 Vue.use(ToastPlugin)
 
 Vue.use(VueRouter)
-Vue.use(VueAxios, axios)
-
+axios.init(Vue);
+require("./common/common.css")
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
