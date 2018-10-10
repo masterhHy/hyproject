@@ -8,8 +8,8 @@
   <artifactId>user-service-provider</artifactId>
   
   <dependencies>
-  	 
-  
+
+
   	<dependency>
   		<groupId>com.hao</groupId>
 	    <artifactId>common</artifactId>
@@ -39,7 +39,7 @@
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 		</dependency>
-		
+
 		<dependency>
 		    <groupId>org.mybatis.generator</groupId>
 		    <artifactId>mybatis-generator-core</artifactId>
@@ -50,29 +50,29 @@
 		    <artifactId>mapper-generator</artifactId>
 		    <version>1.0.0</version>
 		</dependency>
-		
-		<dependency>  
-            <groupId>com.alibaba</groupId>  
-            <artifactId>dubbo</artifactId>  
-            <exclusions>  
-                <exclusion>  
-                    <groupId>org.springframework</groupId>  
-                    <artifactId>spring</artifactId>  
-                </exclusion>  
-            </exclusions>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.apache.zookeeper</groupId>  
-            <artifactId>zookeeper</artifactId>  
+
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <dependency>  
-            <groupId>com.github.sgroschupf</groupId>  
-            <artifactId>zkclient</artifactId>  
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
         </dependency>
-		
-  	
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+
+
   </dependencies>
-  
+
   <build>
   	<plugins>
 
@@ -85,7 +85,7 @@
 	    </configuration>
 	  </plugin>
 	</plugins>
-  
+
   </build>
   
   
