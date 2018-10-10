@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.finance.dao.SpliderStockCodeInvestorMapper">
+  <resultMap id="BaseResultMap" type="com.hao.finance.entity.SpliderStockCodeInvestor">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="code_percent" jdbcType="DOUBLE" property="codePercent" />
+    <result column="code_quantity" jdbcType="DOUBLE" property="codeQuantity" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="public_date" jdbcType="VARCHAR" property="publicDate" />
+    <result column="splider_investor_id" jdbcType="VARCHAR" property="spliderInvestorId" />
+    <result column="splider_stock_code_id" jdbcType="VARCHAR" property="spliderStockCodeId" />
+  </resultMap>
+</mapper>
