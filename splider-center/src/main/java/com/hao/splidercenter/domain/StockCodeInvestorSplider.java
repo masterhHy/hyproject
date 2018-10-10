@@ -58,7 +58,6 @@ public class StockCodeInvestorSplider implements SpliderTask {
 			v.setType("get");
 			v.setParams(null);
 			list.add(v);
-			
 		}
 		InvestorMonitor m = new InvestorMonitor(ds);
 		m.max=list.size();

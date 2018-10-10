@@ -39,7 +39,7 @@ public class SpliderCenterApplication {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		/*//更新股票代码（已有则不更新 判断依据：code）
+		//更新股票代码（已有则不更新 判断依据：code）
 		
 		stockCodeSplider.run();
 		
@@ -58,9 +58,10 @@ public class SpliderCenterApplication {
 		
 		//更新股票每日盘中数据 （已有则不更新 判断依据：表中codeId 和 时间段  存在 ）输入 日期
 		
-		codeDayDataSplider.run();*/
+		codeDayDataSplider.run();
 		
-		netLandCheckSplider.run();
+		//netLandCheckSplider.run();
+		
 		
 		
 		
