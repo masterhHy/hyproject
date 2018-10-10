@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/TimeCoinClientApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/controller/TimeCoinController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/table/TableTimeBPOpereate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/table/TableTimeBp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/table/TableTimeCoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/BaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/TimeCoinService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/impl/BaseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/impl/TimeCoinServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/test/java/test/Code.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/src/test/java/test/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time-coin-client/time-coin-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/time-coin2/src/common/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/time-coin2/src/common/theme.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/back-support/target/" />
@@ -46,8 +26,8 @@
       <file leaf-file-name="TimeCoinClientApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/TimeCoinClientApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="108">
+              <caret line="4" selection-start-line="4" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,14 +35,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeCoinController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeCoinController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/controller/TimeCoinController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-292">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="140">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/time-coin-client/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -102,7 +100,6 @@
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/TimeCoin.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/TimeBP.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/TimeBPOpereate.java" />
-        <option value="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/time-coin-client/src/test/java/test/Code.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/table/TimeBPOpereate.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/table/TableTimeBPOpereate.java" />
@@ -112,12 +109,13 @@
         <option value="$PROJECT_DIR$/time-coin-client/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/time-coin-client/src/test/java/test/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/dao/TimeBpOperateMapper.java" />
-        <option value="$PROJECT_DIR$/time-coin-client/pom.xml" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/TimeCoinService.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/impl/TimeCoinServiceImpl.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/controller/TimeCoinController.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/dao/TimeCoinMapper.java" />
         <option value="$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/dao/TimeBpMapper.java" />
+        <option value="$PROJECT_DIR$/time-coin-client/pom.xml" />
+        <option value="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -159,7 +157,7 @@
       <path value="$PROJECT_DIR$/time-coin2/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-191" />
     <option name="y" value="72" />
     <option name="width" value="1400" />
@@ -206,36 +204,7 @@
               <item name="time-coin-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="time-coin-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="time" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="time-coin-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="time" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="time-coin-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="time" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -338,6 +307,10 @@
       <module name="user-service-provider" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hao.user.DubboMain" />
     </configuration>
+    <configuration name="TimeCoinClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="time-coin-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hao.time.TimeCoinClientApplication" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -366,6 +339,7 @@
       <item itemvalue="Application.SpliderCenterApplication" />
       <item itemvalue="Application.TimeCoinClientApplication" />
       <item itemvalue="Application.Code" />
+      <item itemvalue="Spring Boot.TimeCoinClientApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -397,20 +371,20 @@
       <workItem from="1536541979681" duration="988000" />
       <workItem from="1536550270312" duration="252000" />
       <workItem from="1536816037349" duration="34000" />
-      <workItem from="1539136267633" duration="12014000" />
+      <workItem from="1539136267633" duration="12832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41642000" />
+    <option name="totallyTimeSpent" value="42460000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005365" side_tool="true" weight="0.35346755" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.33433735" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.33422747" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -427,10 +401,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.35346755" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.35346755" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27038628" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27038628" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
@@ -608,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/splider-center/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/Table.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -726,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/time-coin-client/src/test/java/test/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -763,13 +723,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/dao/mapper/TimeBpMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/time-coin-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/entity/TimeBp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -840,16 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/TimeCoinClientApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/service/impl/TimeCoinServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -860,13 +803,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/splider-center/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-196">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/time-coin-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/controller/TimeCoinController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="140">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/java/com/hao/time/TimeCoinClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" selection-start-line="4" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
         </state>
       </provider>
     </entry>
