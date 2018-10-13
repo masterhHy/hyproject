@@ -141,7 +141,7 @@ public class StockCodeDayData implements ParentPo{
 				openPrice+","+
 				stockCodeId+","+
 				topPrice+","+
-				now.toGMTString() + "," +
+				now.toLocaleString() + "," +
 				zUpdateTime 
 				;
 		

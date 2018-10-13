@@ -88,7 +88,7 @@ public class StockCodeDetail implements ParentPo {
 				   profitPercent + "," + 
 				   pubDate + "," + 
 				   stockCodeId + "," +
-				   now.toGMTString() + "," +
+				   now.toLocaleString() + "," +
 				   zUpdateTime 
 				  ;
 		return str.replace("null", "\\N");

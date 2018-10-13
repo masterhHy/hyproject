@@ -122,7 +122,7 @@ public class StockCodeInvestor implements ParentPo {
 				publicDate + ","+ 
 				spliderInvestorId + "," + 
 				spliderStockCodeId + "," +
-				now.toGMTString() + "," +
+				now.toLocaleString() + "," +
 				zUpdateTime 
 				;
 		str = str.replace("null", "\\N");
