@@ -1,5 +1,6 @@
 package com.hao.splidercenter.po;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -129,6 +130,8 @@ public class StockCodeDayData implements ParentPo{
 	@Override
 	public String toWritingString() {
 		Date now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat(DAY);
+		String format = sdf.format(now);
 		String str=
 				id+","+
 				amount+","+
@@ -141,7 +144,7 @@ public class StockCodeDayData implements ParentPo{
 				openPrice+","+
 				stockCodeId+","+
 				topPrice+","+
-				now.toLocaleString() + "," +
+				format + "," +
 				zUpdateTime 
 				;
 		
