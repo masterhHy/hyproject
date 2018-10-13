@@ -35,6 +35,7 @@ public class IndustrySplider implements SpliderTask {
 	@Override
 	public void run() {
 		List<Dictionary> p = dictionaryDao.findBySortAndParentIdIsNull(Dictionary.SORT_INDUSTRY);
+		Dictionary parent =null;
 		if(p.size()==0){
 			Dictionary dic = new Dictionary();
 			dic.setId(UUID.uuid32());
@@ -43,12 +44,15 @@ public class IndustrySplider implements SpliderTask {
 			dic.setSort(Dictionary.SORT_INDUSTRY);
 			dictionaryDao.save(dic);
 			dictionaryDao.flush();
+			parent=dic;
+		}else{
+			parent=p.get(0);
 		}
 		List<StockCode> codeList = stockCodeDao.findByDitionaryCodeIsNull();
 		
 		List<SpliderTaskVo> list = new ArrayList<>();
 		for (StockCode stockCode : codeList) {
-			IndustryHandler handler = new IndustryHandler(stockCodeDao,dictionaryDao,stockCode.getId());
+			IndustryHandler handler = new IndustryHandler(stockCodeDao,dictionaryDao,stockCode.getId(),parent);
 			String url ="http://basic.10jqka.com.cn/"+stockCode.getCode()+"/company.html#stockpage";
 			
 			SpliderTaskVo v = new SpliderTaskVo();
@@ -90,11 +94,12 @@ class IndustryHandler extends HtmlHandler{
 	private StockCodeDao stockCodeDao;
 	private DictionaryDao dictionaryDao;
 	private String codeId;
-	public IndustryHandler(StockCodeDao stockCodeDao,DictionaryDao dictionaryDao,String codeId) {
+	private Dictionary parent;
+	public IndustryHandler(StockCodeDao stockCodeDao,DictionaryDao dictionaryDao,String codeId,Dictionary parent) {
 		this.stockCodeDao=stockCodeDao;
 		this.dictionaryDao=dictionaryDao;
 		this.codeId=codeId;
-		
+		this.parent=parent;
 		
 	}
 	
@@ -116,6 +121,7 @@ class IndustryHandler extends HtmlHandler{
 				dic.setCode(code);
 				dic.setName(name);
 				dic.setSort(Dictionary.SORT_INDUSTRY);
+				dic.setParentId(parent.getId());
 				dic =dictionaryDao.save(dic);
 				dictionaryDao.flush();
 			}

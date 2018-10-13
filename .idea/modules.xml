@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/hyproject.iml" filepath="$PROJECT_DIR$/hyproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/splider-center/splider-center.iml" filepath="$PROJECT_DIR$/splider-center/splider-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/time-coin-client/time-coin-client.iml" filepath="$PROJECT_DIR$/time-coin-client/time-coin-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service-provider/user-service-provider.iml" filepath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/wx-mp/wx-mp.iml" filepath="$PROJECT_DIR$/wx-mp/wx-mp.iml" />
     </modules>

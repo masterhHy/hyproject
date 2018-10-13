@@ -36,6 +36,7 @@ public abstract class DefaultMonitor<T> implements Monitor {
 	
 	public DefaultMonitor(DruidDataSource ds) {
 		this.ds=ds;
+		errorList.clear();
 	}
 	@Override
 	public abstract void currendURL(String url);
@@ -106,6 +107,7 @@ public abstract class DefaultMonitor<T> implements Monitor {
 				os.write(str.getBytes());
 			}
 			os.close();
+			errorList.clear();
 		} catch (Exception e) {
 			logger.error("输出error目录错误文件出错-->",e);
 		}
@@ -126,21 +128,33 @@ public abstract class DefaultMonitor<T> implements Monitor {
 			   .append("LINES TERMINATED BY '\\r\\n' ");
 			connection = ds.getConnection();
 			File[] listFiles = dir.listFiles();
+			String os = System.getProperty("os.name");
+			
 			for (File data : listFiles) {
 				if(data.getName().equals("error.txt")){
 					continue;
 				}
-				
+				if(os.toLowerCase().indexOf("linux")!=-1){
+					//linux要把文件移动到temp目录 不然权限问题不能读取文件
+					File tarFile = new File("/temp"+data.getParentFile().getAbsolutePath());
+					boolean mkdir = tarFile.mkdirs();
+					logger.info("创建文件夹状态:"+mkdir);
+					tarFile = new File("/temp"+data.getAbsolutePath());
+					boolean renameTo = data.renameTo(tarFile);
+					logger.info("移动文件夹状态:"+renameTo);
+					data=tarFile;
+				}
 				String loadSql = sql.toString().replace("?", data.getAbsolutePath().replace("\\", "/"));
 				Statement ps =null;
 				try {
 					ps = connection.createStatement();
 					logger.info("正在入库....");
+					logger.info("正在执行sql:"+loadSql);
 					ps.execute(loadSql);
 					logger.info("入库完成");
 					data.delete();
 				} catch (Exception e) {
-					e.printStackTrace();
+					logger.error("",e);
 				}finally{
 					if(ps!=null)
 						ps.close();

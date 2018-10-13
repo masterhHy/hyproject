@@ -10,6 +10,7 @@
         <module name="back-support" />
         <module name="common" />
         <module name="splider-center" />
+        <module name="time-coin-client" />
         <module name="user-service-provider" />
         <module name="wx-mp" />
       </profile>
@@ -21,6 +22,7 @@
       <module name="common" target="1.8" />
       <module name="hyproject" target="1.8" />
       <module name="splider-center" target="1.8" />
+      <module name="time-coin-client" target="1.8" />
       <module name="user-service-provider" target="1.8" />
       <module name="wx-mp" target="1.8" />
     </bytecodeTargetLevel>
