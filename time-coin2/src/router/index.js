@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import VuxIndex from '@/components/VuxIndex'
+import HomePage from '@/components/h5/coin/HomePage'
 
 Vue.use(Router)
 
@@ -9,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'VuxIndex',
-      component: VuxIndex
+      name: 'HomePage',
+      component: HomePage
     },
     {
-      path: '/VuxIndex',
-      name: 'VuxIndex',
-      component: VuxIndex
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      component: HelloWorld
     }
   ]
 })
