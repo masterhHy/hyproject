@@ -1,5 +1,7 @@
 package com.hao.splidercenter.po;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,6 +14,10 @@ public class Investor implements ParentPo {
 	private String name;
 	@Column(columnDefinition="int(3) COMMENT '公司类型 1:基金	2:保险公司		3:一般法人		4:信托公司		5:社保基金		6:QFII 	7:券商	8:券商集合理财		9:企业年金'")
 	private Integer type;
+	@Column(columnDefinition="datetime COMMENT '创建时间' ")
+	private Date zCreatTime;
+	@Column(columnDefinition="datetime COMMENT '修改时间' ")
+	private Date zUpdateTime;
 	
 	public static final Integer TYPE_FUND=1;
 	public static final Integer TYPE_SAFE=2;
@@ -34,6 +40,20 @@ public class Investor implements ParentPo {
 	}
 	public void setType(Integer type) {
 		this.type = type;
+	}
+	
+	
+	public Date getzCreatTime() {
+		return zCreatTime;
+	}
+	public void setzCreatTime(Date zCreatTime) {
+		this.zCreatTime = zCreatTime;
+	}
+	public Date getzUpdateTime() {
+		return zUpdateTime;
+	}
+	public void setzUpdateTime(Date zUpdateTime) {
+		this.zUpdateTime = zUpdateTime;
 	}
 	@Override
 	public String toString() {

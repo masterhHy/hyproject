@@ -1,5 +1,6 @@
 package com.hao.finance.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "splider_investor")
@@ -17,6 +18,18 @@ public class SpliderInvestor {
      * 公司类型 1:基金	2:保险公司		3:一般法人		4:信托公司		5:社保基金		6:QFII 	7:券商	8:券商集合理财		9:企业年金
      */
     private Integer type;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "z_creat_time")
+    private Date zCreatTime;
+
+    /**
+     * 修改时间
+     */
+    @Column(name = "z_update_time")
+    private Date zUpdateTime;
 
     /**
      * @return id
@@ -66,5 +79,41 @@ public class SpliderInvestor {
      */
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return z_creat_time - 创建时间
+     */
+    public Date getzCreatTime() {
+        return zCreatTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param zCreatTime 创建时间
+     */
+    public void setzCreatTime(Date zCreatTime) {
+        this.zCreatTime = zCreatTime;
+    }
+
+    /**
+     * 获取修改时间
+     *
+     * @return z_update_time - 修改时间
+     */
+    public Date getzUpdateTime() {
+        return zUpdateTime;
+    }
+
+    /**
+     * 设置修改时间
+     *
+     * @param zUpdateTime 修改时间
+     */
+    public void setzUpdateTime(Date zUpdateTime) {
+        this.zUpdateTime = zUpdateTime;
     }
 }

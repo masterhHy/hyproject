@@ -11,5 +11,7 @@
     <result column="profit_percent" jdbcType="DOUBLE" property="profitPercent" />
     <result column="pub_date" jdbcType="VARCHAR" property="pubDate" />
     <result column="stock_code_id" jdbcType="VARCHAR" property="stockCodeId" />
+    <result column="z_creat_time" jdbcType="TIMESTAMP" property="zCreatTime" />
+    <result column="z_update_time" jdbcType="TIMESTAMP" property="zUpdateTime" />
   </resultMap>
 </mapper>

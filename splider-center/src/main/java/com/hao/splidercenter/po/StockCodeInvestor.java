@@ -1,5 +1,7 @@
 package com.hao.splidercenter.po;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,7 +26,10 @@ public class StockCodeInvestor implements ParentPo {
 	
 	@Column(columnDefinition="varchar(50) COMMENT '增减情况' ")
 	private String comment;
-
+	@Column(columnDefinition="datetime COMMENT '创建时间' ")
+	private Date zCreatTime;
+	@Column(columnDefinition="datetime COMMENT '修改时间' ")
+	private Date zUpdateTime;
 	public String getId() {
 		return id;
 	}
@@ -80,6 +85,25 @@ public class StockCodeInvestor implements ParentPo {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
+
+	
+
+	public Date getzCreatTime() {
+		return zCreatTime;
+	}
+
+	public void setzCreatTime(Date zCreatTime) {
+		this.zCreatTime = zCreatTime;
+	}
+
+	public Date getzUpdateTime() {
+		return zUpdateTime;
+	}
+
+	public void setzUpdateTime(Date zUpdateTime) {
+		this.zUpdateTime = zUpdateTime;
+	}
 
 	@Override
 	public String toString() {
@@ -90,10 +114,18 @@ public class StockCodeInvestor implements ParentPo {
 
 	@Override
 	public String toWritingString() {
-		String str=id +"," + codePercent+ "," + codeQuantity + "," 
-					+ comment + "," + publicDate + ","
-							+ spliderInvestorId + "," + spliderStockCodeId   ;
-		str = str.replace("null", "");
+		Date now = new Date();
+		String str=id +"," + 
+				codePercent+ "," + 
+				codeQuantity + "," + 
+				comment + "," + 
+				publicDate + ","+ 
+				spliderInvestorId + "," + 
+				spliderStockCodeId + "," +
+				now.toGMTString() + "," +
+				zUpdateTime 
+				;
+		str = str.replace("null", "\\N");
 		return str;
 	}
 	

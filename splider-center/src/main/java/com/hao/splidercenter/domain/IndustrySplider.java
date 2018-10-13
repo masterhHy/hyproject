@@ -1,6 +1,7 @@
 package com.hao.splidercenter.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.jsoup.nodes.Document;
@@ -42,6 +43,7 @@ public class IndustrySplider implements SpliderTask {
 			dic.setCode(Dictionary.SORT_INDUSTRY+"_1");
 			dic.setName("行业");
 			dic.setSort(Dictionary.SORT_INDUSTRY);
+			dic.setzCreatTime(new Date());
 			dictionaryDao.save(dic);
 			dictionaryDao.flush();
 			parent=dic;
@@ -122,11 +124,13 @@ class IndustryHandler extends HtmlHandler{
 				dic.setName(name);
 				dic.setSort(Dictionary.SORT_INDUSTRY);
 				dic.setParentId(parent.getId());
+				dic.setzCreatTime(new Date());
 				dic =dictionaryDao.save(dic);
 				dictionaryDao.flush();
 			}
 			StockCode stockCode = stockCodeDao.findById(codeId).get();
 			stockCode.setDitionaryCode(dic.getCode());
+			stockCode.setzUpdateTime(new Date());
 			stockCodeDao.save(stockCode);
 		}
 		

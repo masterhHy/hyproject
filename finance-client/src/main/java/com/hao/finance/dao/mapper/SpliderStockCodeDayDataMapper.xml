@@ -16,5 +16,7 @@
     <result column="open_price" jdbcType="DOUBLE" property="openPrice" />
     <result column="stock_code_id" jdbcType="VARCHAR" property="stockCodeId" />
     <result column="top_price" jdbcType="DOUBLE" property="topPrice" />
+    <result column="z_creat_time" jdbcType="TIMESTAMP" property="zCreatTime" />
+    <result column="z_update_time" jdbcType="TIMESTAMP" property="zUpdateTime" />
   </resultMap>
 </mapper>

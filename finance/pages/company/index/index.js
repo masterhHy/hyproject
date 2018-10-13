@@ -38,6 +38,9 @@ Page({
 
     }
     this.setData({ 'inventor.data': this.data.inventor.data });
+    wx.axios.get("http://120.78.150.74:8080/investor/a").then(res=>{
+      console.log(res);
+    })
   },
 
   downLoading(e){

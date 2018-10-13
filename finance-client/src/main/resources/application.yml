@@ -4,6 +4,7 @@ server:
   servlet:
     context-path: /
   
+  
 spring:
   application:
     name: finance-client

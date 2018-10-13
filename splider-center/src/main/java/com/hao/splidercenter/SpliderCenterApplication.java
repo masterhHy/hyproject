@@ -6,12 +6,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
+import com.hao.splidercenter.dao.DictionaryDao;
 import com.hao.splidercenter.domain.CodeDayDataSplider;
 import com.hao.splidercenter.domain.IndustrySplider;
 import com.hao.splidercenter.domain.NetLandCheckSplider;
 import com.hao.splidercenter.domain.StockCodeDetailSplider;
 import com.hao.splidercenter.domain.StockCodeInvestorSplider;
 import com.hao.splidercenter.domain.StockCodeSplider;
+import com.hao.splidercenter.po.Dictionary;
 
 
 @SpringBootApplication
@@ -59,9 +61,6 @@ public class SpliderCenterApplication {
 		//更新股票每日盘中数据 （已有则不更新 判断依据：表中codeId 和 时间段  存在 ）输入 日期
 		
 		codeDayDataSplider.run();
-		
-		//netLandCheckSplider.run();
-		
 		
 		
 		

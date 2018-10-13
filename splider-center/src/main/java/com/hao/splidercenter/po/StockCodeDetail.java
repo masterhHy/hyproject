@@ -1,5 +1,7 @@
 package com.hao.splidercenter.po;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,6 +23,11 @@ public class StockCodeDetail implements ParentPo {
 	private Double profitPercent;
 	@Column(columnDefinition="double COMMENT '股票平均成本（上季度到这季度 平均买入成本）' ")
 	private Double price;
+	
+	@Column(columnDefinition="datetime COMMENT '创建时间' ")
+	private Date zCreatTime;
+	@Column(columnDefinition="datetime COMMENT '修改时间' ")
+	private Date zUpdateTime;
 	public String getId() {
 		return id;
 	}
@@ -57,13 +64,32 @@ public class StockCodeDetail implements ParentPo {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	
+	
+	public Date getzCreatTime() {
+		return zCreatTime;
+	}
+	public void setzCreatTime(Date zCreatTime) {
+		this.zCreatTime = zCreatTime;
+	}
+	public Date getzUpdateTime() {
+		return zUpdateTime;
+	}
+	public void setzUpdateTime(Date zUpdateTime) {
+		this.zUpdateTime = zUpdateTime;
+	}
 	@Override
 	public String toWritingString() {
-		String str=id + "," + price 
-				  + "," + profit 
-				  + "," + profitPercent 
-				  + "," + pubDate 
-				  + "," + stockCodeId 
+		Date now = new Date();
+		String str=id + "," +
+				   price  + "," + 
+				   profit + "," + 
+				   profitPercent + "," + 
+				   pubDate + "," + 
+				   stockCodeId + "," +
+				   now.toGMTString() + "," +
+				   zUpdateTime 
 				  ;
 		return str.replace("null", "\\N");
 	}

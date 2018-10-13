@@ -12,5 +12,7 @@
     <result column="public_date" jdbcType="VARCHAR" property="publicDate" />
     <result column="splider_investor_id" jdbcType="VARCHAR" property="spliderInvestorId" />
     <result column="splider_stock_code_id" jdbcType="VARCHAR" property="spliderStockCodeId" />
+    <result column="z_creat_time" jdbcType="TIMESTAMP" property="zCreatTime" />
+    <result column="z_update_time" jdbcType="TIMESTAMP" property="zUpdateTime" />
   </resultMap>
 </mapper>
