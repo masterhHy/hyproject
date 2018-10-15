@@ -20,8 +20,10 @@ public class StockCodeDetail implements ParentPo {
 	private String pubDate;
 	@Column(columnDefinition="double COMMENT '利润（单位：亿）' ")
 	private Double profit;
-	@Column(columnDefinition="double COMMENT '利润环比 （一季度利润与上年一季度利润做对比）' ")
+	@Column(columnDefinition="double COMMENT '利润同比 （一季度利润与上年一季度利润做对比）' ")
 	private Double profitPercent;
+	@Column(columnDefinition="double COMMENT '利润环比 （二季度利润与同年一季度利润做对比）' ")
+	private Double profitPercentHuanZeng;
 	@Column(columnDefinition="double COMMENT '股票平均成本（上季度到这季度 平均买入成本）' ")
 	private Double price;
 	
@@ -65,9 +67,15 @@ public class StockCodeDetail implements ParentPo {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
-	
-	
+
+	public Double getProfitPercentHuanZeng() {
+		return profitPercentHuanZeng;
+	}
+
+	public void setProfitPercentHuanZeng(Double profitPercentHuanZeng) {
+		this.profitPercentHuanZeng = profitPercentHuanZeng;
+	}
+
 	public Date getzCreatTime() {
 		return zCreatTime;
 	}
@@ -88,8 +96,9 @@ public class StockCodeDetail implements ParentPo {
 		String str=id + "," +
 				   price  + "," + 
 				   profit + "," + 
-				   profitPercent + "," + 
-				   pubDate + "," + 
+				   profitPercent + "," +
+				   profitPercentHuanZeng + "," +
+				   pubDate + "," +
 				   stockCodeId + "," +
 				   format + "," +
 				   zUpdateTime 

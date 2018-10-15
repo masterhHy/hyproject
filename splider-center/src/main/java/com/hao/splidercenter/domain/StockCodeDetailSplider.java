@@ -187,7 +187,7 @@ class StockCodeDetailHandler extends JsonHandler{
 			//如果这条数据的prfit_percent没有 则更新这条数据
 			String currentPublicDate = OutputWriterUtils.getCurrentPublicDate();
 			String upPublicDate = OutputWriterUtils.getupPublicDate();
-			if(d.getProfitPercent()==null&&(d.getPubDate().equals(currentPublicDate)||d.getPubDate().equals(upPublicDate))){
+			if((d.getProfitPercent()==null||d.getProfitPercentHuanZeng()==null)&&(d.getPubDate().equals(currentPublicDate)||d.getPubDate().equals(upPublicDate))){
 				try {
 					Double profit = Double.parseDouble(json.get("parentnetprofit").toString());
 					d.setProfit(profit/100000000);
@@ -199,10 +199,20 @@ class StockCodeDetailHandler extends JsonHandler{
 					Double profitPercent = Double.parseDouble(json.get("sjltz").toString());
 					d.setProfitPercent(profitPercent);
 				} catch (Exception e) {
-					logger.info("parentnetprofit出错--》"+json.get("sjltz").toString());
+					logger.info("sjltz出错--》"+json.get("sjltz").toString());
 					System.out.println("sjltz出错--》"+json.get("sjltz").toString());
 					
 				}
+
+				try {
+					Double profitPercentHZ = Double.parseDouble(json.get("sjlhz").toString());
+					d.setProfitPercentHuanZeng(profitPercentHZ);
+				} catch (Exception e) {
+					logger.info("sjlhz出错--》"+json.get("sjlhz").toString());
+					System.out.println("sjlhz出错--》"+json.get("sjlhz").toString());
+
+				}
+
 				d.setzUpdateTime(new Date());
 				stockCodeDetailDao.save(d);
 				num++;
@@ -235,6 +245,14 @@ class StockCodeDetailHandler extends JsonHandler{
 			logger.info("parentnetprofit出错--》"+json.get("sjltz").toString());
 			System.out.println("sjltz出错--》"+json.get("sjltz").toString());
 			
+		}
+		try {
+			Double profitPercentHZ = Double.parseDouble(json.get("sjlhz").toString());
+			d.setProfitPercentHuanZeng(profitPercentHZ);
+		} catch (Exception e) {
+			logger.info("sjlhz出错--》"+json.get("sjlhz").toString());
+			System.out.println("sjlhz出错--》"+json.get("sjlhz").toString());
+
 		}
 		
 		
