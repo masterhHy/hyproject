@@ -32,7 +32,6 @@ public class InvestorController {
 		PageInfo<SpliderInvestor> selectAllByList = investorService.selectAllByList(0, 5);
 		res.setCode(200);
 		res.setData(selectAllByList.getList().get(0));
-		int i=1/0;
 		return res;
 		
 	}
