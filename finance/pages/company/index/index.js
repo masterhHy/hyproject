@@ -36,9 +36,11 @@ Page({
     for (let i = 0; i < 25; i++) {
       this.data.inventor.data.push(i);
 
+
     }
     this.setData({ 'inventor.data': this.data.inventor.data });
-    wx.axios.get("http://120.78.150.74:8080/investor/a").then(res=>{
+    wx.axios.get("https://www.ttimecoin.top/investor/a").then(res=>{
+
       console.log(res);
     })
   },
