@@ -159,14 +159,15 @@ class StockCodeDetailMonitor extends DefaultMonitor<StockCodeDetail>{
 				logger.info("正在对临时表汇总....");
 
 				ps.executeUpdate("TRUNCATE temp_stock_code_annual_report");
-				String insertSql ="INSERT INTO temp_stock_code_annual_report  SELECT * FROM splider_stock_code_detail s WHERE s.pub_date LIKE '%-12-31' ";
-				boolean bool = ps.execute(insertSql);
-				if(bool){
-					logger.info("汇总完成");
-				}else{
-					logger.info("汇总失败");
-				}
+				logger.info("临时表数据清除完毕....");
+				String insertSql =  "INSERT INTO temp_stock_code_annual_report " +
+									" SELECT * FROM splider_stock_code_detail s " +
+									" WHERE s.pub_date = CONCAT(SUBSTRING(NOW(),1,4)-1,'-12-31') OR s.pub_date = CONCAT(SUBSTRING(NOW(),1,4)-2,'-12-31') OR s.pub_date =CONCAT(SUBSTRING(NOW(),1,4)-3,'-12-31') ";
+				ps.execute(insertSql);
+				logger.info("汇总完成");
+
 			} catch (Exception e) {
+				logger.info("汇总失败");
 				logger.error("",e);
 			}finally{
 				if(ps!=null)
