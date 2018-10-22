@@ -52,7 +52,7 @@ public class SpliderCenterApplication {
 		
 		//更新股票投资者持股量 （已有则不更新 判断依据：表中codeId 和 日期 存在 ）
 		
-		//stockCodeInvestorSplider.run();
+		stockCodeInvestorSplider.run();
 		
 		//更新股票基本面分析（已有则不更新 判断依据：表中codeId 和 日期 存在 ）输入 日期
 		
@@ -60,7 +60,7 @@ public class SpliderCenterApplication {
 		
 		//更新股票每日盘中数据 （已有则不更新 判断依据：表中codeId 和 时间段  存在 ）输入 日期
 		
-		//codeDayDataSplider.run();
+		codeDayDataSplider.run();
 		
 		
 		
