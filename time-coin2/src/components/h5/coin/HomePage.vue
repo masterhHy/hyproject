@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="content">
-      <div class="img" :style="backImg"></div>
+      <div class="img js_timeCoin" :style="backImg" @click="toTimeCoin"></div>
       <p class="title">人的回忆是由过去构成的</p>
     </div>
 
@@ -21,7 +21,15 @@
           backgroundPosition: "-6px -2px"
         }
       }
+    },
+    methods:{
+      toTimeCoin() {
+        console.log(this.$router)
+        this.$router.push('/TimeCoin');
+       /* this.router.push('/TimeCoin');*/
+      }
     }
+
   }
 </script>
 
