@@ -1,5 +1,8 @@
 package com.hao.splidercenter.po;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -31,6 +34,10 @@ public class StockCodeDayData implements ParentPo{
 	private Double changeHand;
 	@Column(columnDefinition="varchar(50) COMMENT '股票id' ")
 	private String stockCodeId;
+	@Column(columnDefinition="datetime COMMENT '创建时间' ")
+	private Date zCreatTime;
+	@Column(columnDefinition="datetime COMMENT '修改时间' ")
+	private Date zUpdateTime;
 	public String getId() {
 		return id;
 	}
@@ -100,6 +107,19 @@ public class StockCodeDayData implements ParentPo{
 	}
 	
 	
+	
+	public Date getzCreatTime() {
+		return zCreatTime;
+	}
+	public void setzCreatTime(Date zCreatTime) {
+		this.zCreatTime = zCreatTime;
+	}
+	public Date getzUpdateTime() {
+		return zUpdateTime;
+	}
+	public void setzUpdateTime(Date zUpdateTime) {
+		this.zUpdateTime = zUpdateTime;
+	}
 	@Override
 	public String toString() {
 		return "StockCodeDayData [id=" + id + ", openDate=" + openDate + ", openPrice=" + openPrice + ", closePrice="
@@ -109,6 +129,9 @@ public class StockCodeDayData implements ParentPo{
 	}
 	@Override
 	public String toWritingString() {
+		Date now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat(DAY);
+		String format = sdf.format(now);
 		String str=
 				id+","+
 				amount+","+
@@ -120,7 +143,10 @@ public class StockCodeDayData implements ParentPo{
 				openDate+","+
 				openPrice+","+
 				stockCodeId+","+
-				topPrice;
+				topPrice+","+
+				format + "," +
+				zUpdateTime 
+				;
 		
 		return str.replace("null", "\\N");	
 	}

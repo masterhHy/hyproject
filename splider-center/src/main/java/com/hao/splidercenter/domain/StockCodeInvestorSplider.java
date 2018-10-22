@@ -1,6 +1,7 @@
 package com.hao.splidercenter.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.jsoup.nodes.Document;
@@ -155,6 +156,7 @@ class StockCodeInvestorHandler extends HtmlHandler{
 						in.setType(10);
 					}
 					in.setId(UUID.uuid32());
+					in.setzCreatTime(new Date());
 					investor = investorDao.save(in);
 				}else{
 					investor=inves.get(0);

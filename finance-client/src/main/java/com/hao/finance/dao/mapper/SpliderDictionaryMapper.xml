@@ -10,5 +10,7 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
     <result column="sort" jdbcType="VARCHAR" property="sort" />
+    <result column="z_creat_time" jdbcType="TIMESTAMP" property="zCreatTime" />
+    <result column="z_update_time" jdbcType="TIMESTAMP" property="zUpdateTime" />
   </resultMap>
 </mapper>

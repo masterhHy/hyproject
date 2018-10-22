@@ -1,11 +1,14 @@
 package com.hao.splidercenter.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -157,6 +160,7 @@ class StockCodeDetailMonitor extends DefaultMonitor<StockCodeDetail>{
 
 class StockCodeDetailHandler extends JsonHandler{
 	private StockCodeDetailDao stockCodeDetailDao;
+	private Logger logger = LoggerFactory.getLogger(StockCodeDetailHandler.class);
 	public StockCodeDetailHandler(StockCodeDetailDao stockCodeDetailDao) {
 		this.stockCodeDetailDao = stockCodeDetailDao;
 	}
@@ -166,6 +170,8 @@ class StockCodeDetailHandler extends JsonHandler{
 	}
 	
 	private List<StockCodeDetail> list = new ArrayList<>();
+	private int num;
+	
 	
 	@Override
 	public void webData(JSONObject json) {
@@ -178,6 +184,45 @@ class StockCodeDetailHandler extends JsonHandler{
 		
 		StockCodeDetail d = stockCodeDetailDao.findByPubDateAndStockCodeId(pubDate, codeId);
 		if(d!=null){
+			//如果这条数据的prfit_percent没有 则更新这条数据
+			String currentPublicDate = OutputWriterUtils.getCurrentPublicDate();
+			String upPublicDate = OutputWriterUtils.getupPublicDate();
+			if((d.getProfitPercent()==null||d.getProfitPercentHuanZeng()==null)&&(d.getPubDate().equals(currentPublicDate)||d.getPubDate().equals(upPublicDate))){
+				try {
+					Double profit = Double.parseDouble(json.get("parentnetprofit").toString());
+					d.setProfit(profit/100000000);
+				} catch (Exception e) {
+					logger.info("parentnetprofit出错--》"+json.get("parentnetprofit").toString());
+					System.out.println("parentnetprofit出错--》"+json.get("parentnetprofit").toString());
+				}
+				try {
+					Double profitPercent = Double.parseDouble(json.get("sjltz").toString());
+					d.setProfitPercent(profitPercent);
+				} catch (Exception e) {
+					logger.info("sjltz出错--》"+json.get("sjltz").toString());
+					System.out.println("sjltz出错--》"+json.get("sjltz").toString());
+					
+				}
+
+				try {
+					Double profitPercentHZ = Double.parseDouble(json.get("sjlhz").toString());
+					d.setProfitPercentHuanZeng(profitPercentHZ);
+				} catch (Exception e) {
+					logger.info("sjlhz出错--》"+json.get("sjlhz").toString());
+					System.out.println("sjlhz出错--》"+json.get("sjlhz").toString());
+
+				}
+
+				d.setzUpdateTime(new Date());
+				stockCodeDetailDao.save(d);
+				num++;
+				if(num>3000){
+					stockCodeDetailDao.flush();
+					num=0;
+				}
+				
+			}
+			//更新这条数据
 			return;
 		}
 		
@@ -187,21 +232,27 @@ class StockCodeDetailHandler extends JsonHandler{
 		scd.setPubDate(pubDate);
 		
 		try {
-			if(json.get("parentnetprofit").toString().indexOf("-")==-1){
-				Double profit = Double.parseDouble(json.get("parentnetprofit").toString());
-				scd.setProfit(profit/100000000);
-			}
+			Double profit = Double.parseDouble(json.get("parentnetprofit").toString());
+			scd.setProfit(profit/100000000);
 		} catch (Exception e) {
+			logger.info("parentnetprofit出错--》"+json.get("parentnetprofit").toString());
 			System.out.println("parentnetprofit出错--》"+json.get("parentnetprofit").toString());
 		}
 		try {
-			if(json.get("sjltz").toString().indexOf("-")==-1){
-				Double profitPercent = Double.parseDouble(json.get("sjltz").toString());
-				scd.setProfitPercent(profitPercent);
-			}
+			Double profitPercent = Double.parseDouble(json.get("sjltz").toString());
+			scd.setProfitPercent(profitPercent);
 		} catch (Exception e) {
+			logger.info("parentnetprofit出错--》"+json.get("sjltz").toString());
 			System.out.println("sjltz出错--》"+json.get("sjltz").toString());
 			
+		}
+		try {
+			Double profitPercentHZ = Double.parseDouble(json.get("sjlhz").toString());
+			d.setProfitPercentHuanZeng(profitPercentHZ);
+		} catch (Exception e) {
+			logger.info("sjlhz出错--》"+json.get("sjlhz").toString());
+			System.out.println("sjlhz出错--》"+json.get("sjlhz").toString());
+
 		}
 		
 		

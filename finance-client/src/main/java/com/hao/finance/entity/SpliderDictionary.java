@@ -1,5 +1,6 @@
 package com.hao.finance.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "splider_dictionary")
@@ -28,6 +29,18 @@ public class SpliderDictionary {
      * 分类表示
      */
     private String sort;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "z_creat_time")
+    private Date zCreatTime;
+
+    /**
+     * 修改时间
+     */
+    @Column(name = "z_update_time")
+    private Date zUpdateTime;
 
     /**
      * @return id
@@ -113,5 +126,41 @@ public class SpliderDictionary {
      */
     public void setSort(String sort) {
         this.sort = sort;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return z_creat_time - 创建时间
+     */
+    public Date getzCreatTime() {
+        return zCreatTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param zCreatTime 创建时间
+     */
+    public void setzCreatTime(Date zCreatTime) {
+        this.zCreatTime = zCreatTime;
+    }
+
+    /**
+     * 获取修改时间
+     *
+     * @return z_update_time - 修改时间
+     */
+    public Date getzUpdateTime() {
+        return zUpdateTime;
+    }
+
+    /**
+     * 设置修改时间
+     *
+     * @param zUpdateTime 修改时间
+     */
+    public void setzUpdateTime(Date zUpdateTime) {
+        this.zUpdateTime = zUpdateTime;
     }
 }

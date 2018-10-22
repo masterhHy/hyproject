@@ -1,5 +1,7 @@
 package com.hao.splidercenter.po;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,6 +27,11 @@ public class StockCode implements ParentPo {
 	
 	@Column(columnDefinition="varchar(50) COMMENT '字典表code值' ")
 	private String ditionaryCode;
+	
+	@Column(columnDefinition="datetime COMMENT '创建时间' ")
+	private Date zCreatTime;
+	@Column(columnDefinition="datetime COMMENT '修改时间' ")
+	private Date zUpdateTime;
 	
 	
 	public String getDitionaryCode() {
@@ -67,6 +74,19 @@ public class StockCode implements ParentPo {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public Date getzCreatTime() {
+		return zCreatTime;
+	}
+	public void setzCreatTime(Date zCreatTime) {
+		this.zCreatTime = zCreatTime;
+	}
+	public Date getzUpdateTime() {
+		return zUpdateTime;
+	}
+	public void setzUpdateTime(Date zUpdateTime) {
+		this.zUpdateTime = zUpdateTime;
+	}
+	
 	
 	
 }

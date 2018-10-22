@@ -1,5 +1,6 @@
 package com.hao.finance.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "splider_stock_code")
@@ -14,6 +15,12 @@ public class SpliderStockCode {
     private String code;
 
     /**
+     * 字典表code值
+     */
+    @Column(name = "ditionary_code")
+    private String ditionaryCode;
+
+    /**
      * 股票名称
      */
     private String name;
@@ -24,10 +31,16 @@ public class SpliderStockCode {
     private Integer type;
 
     /**
-     * 字典表code值
+     * 创建时间
      */
-    @Column(name = "ditionary_code")
-    private String ditionaryCode;
+    @Column(name = "z_creat_time")
+    private Date zCreatTime;
+
+    /**
+     * 修改时间
+     */
+    @Column(name = "z_update_time")
+    private Date zUpdateTime;
 
     /**
      * @return id
@@ -59,6 +72,24 @@ public class SpliderStockCode {
      */
     public void setCode(String code) {
         this.code = code;
+    }
+
+    /**
+     * 获取字典表code值
+     *
+     * @return ditionary_code - 字典表code值
+     */
+    public String getDitionaryCode() {
+        return ditionaryCode;
+    }
+
+    /**
+     * 设置字典表code值
+     *
+     * @param ditionaryCode 字典表code值
+     */
+    public void setDitionaryCode(String ditionaryCode) {
+        this.ditionaryCode = ditionaryCode;
     }
 
     /**
@@ -98,20 +129,38 @@ public class SpliderStockCode {
     }
 
     /**
-     * 获取字典表code值
+     * 获取创建时间
      *
-     * @return ditionary_code - 字典表code值
+     * @return z_creat_time - 创建时间
      */
-    public String getDitionaryCode() {
-        return ditionaryCode;
+    public Date getzCreatTime() {
+        return zCreatTime;
     }
 
     /**
-     * 设置字典表code值
+     * 设置创建时间
      *
-     * @param ditionaryCode 字典表code值
+     * @param zCreatTime 创建时间
      */
-    public void setDitionaryCode(String ditionaryCode) {
-        this.ditionaryCode = ditionaryCode;
+    public void setzCreatTime(Date zCreatTime) {
+        this.zCreatTime = zCreatTime;
+    }
+
+    /**
+     * 获取修改时间
+     *
+     * @return z_update_time - 修改时间
+     */
+    public Date getzUpdateTime() {
+        return zUpdateTime;
+    }
+
+    /**
+     * 设置修改时间
+     *
+     * @param zUpdateTime 修改时间
+     */
+    public void setzUpdateTime(Date zUpdateTime) {
+        this.zUpdateTime = zUpdateTime;
     }
 }

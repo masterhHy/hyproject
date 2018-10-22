@@ -1,5 +1,6 @@
 package com.hao.finance.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "splider_stock_code_day_data")
@@ -9,7 +10,7 @@ public class SpliderStockCodeDayData {
     private String id;
 
     /**
-     * 成交金额
+     * 成交金额(亿)
      */
     private Double amount;
 
@@ -38,7 +39,7 @@ public class SpliderStockCodeDayData {
     private Double lowPrice;
 
     /**
-     * 成交量
+     * 成交量(手)
      */
     private Double num;
 
@@ -67,6 +68,18 @@ public class SpliderStockCodeDayData {
     private Double topPrice;
 
     /**
+     * 创建时间
+     */
+    @Column(name = "z_creat_time")
+    private Date zCreatTime;
+
+    /**
+     * 修改时间
+     */
+    @Column(name = "z_update_time")
+    private Date zUpdateTime;
+
+    /**
      * @return id
      */
     public String getId() {
@@ -81,18 +94,18 @@ public class SpliderStockCodeDayData {
     }
 
     /**
-     * 获取成交金额
+     * 获取成交金额(亿)
      *
-     * @return amount - 成交金额
+     * @return amount - 成交金额(亿)
      */
     public Double getAmount() {
         return amount;
     }
 
     /**
-     * 设置成交金额
+     * 设置成交金额(亿)
      *
-     * @param amount 成交金额
+     * @param amount 成交金额(亿)
      */
     public void setAmount(Double amount) {
         this.amount = amount;
@@ -171,18 +184,18 @@ public class SpliderStockCodeDayData {
     }
 
     /**
-     * 获取成交量
+     * 获取成交量(手)
      *
-     * @return num - 成交量
+     * @return num - 成交量(手)
      */
     public Double getNum() {
         return num;
     }
 
     /**
-     * 设置成交量
+     * 设置成交量(手)
      *
-     * @param num 成交量
+     * @param num 成交量(手)
      */
     public void setNum(Double num) {
         this.num = num;
@@ -258,5 +271,41 @@ public class SpliderStockCodeDayData {
      */
     public void setTopPrice(Double topPrice) {
         this.topPrice = topPrice;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return z_creat_time - 创建时间
+     */
+    public Date getzCreatTime() {
+        return zCreatTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param zCreatTime 创建时间
+     */
+    public void setzCreatTime(Date zCreatTime) {
+        this.zCreatTime = zCreatTime;
+    }
+
+    /**
+     * 获取修改时间
+     *
+     * @return z_update_time - 修改时间
+     */
+    public Date getzUpdateTime() {
+        return zUpdateTime;
+    }
+
+    /**
+     * 设置修改时间
+     *
+     * @param zUpdateTime 修改时间
+     */
+    public void setzUpdateTime(Date zUpdateTime) {
+        this.zUpdateTime = zUpdateTime;
     }
 }

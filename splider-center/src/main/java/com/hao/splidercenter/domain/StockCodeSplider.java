@@ -1,6 +1,7 @@
 package com.hao.splidercenter.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +61,7 @@ public class StockCodeSplider implements SpliderTask {
 				code.setType(Integer.parseInt(split[0]));
 			    code.setCode(split[1]);
 			    code.setName(split[2]);
+			    code.setzCreatTime(new Date());
 			    entities.add(code);
 			}
 			stockCodeDao.saveAll(entities);

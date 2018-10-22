@@ -7,8 +7,10 @@
     -->
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="ditionary_code" jdbcType="VARCHAR" property="ditionaryCode" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="type" jdbcType="INTEGER" property="type" />
-    <result column="ditionary_code" jdbcType="VARCHAR" property="ditionaryCode" />
+    <result column="z_creat_time" jdbcType="TIMESTAMP" property="zCreatTime" />
+    <result column="z_update_time" jdbcType="TIMESTAMP" property="zUpdateTime" />
   </resultMap>
 </mapper>

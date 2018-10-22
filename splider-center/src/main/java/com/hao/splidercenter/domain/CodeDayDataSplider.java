@@ -1,6 +1,7 @@
 package com.hao.splidercenter.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -164,6 +165,7 @@ class CodeDayDataHandler extends JsonHandler{
 			Double a = dealDouble(list.get(7).toString());
 			Double avgprice = a*100/n;
 			detail.setPrice(avgprice);
+			detail.setzUpdateTime(new Date());
 			stockCodeDetailDao.save(detail);
 		}
 	}
