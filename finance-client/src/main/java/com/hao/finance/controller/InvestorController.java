@@ -18,15 +18,15 @@ import com.github.pagehelper.PageInfo;
 import com.hao.common.pojo.ResponseData;
 import com.hao.finance.entity.SpliderInvestor;
 import com.hao.finance.service.InvestorService;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/investor")
 public class InvestorController {
 	@Autowired
 	private InvestorService investorService;
 	
 	@RequestMapping("/{id}")
-	@ResponseBody
 	public ResponseData<SpliderInvestor> getInvestor(@PathVariable("id")String id){
 		ResponseData<SpliderInvestor> res = new ResponseData<>();
 		PageInfo<SpliderInvestor> selectAllByList = investorService.selectAllByList(0, 5);

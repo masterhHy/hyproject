@@ -6,7 +6,8 @@ public class ResponseData<T> {
      * 返回码
      */
     private Integer code;
-
+    public static final  Integer SUCCESS_CODE =200;
+    public static final  Integer ERROR_CODE =500;
     /**
      * 返回描述
      */
