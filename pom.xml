@@ -98,12 +98,12 @@
 
 	<distributionManagement>
 		<repository>
-		    <id>maven-releases</id>
-		    <url>http://47.106.137.211:9090/repository/maven-releases/</url>
+		    <id>releases</id>
+		    <url>http://47.106.137.211:9090/nexus/content/repositories/releases</url>
 		  </repository>
 		 <snapshotRepository>
-		    <id>maven-snapshots</id>
-		    <url>http://47.106.137.211:9090/repository/maven-snapshots/</url>
+		    <id>snapshots</id>
+		    <url>http://47.106.137.211:9090/nexus/content/repositories/snapshots</url>
 		  </snapshotRepository>
 	</distributionManagement>
 	
