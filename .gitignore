@@ -49,3 +49,12 @@
 /back-support/target
 /auth-center/auth-center-provider/target
 /auth-center/auth-spring-boot-autoconfigure/target
+/auth-center/auth-spring-boot-starter/target
+/auth-center/auth-spring-boot-starter/.settings
+/auth-center/auth-spring-boot-starter/.project
+/auth-center/auth-spring-boot-starter/.classpath
+/auth-center/auth-spring-boot-autoconfigure/.classpath
+/auth-center/auth-spring-boot-autoconfigure/.project
+/auth-center/auth-spring-boot-autoconfigure/.settings
+/user-service-provider/logs
+/auth-center/auth-center-provider/logs

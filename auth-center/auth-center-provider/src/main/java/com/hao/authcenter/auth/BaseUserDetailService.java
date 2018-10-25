@@ -1,11 +1,8 @@
 package com.hao.authcenter.auth;
 
-import com.hao.authcenter.remote.UserServiceRemoteClient;
-import com.hao.user.entity.SysAuthority;
-import com.hao.user.entity.SysRole;
-import com.hao.user.entity.SysUser;
-import com.hao.user.service.ResourceService;
-import com.hao.user.service.RoleService;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +14,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.user.entity.SysAuthority;
+import com.hao.user.entity.SysRole;
+import com.hao.user.entity.SysUser;
 
 
 /**
@@ -30,7 +29,7 @@ public class BaseUserDetailService implements UserDetailsService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private UserServiceRemoteClient userService;
+    private UserServiceClient userService;
     
     @Autowired
     private RedisTemplate<String, SysAuthority> resourcesTemplate;
@@ -40,7 +39,7 @@ public class BaseUserDetailService implements UserDetailsService {
     	SysUser record = new SysUser();
     	record.setUsername(username);
         // 调用FeignClient查询用户
-    	SysUser sysUser = userService.selectOneUser(record);
+    	SysUser sysUser = userService.selectOneUser(record).getData();
 
         if(sysUser == null){
             logger.error("找不到该用户，用户名：" + username);
@@ -48,7 +47,7 @@ public class BaseUserDetailService implements UserDetailsService {
             
         }
         // 查询用户所有角色
-        List<SysRole> roles = userService.getRoleByUserId(sysUser.getId());
+        List<SysRole> roles = userService.getRoleByUserId(sysUser.getId()).getData();
         List<GrantedAuthority> authorities = this.convertToAuthorities(sysUser, roles);
        
         // 返回带有用户权限信息的User

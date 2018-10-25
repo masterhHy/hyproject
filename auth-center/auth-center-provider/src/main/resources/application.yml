@@ -11,8 +11,8 @@ spring:
       port: ${CONSUL_PORT:8500}
       discovery:
         prefer-ip-address: true
-        health-check-path: ${server.context-path}/health
-        tags: management.context-path=${server.context-path}
+        health-check-path: ${server.servlet.context-path}/health
+        tags: management.context-path=${server.servlet.context-path}
   redis:
     database: 0
     host: ${REDIS_HOST:localhost}
