@@ -1,16 +1,27 @@
 package com.hao.user.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-
-import javax.persistence.*;
 
 @Table(name = "sys_user_roles")
 public class SysUserRoles implements Serializable {
+    @Id
+    private String id;
     @Column(name = "sys_user_id")
     private String sysUserId;
 
     @Column(name = "roles_id")
     private String rolesId;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     /**
      * @return sys_user_id

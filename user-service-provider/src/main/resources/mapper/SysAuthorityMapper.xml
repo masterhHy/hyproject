@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.user.dao.SysAuthorityMapper">
+  <resultMap id="BaseResultMap" type="com.hao.user.entity.SysAuthority">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
+    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="last_modified_by" jdbcType="VARCHAR" property="lastModifiedBy" />
+    <result column="last_modified_date" jdbcType="TIMESTAMP" property="lastModifiedDate" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="order_num" jdbcType="INTEGER" property="orderNum" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="is_enable" jdbcType="CHAR" property="isEnable" />
+  </resultMap>
+
+  <select id="getAllAuthorityByUserId" resultMap="BaseResultMap"  >
+      SELECT distinct sa.* FROM sys_user u
+      LEFT JOIN sys_user_roles sur ON u.id=sur.sys_user_id
+      LEFT JOIN sys_role r ON sur.roles_id=r.id
+      LEFT JOIN sys_role_authorities sra ON r.id=sra.sys_role_id
+      LEFT JOIN sys_authority sa ON sa.id=sra.authorities_id
+      WHERE u.id = #{userId} AND r.is_enable='Y' AND sa.is_enable='Y'
+  </select>
+</mapper>

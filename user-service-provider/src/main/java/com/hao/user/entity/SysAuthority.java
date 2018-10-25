@@ -1,8 +1,8 @@
 package com.hao.user.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "sys_authority")
 public class SysAuthority implements Serializable {
@@ -59,8 +59,19 @@ public class SysAuthority implements Serializable {
     /**
      * Y 启用 N禁用
      */
-    @Column(name = "id_enable")
-    private String idEnable;
+    @Column(name = "is_enable")
+    private String isEnable;
+
+    @Column(name = "project_name")
+    private String projectName;
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
 
     /**
      * @return id
@@ -254,21 +265,11 @@ public class SysAuthority implements Serializable {
         this.type = type;
     }
 
-    /**
-     * 获取Y 启用 N禁用
-     *
-     * @return id_enable - Y 启用 N禁用
-     */
-    public String getIdEnable() {
-        return idEnable;
+    public String getIsEnable() {
+        return isEnable;
     }
 
-    /**
-     * 设置Y 启用 N禁用
-     *
-     * @param idEnable Y 启用 N禁用
-     */
-    public void setIdEnable(String idEnable) {
-        this.idEnable = idEnable;
+    public void setIsEnable(String isEnable) {
+        this.isEnable = isEnable;
     }
 }

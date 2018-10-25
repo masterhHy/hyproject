@@ -1,8 +1,8 @@
 package com.hao.user.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "sys_role")
 public class SysRole implements Serializable {
@@ -23,6 +23,12 @@ public class SysRole implements Serializable {
     private Date lastModifiedDate;
 
     /**
+     * Y 启用 N禁用
+     */
+    @Column(name = "is_enable")
+    private String isEnable;
+
+    /**
      * 角色名字
      */
     private String name;
@@ -31,6 +37,14 @@ public class SysRole implements Serializable {
      * 角色编码
      */
     private String code;
+
+    public String getIsEnable() {
+        return isEnable;
+    }
+
+    public void setIsEnable(String isEnable) {
+        this.isEnable = isEnable;
+    }
 
     /**
      * @return id

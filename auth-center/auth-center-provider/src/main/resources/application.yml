@@ -3,9 +3,16 @@ server:
     context-path: /auth
   port: 18001
 spring:
-
   application:
     name: auth-center
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      discovery:
+        prefer-ip-address: true
+        health-check-path: ${server.context-path}/health
+        tags: management.context-path=${server.context-path}
   redis:
     database: 0
     host: ${REDIS_HOST:localhost}

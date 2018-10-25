@@ -1,8 +1,11 @@
 package com.hao.authcenter.auth;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.hao.authcenter.remote.UserServiceRemoteClient;
+import com.hao.user.entity.SysAuthority;
+import com.hao.user.entity.SysRole;
+import com.hao.user.entity.SysUser;
+import com.hao.user.service.ResourceService;
+import com.hao.user.service.RoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +17,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.hao.common.pojo.ResponseData;
-import com.hao.common.utils.UUID;
-import com.hao.user.entity.SysAuthority;
-import com.hao.user.entity.SysRole;
-import com.hao.user.entity.SysUser;
-import com.hao.user.service.ResourceService;
-import com.hao.user.service.RoleService;
-import com.hao.user.service.UserService;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -33,14 +30,8 @@ public class BaseUserDetailService implements UserDetailsService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private UserService userService;
+    private UserServiceRemoteClient userService;
     
-    @Autowired
-    private RoleService roleService;
-    @Autowired
-    private ResourceService resourceService;
-    @Autowired
-    private RedisTemplate<String, SysRole> redisTemplate;
     @Autowired
     private RedisTemplate<String, SysAuthority> resourcesTemplate;
 
@@ -48,15 +39,16 @@ public class BaseUserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     	SysUser record = new SysUser();
     	record.setUsername(username);
-    	SysUser sysUser = userService.selectOne(record);
         // 调用FeignClient查询用户
+    	SysUser sysUser = userService.selectOneUser(record);
+
         if(sysUser == null){
             logger.error("找不到该用户，用户名：" + username);
             throw new UsernameNotFoundException("找不到该用户，用户名：" + username);
             
         }
         // 查询用户所有角色
-        List<SysRole> roles = roleService.getRoleByUserId(sysUser.getId());
+        List<SysRole> roles = userService.getRoleByUserId(sysUser.getId());
         List<GrantedAuthority> authorities = this.convertToAuthorities(sysUser, roles);
        
         // 返回带有用户权限信息的User
@@ -89,14 +81,14 @@ public class BaseUserDetailService implements UserDetailsService {
 
     private List<GrantedAuthority> convertToAuthorities(SysUser sysUser, List<SysRole> roles) {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        // 清除 Redis 中用户的角色
-        redisTemplate.delete(sysUser.getId());
+        // 清除 Redis 中用户的权限
+        resourcesTemplate.delete(sysUser.getId()+"-menu");
         roles.forEach(e -> {
-            // 存储用户、角色信息到GrantedAuthority，并放到GrantedAuthority列表
+
             GrantedAuthority authority = new SimpleGrantedAuthority(e.getCode());
             authorities.add(authority);
-            //存储角色到redis
-            redisTemplate.opsForList().rightPush(sysUser.getId(), e);
+            //存储权限到redis
+           // resourcesTemplate.opsForList().rightPush(sysUser.getId()+"-menu", e);
             
         });
         return authorities;

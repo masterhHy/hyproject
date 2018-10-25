@@ -44,3 +44,8 @@
 /user-service-provider/.settings
 /finance-client/.gitignore
 /back-support/.gitignore
+/wx-mp/target
+/user-service-provider/target
+/back-support/target
+/auth-center/auth-center-provider/target
+/auth-center/auth-spring-boot-autoconfigure/target
