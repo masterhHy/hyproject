@@ -1,7 +1,6 @@
 package com.hao.auth.autoconfigure.utils;
 
 import com.hao.user.entity.SysAuthority;
-import com.hao.user.entity.SysRole;
 import com.hao.user.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -29,8 +28,6 @@ public class AccessTokenUtils {
     @Autowired
     private TokenExtractor tokenExtractor;
 
-    @Autowired
-    private RedisTemplate<String, SysRole> baseRoleTemplate;
 
     @Autowired
     private RedisTemplate<String, SysAuthority> baseModelTemplate;
@@ -52,11 +49,6 @@ public class AccessTokenUtils {
         return (SysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
     }
 
-    public List<SysRole> getRoleInfo()throws AccessDeniedException{
-        String userId = getUserInfo().getId();
-        long size = baseRoleTemplate.opsForList().size(userId);
-        return baseRoleTemplate.opsForList().range(userId, 0, size);
-    }
 
     public List<SysAuthority> getMenuInfo()throws AccessDeniedException{
         String key = getUserInfo().getId() + "-menu";

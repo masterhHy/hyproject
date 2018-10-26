@@ -11,7 +11,7 @@ spring:
       port: ${CONSUL_PORT:8500}
       discovery:
         prefer-ip-address: true
-        health-check-path: ${server.servlet.context-path}/health
+        health-check-path: ${server.servlet.context-path}/actuator/health
         tags: management.context-path=${server.servlet.context-path}
   redis:
     database: 0
@@ -48,5 +48,6 @@ spring:
         login-password: "000000"
   freemarker:
       request-context-attribute: request
+
 logging:
   file: logs/auth-center.log

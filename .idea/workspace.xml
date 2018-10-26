@@ -2,116 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ecwid_consul_consul_api_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_core_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_javanica_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_metrics_event_stream_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_serialization_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_commons_util_0_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_2_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_core_2_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_httpclient_2_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_loadbalancer_2_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_transport_2_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_servo_servo_core_0_12_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_9_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_9_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_9_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_22_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_22_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_22_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_1_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_reactive_streams_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_consul_core_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_consul_discovery_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_core_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_consul_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_consul_discovery_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_hystrix_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_0_0_RC2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceRemoteClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/AuthResourcesAutoConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/RedisAuthConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/redis/RedisObjectSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-starter/auth-spring-boot-starter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-starter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_5_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_sgroschupf_zkclient_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_7_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_15_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_netty_netty_3_2_5_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_0_0_RC1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_0_0_RC2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_0_RC1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_0_RC2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_0_0_RC1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_0_0_RC2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/redis/RedisAuthConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/redis/RedisAuthConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/dubbo/dubbo-consumer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/InvestorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/InvestorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/DubboMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/SysAuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/SysAuthorityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysAuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysAuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysRoleAuthoritiesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleAuthoritiesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysUserRolesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserRolesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysRoleAuthorities.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysRoleAuthorities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysUserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/SysUserRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/ResourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ResourceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ResourceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/UserServiceRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/UserServiceRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/dubbo/dubbo-config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/dubbo/dubbo-user.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -138,47 +38,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java">
+      <file leaf-file-name="UserCenterApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+            <state relative-caret-position="189">
+              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#246#247#0" expanded="true" />
+                <element signature="e#313#314#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java">
+      <file leaf-file-name="AccessDecisionManagerIml.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="23" />
+            <state relative-caret-position="200">
+              <caret line="117" column="42" lean-forward="true" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2534#2535#0" expanded="true" />
+                <element signature="e#2603#2604#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseUserDetailService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-starter/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+            <state relative-caret-position="467">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceRemoteClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceRemoteClient.java">
+      <file leaf-file-name="AuthCenterProviderApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessTokenUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="53" column="6" lean-forward="true" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -204,10 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/service/impl/StockCodeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/dao/SpliderStockCodeMapper.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/hao/common/pojo/ResponseData.java" />
-        <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/StockCodeController.java" />
         <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/ExceptionController.java" />
         <option value="$PROJECT_DIR$/finance-client/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/dao/mapper/SpliderStockCodeMapper.xml" />
@@ -215,12 +121,10 @@
         <option value="$PROJECT_DIR$/finance-client/src/main/resources/mapper/SpliderStockCodeMapper.xml" />
         <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/entity/po/StockCodeQuery.java" />
         <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/InvestorController.java" />
-        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/auth-center/pom.xml" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/redis/RedisObjectSerializer.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/pom.xml" />
-        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/redis/RedisAuthConfiguration.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/SysAuthorityMapper.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/entity/table/SysUser.java" />
@@ -239,13 +143,11 @@
         <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysAuthorityMapper.xml" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ResourceServiceImpl.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/AuthResourcesAutoConfiguration.java" />
-        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/RedisAuthConfiguration.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/FinanceClientApplication.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" />
-        <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java" />
@@ -255,6 +157,14 @@
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceRemoteClient.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/UserServiceRemote.java" />
+        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceClient.java" />
+        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java" />
+        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java" />
+        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-starter/pom.xml" />
       </list>
     </option>
   </component>
@@ -326,20 +236,20 @@
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -347,7 +257,7 @@
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -356,83 +266,73 @@
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-starter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-starter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-starter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
               <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,7 +342,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-cloud-base-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
@@ -475,7 +375,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UserCenterApplication">
+  <component name="RunManager" selected="Spring Boot.AuthCenterProviderApplication">
     <configuration name="Code" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Code" />
       <module name="time-coin-client" />
@@ -639,11 +539,12 @@
       <workItem from="1540352983897" duration="3081000" />
       <workItem from="1540431495448" duration="21529000" />
       <workItem from="1540457528052" duration="7344000" />
+      <workItem from="1540522568346" duration="6885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98992000" />
+    <option name="totallyTimeSpent" value="105877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -651,7 +552,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50107294" side_tool="true" weight="0.30536914" />
-      <window_info anchor="right" id="Maven Projects" order="9" visible="true" weight="0.18454936" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.18454936" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="2" />
@@ -667,13 +568,12 @@
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.30536914" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" visible="true" weight="0.2049272" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25214592" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25590128" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -681,6 +581,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,50 +604,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/redis/RedisObjectSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysUserRolesMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysUserMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/mapper/SysAuthorityMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/utils/JwtAccessToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/redis/RedisAuthConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="647">
@@ -834,20 +691,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/DubboMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/DubboMain.java" />
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/test.java" />
     <entry file="file://$PROJECT_DIR$/time-coin-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-459">
@@ -866,12 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,12 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="711">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -892,16 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#1186#1187#0" expanded="true" />
-            <element signature="e#1220#1221#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#4415#4416#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4494#4495#0" expanded="true" />
-            <element signature="e#4534#4535#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,12 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="253" column="26" lean-forward="true" selection-start-line="253" selection-start-column="26" selection-end-line="253" selection-end-column="26" />
-          <folding>
-            <element signature="e#4670#4671#0" expanded="true" />
-            <element signature="e#4701#4702#0" expanded="true" />
-            <element signature="e#4749#4750#0" expanded="true" />
-            <element signature="e#4789#4790#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -936,27 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/RedisAuthConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1002,46 +798,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
@@ -1049,15 +809,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceRemoteClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="324">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1065,10 +822,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java">
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+        <state relative-caret-position="597">
+          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1082,13 +839,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/user-service-provider/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        <state relative-caret-position="351">
+          <caret line="87" column="18" lean-forward="true" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="41" column="52" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81">
+          <caret line="41" column="37" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/UserServiceRemote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/reactivex/rxjava/1.3.6/rxjava-1.3.6.jar!/rx/observables/BlockingObservable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#4067#4068#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/remote/UserServiceClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/remote/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/RedisAuthConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/AccessTokenUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="53" column="6" lean-forward="true" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/AccessDecisionManagerIml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="117" column="42" lean-forward="true" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2534#2535#0" expanded="true" />
+            <element signature="e#2603#2604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-starter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
         </state>
       </provider>
     </entry>

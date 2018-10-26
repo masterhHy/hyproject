@@ -11,5 +11,12 @@
 
     <artifactId>auth-spring-boot-starter</artifactId>
 
+    <dependencies>
+        <!-- Spring Boot 自动装配 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
 
+    </dependencies>
 </project>

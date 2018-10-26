@@ -1,14 +1,13 @@
 package com.hao.user.remote;
 
-import java.util.List;
-
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.hao.common.pojo.ResponseData;
 import com.hao.user.entity.SysAuthority;
 import com.hao.user.entity.SysRole;
 import com.hao.user.entity.SysUser;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 
 /**
@@ -18,10 +17,12 @@ import com.hao.user.entity.SysUser;
  */
 public interface UserServiceRemote   {
 	public static final String FeignClientName="user-service-provider";
+    public static final String CONTEXT_PATH="/user";
+
     @RequestMapping("/user/getAllAuthByUserId")
-    public ResponseData<List<SysAuthority>> getAllAuthorityByUserId(String userId);
+    public ResponseData<List<SysAuthority>> getAllAuthorityByUserId(@RequestParam("userId")String userId);
     @RequestMapping("/user/getUser")
-    public ResponseData<SysUser> selectOneUser(SysUser user);
+    public ResponseData<SysUser> selectOneUser(@RequestParam("user")SysUser user);
     @RequestMapping("/user/getRoleByUserId")
-    public ResponseData<List<SysRole>> getRoleByUserId(String userId);
+    public ResponseData<List<SysRole>> getRoleByUserId(@RequestParam("userId")String userId);
 }

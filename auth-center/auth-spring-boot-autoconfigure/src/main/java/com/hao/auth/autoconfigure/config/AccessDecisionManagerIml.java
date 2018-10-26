@@ -1,6 +1,7 @@
 package com.hao.auth.autoconfigure.config;
 
 import com.hao.auth.autoconfigure.utils.AccessTokenUtils;
+import com.hao.user.entity.SysAuthority;
 import com.hao.user.entity.SysRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,8 +40,6 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
     public void decide(Authentication authentication, Object o, Collection<ConfigAttribute> collection) throws AccessDeniedException,InsufficientAuthenticationException {
         // 请求路径
         url = getUrl(o);
-        // http 方法
-        httpMethod = getMethod(o);
 
         // 不拦截的请求
         for(String path : ignoreds){
@@ -51,9 +50,10 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         }
 
         // URL 鉴权
-        Iterator<SysRole> iterator = accessTokenUtils.getRoleInfo().iterator();
+        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
         while (iterator.hasNext()){
-            SysRole baseRole = iterator.next();
+            SysAuthority auth = iterator.next();
+            if(auth.getUrl().)
             if (baseRole.getModules().size() > 0 && checkSubModule(baseRole.getModules())) {
                 return;
             }
