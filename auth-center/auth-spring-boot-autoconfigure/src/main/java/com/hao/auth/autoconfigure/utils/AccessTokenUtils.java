@@ -14,9 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
-/**
- * Created by fp295 on 2018/4/29.
- */
 public class AccessTokenUtils {
 
     @Autowired

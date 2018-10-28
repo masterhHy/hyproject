@@ -8,11 +8,15 @@ server:
 spring:
   application:
     name: finance-client
+  redis:
+    database: 0
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: haomaria
+      password: root
       driver-class-name: com.mysql.jdbc.Driver
       max-active: 20
       initial-size: 1

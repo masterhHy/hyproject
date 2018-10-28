@@ -68,6 +68,13 @@
 		  <groupId>org.springframework.cloud</groupId>
 		  <artifactId>spring-cloud-starter-oauth2</artifactId>
 	  </dependency>
+	  <!-- 自定义资源拦截器辅助工具 -->
+	  <!-- <dependency>
+  		<groupId>com.hao</groupId>
+	    <artifactId>auth-spring-boot-autoconfigure</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	  </dependency> -->
+	  
 
 	  <!--应用健康管理 及服务注册-->
 	  <dependency>

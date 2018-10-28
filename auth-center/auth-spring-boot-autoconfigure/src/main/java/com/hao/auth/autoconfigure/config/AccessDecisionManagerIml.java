@@ -33,7 +33,6 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
     private String url;
 
-    private String httpMethod;
 
 
     @Override
@@ -53,9 +52,8 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
         while (iterator.hasNext()){
             SysAuthority auth = iterator.next();
-            if(auth.getUrl().)
-            if (baseRole.getModules().size() > 0 && checkSubModule(baseRole.getModules())) {
-                return;
+            if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
+            	return ;
             }
         }
 
@@ -76,35 +74,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         return url;
     }
 
-    private String getMethod(Object o) {
-        return ((FilterInvocation)o).getRequest().getMethod();
-    }
 
-    // 检查子模块权限
-    private boolean checkSubModule(List<BaseModuleResources> modules) {
-
-        Iterator<BaseModuleResources> iterator = modules.iterator();
-        while (iterator.hasNext())
-        {
-            BaseModuleResources e = iterator.next();
-            // 匹配当前应用的资源
-            if(applicationName.equals(e.getProjectName())) {
-                if (e.getIsOperating() == 1 && e.getActive() == 1 && e.getModulePath() != null && !"".equals(e.getModulePath())) {
-                    if (matchUrl(url, e.getModulePath()) && httpMethod.toUpperCase().equals(e.getHttpMethod().toUpperCase())) {
-                        return true;
-                    }
-                }
-
-                // 递归检查子模块的权限
-                if (e.getSubModules().size() > 0) {
-                    if (checkSubModule(e.getSubModules())) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
 
     private boolean matchUrl(String url, String modulePath) {
 
@@ -143,6 +113,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
     }
 
     public void setIgnored(String ignored) {
+    	System.out.println("=================="+ignored);
         if(ignored != null && !"".equals(ignored))
             this.ignoreds = ignored.split(",");
         else
