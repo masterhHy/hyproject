@@ -49,16 +49,12 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
             }
         }
         // URL 鉴权
-        try {
-            Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
-            while (iterator.hasNext()){
-                SysAuthority auth = iterator.next();
-                if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
-                    return ;
-                }
+        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
+        while (iterator.hasNext()){
+            SysAuthority auth = iterator.next();
+            if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
+                return ;
             }
-        }catch (Exception e){
-            e.printStackTrace();
         }
 
 

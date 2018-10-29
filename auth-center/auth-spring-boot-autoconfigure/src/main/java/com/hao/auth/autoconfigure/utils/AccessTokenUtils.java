@@ -5,6 +5,7 @@ import com.hao.user.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.authentication.TokenExtractor;
@@ -61,7 +62,7 @@ public class AccessTokenUtils {
             // 调用JwtAccessTokenConverter的extractAccessToken方法解析token
             token = tokenStore.readAccessToken((String) a.getPrincipal());
         } catch(Exception e) {
-            throw new AccessDeniedException("AccessToken Not Found.");
+            throw new InsufficientAuthenticationException("没登录访问保护资源");
         }
         return token;
     }
