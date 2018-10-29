@@ -219,4 +219,15 @@ public class SysUser implements Serializable {
     public void setIsEnable(String isEnable) {
         this.isEnable = isEnable;
     }
+
+	@Override
+	public String toString() {
+		return "SysUser [id=" + id + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastModifiedBy="
+				+ lastModifiedBy + ", lastModifiedDate=" + lastModifiedDate + ", email=" + email + ", firstName="
+				+ firstName + ", sex=" + sex + ", phone=" + phone + ", password=" + password + ", username=" + username
+				+ ", isEnable=" + isEnable + "]";
+	}
+
+    
+    
 }
