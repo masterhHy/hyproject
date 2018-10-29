@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="auth-center-provider" />
         <module name="auth-spring-boot-autoconfigure" />
-        <module name="auth-spring-boot-starter" />
         <module name="back-support" />
         <module name="common" />
         <module name="finance-client" />

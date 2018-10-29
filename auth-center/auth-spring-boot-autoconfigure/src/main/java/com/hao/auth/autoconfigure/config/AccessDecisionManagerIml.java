@@ -2,7 +2,6 @@ package com.hao.auth.autoconfigure.config;
 
 import com.hao.auth.autoconfigure.utils.AccessTokenUtils;
 import com.hao.user.entity.SysAuthority;
-import com.hao.user.entity.SysRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -17,7 +16,10 @@ import org.springframework.util.AntPathMatcher;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+/**
+ *
+ * 自定义权限控制，给资源服务器用的
+ */
 @ConfigurationProperties(prefix = "security")
 public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
@@ -39,7 +41,6 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
     public void decide(Authentication authentication, Object o, Collection<ConfigAttribute> collection) throws AccessDeniedException,InsufficientAuthenticationException {
         // 请求路径
         url = getUrl(o);
-
         // 不拦截的请求
         for(String path : ignoreds){
             String temp = path.trim();
@@ -47,15 +48,19 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
                 return;
             }
         }
-
         // URL 鉴权
-        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
-        while (iterator.hasNext()){
-            SysAuthority auth = iterator.next();
-            if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
-            	return ;
+        try {
+            Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
+            while (iterator.hasNext()){
+                SysAuthority auth = iterator.next();
+                if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
+                    return ;
+                }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
 
         throw new AccessDeniedException("无权限！");
 
@@ -113,7 +118,6 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
     }
 
     public void setIgnored(String ignored) {
-    	System.out.println("=================="+ignored);
         if(ignored != null && !"".equals(ignored))
             this.ignoreds = ignored.split(",");
         else

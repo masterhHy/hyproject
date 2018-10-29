@@ -2,6 +2,8 @@ package com.hao.auth.autoconfigure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -9,6 +11,7 @@ import org.springframework.security.oauth2.provider.authentication.BearerTokenEx
 import org.springframework.security.oauth2.provider.authentication.TokenExtractor;
 
 @Configuration
+@Order(Ordered.HIGHEST_PRECEDENCE)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -16,10 +19,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http    // 配置授权管理器
                 .authorizeRequests().accessDecisionManager(getAccessDecisionManager())
                 // 匹配全部请求鉴权认证
-                .antMatchers("/**").authenticated()
+                .anyRequest().authenticated()
                 // 由于使用的是JWT，我们这里不需要csrf
                 .and().csrf().disable();
     }
+
 
     @Bean
     public AccessDecisionManager getAccessDecisionManager() {

@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center.iml" filepath="$PROJECT_DIR$/auth-center/auth-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" filepath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" filepath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/auth-center/auth-spring-boot-starter/auth-spring-boot-starter.iml" filepath="$PROJECT_DIR$/auth-center/auth-spring-boot-starter/auth-spring-boot-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/back-support/back-support.iml" filepath="$PROJECT_DIR$/back-support/back-support.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/finance-client/finance-client.iml" filepath="$PROJECT_DIR$/finance-client/finance-client.iml" />

@@ -48,14 +48,6 @@ spring:
         login-username: sysadmin
         login-password: "000000"
 
-security:
-  oauth2:
-    resource:
-      jwt:
-        key-uri: http://${AUTH_CENTER_HOST:localhost}:${AUTH_CENTER_PORT:18001}/auth/oauth/token_key
-      id: ${spring.application.name}
-      serviceId: ${spring.application.name}
-  ignored: /**
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
