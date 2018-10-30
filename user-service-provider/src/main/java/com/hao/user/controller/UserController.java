@@ -9,7 +9,7 @@ import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
 import com.hao.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class UserController implements UserServiceRemote {
         res.setCode(ResponseData.SUCCESS_CODE);
         return res;
     }
-    public ResponseData<SysUser> selectOneUser(SysUser user){
+    public ResponseData<SysUser> selectOneUser(@RequestBody SysUser user){
         ResponseData<SysUser>res = new ResponseData<>();
         res.setData(userService.selectOne(user));
         res.setCode(ResponseData.SUCCESS_CODE);

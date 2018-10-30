@@ -3,6 +3,7 @@ package com.hao.authcenter.auth;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hao.common.constant.DataBaseConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,48 +47,32 @@ public class BaseUserDetailService implements UserDetailsService {
             throw new UsernameNotFoundException("找不到该用户，用户名：" + username);
             
         }
-        // 查询用户所有角色
-        List<SysRole> roles = userService.getRoleByUserId(sysUser.getId()).getData();
-        List<GrantedAuthority> authorities = this.convertToAuthorities(sysUser, roles);
+
+        List<SysAuthority> authList = userService.getAllAuthorityByUserId(sysUser.getId()).getData();
+        List<GrantedAuthority> authorities = this.convertToAuthorities(sysUser, authList);
        
         // 返回带有用户权限信息的User
         org.springframework.security.core.userdetails.User user =  new org.springframework.security.core.userdetails.User(sysUser.getUsername(),
         		sysUser.getPassword(), isActive(sysUser.getIsEnable()), true, true, true, authorities);
         return new BaseUserDetail(sysUser, user);
 
-      /*  
-
-        //调用FeignClient查询菜单
-        ResponseData<List<BaseModuleResources>> baseModuleResourceListResponseData = baseModuleResourceService.getMenusByUserId(baseUser.getId());
-
-        // 获取用户权限列表
-        List<GrantedAuthority> authorities = convertToAuthorities(baseUser, roles);
-
-        // 存储菜单到redis
-        if( ResponseCode.SUCCESS.getCode().equals(baseModuleResourceListResponseData.getCode()) && baseModuleResourceListResponseData.getData() != null){
-            resourcesTemplate.delete(baseUser.getId() + "-menu");
-            baseModuleResourceListResponseData.getData().forEach(e -> {
-                resourcesTemplate.opsForList().leftPush(baseUser.getId() + "-menu", e);
-            });
-        }
-
-        */
     }
 
     private boolean isActive(String active){
         return "Y".equals(active) ? true : false;
     }
 
-    private List<GrantedAuthority> convertToAuthorities(SysUser sysUser, List<SysRole> roles) {
+    private List<GrantedAuthority> convertToAuthorities(SysUser sysUser,List<SysAuthority> auth) {
         List<GrantedAuthority> authorities = new ArrayList<>();
         // 清除 Redis 中用户的权限
-        resourcesTemplate.delete(sysUser.getId()+"-menu");
-        roles.forEach(e -> {
+        resourcesTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+":"+sysUser.getId()+"-menu");
+        auth.forEach(e -> {
 
             GrantedAuthority authority = new SimpleGrantedAuthority(e.getCode());
             authorities.add(authority);
+
             //存储权限到redis
-           // resourcesTemplate.opsForList().rightPush(sysUser.getId()+"-menu", e);
+            resourcesTemplate.opsForList().rightPush(DataBaseConstant.REDIS_USER_NAME_PLACE+":"+sysUser.getId()+"-menu", e);
             
         });
         return authorities;

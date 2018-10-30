@@ -4,6 +4,7 @@ import com.hao.common.pojo.ResponseData;
 import com.hao.user.entity.SysAuthority;
 import com.hao.user.entity.SysRole;
 import com.hao.user.entity.SysUser;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,7 +23,7 @@ public interface UserServiceRemote   {
     @RequestMapping("/user/getAllAuthByUserId")
     public ResponseData<List<SysAuthority>> getAllAuthorityByUserId(@RequestParam("userId")String userId);
     @RequestMapping("/user/getUser")
-    public ResponseData<SysUser> selectOneUser(@RequestParam("user")SysUser user);
+    public ResponseData<SysUser> selectOneUser(@RequestBody SysUser user);
     @RequestMapping("/user/getRoleByUserId")
     public ResponseData<List<SysRole>> getRoleByUserId(@RequestParam("userId")String userId);
 }

@@ -17,7 +17,7 @@ public class StockCodeController {
     @Autowired
     private StockCodeService stockCodeService;
 
-    @RequestMapping("getCodeData")
+    @RequestMapping("/getCodeData")
     public ResponseData<List<Map<String, Object>>> getCodeData(StockCodeQuery query){
         ResponseData<List<Map<String, Object>>> res = new ResponseData<>();
         List<Map<String, Object>> codeData = stockCodeService.getCodeData(query);

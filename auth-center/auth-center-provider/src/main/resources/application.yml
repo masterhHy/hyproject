@@ -46,6 +46,11 @@ spring:
         reset-enable: false
         login-username: sysadmin
         login-password: "000000"
+  jpa:
+          show-sql: false
+          database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+          hibernate:
+            ddl-auto: update
   freemarker:
       request-context-attribute: request
 

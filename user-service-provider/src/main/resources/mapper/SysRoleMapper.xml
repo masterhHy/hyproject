@@ -19,6 +19,6 @@
   	SELECT r.* FROM sys_user u
 	INNER JOIN sys_user_roles sur ON u.id=sur.sys_user_id
 	INNER JOIN sys_role r ON sur.roles_id=r.id
-	WHERE u.id=#{userId}
+	WHERE u.id=#{userId} AND u.is_enable='Y' AND r.is_enable='Y'
   </select>
 </mapper>
