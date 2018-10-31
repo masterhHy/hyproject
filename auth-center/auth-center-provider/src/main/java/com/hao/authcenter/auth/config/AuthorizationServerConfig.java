@@ -55,7 +55,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Bean("jdbcClientDetailsService")
     public JdbcClientDetailsService getJdbcClientDetailsService() {
-        return new JdbcClientDetailsService(dataSource);
+        JdbcClientDetailsService s = new JdbcClientDetailsService(dataSource);
+        return s;
     }
 
 

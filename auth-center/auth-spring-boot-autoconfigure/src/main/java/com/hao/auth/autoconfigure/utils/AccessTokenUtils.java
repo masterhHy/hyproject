@@ -56,7 +56,8 @@ public class AccessTokenUtils {
 
     private OAuth2AccessToken getAccessToken() throws AccessDeniedException {
         OAuth2AccessToken token;
-        // 抽取token
+        // 抽取token] 把request header 中key Authorization value ‘Bearer f732723d-af7f-41bb-bd06-2636ab2be135’这种格式抽取出来
+        //f732723d-af7f-41bb-bd06-2636ab2be135 即为token
         Authentication a = tokenExtractor.extract(request);
         try {
             // 调用JwtAccessTokenConverter的extractAccessToken方法解析token

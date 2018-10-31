@@ -59,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     			"/favicon.ico","/webjars/**",
     			"/images/**",
     			"/druid/**",
-    			"/refresh",
+    			"/refresh","/oauth/deleteToken",
     			"/backReferer","/actuator/**"
     	};
     	web.ignoring().antMatchers(arr);
