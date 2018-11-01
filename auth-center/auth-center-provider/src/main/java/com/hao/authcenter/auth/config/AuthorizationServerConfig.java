@@ -24,6 +24,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import javax.sql.DataSource;
 
 
@@ -55,14 +59,39 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Bean("jdbcClientDetailsService")
     public JdbcClientDetailsService getJdbcClientDetailsService() {
-        JdbcClientDetailsService s = new JdbcClientDetailsService(dataSource);
-        return s;
+        return new JdbcClientDetailsService(dataSource);
     }
 
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        // 使用JdbcClientDetailsService客户端详情服务
+    	Connection connection =null;
+    	Statement st=null;
+    	ResultSet res=null;
+    	try {
+    		connection = dataSource.getConnection();
+    		st = connection.createStatement();
+    		res = st.executeQuery("select * from oauth_client_details where client_id ='admin' ");
+			if(!res.next()){//系统创建给admin客户端用的
+				clients.jdbc(dataSource).withClient("admin")
+				.authorizedGrantTypes("authorization_code","client_credentials","password", "refresh_token","implicit")
+				.scopes("read", "write")
+				.secret("123456").autoApprove(true).and().build();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			if(res!=null){
+				res.close();
+			}
+			if(st!=null){
+				st.close();
+			}
+			if(connection!=null){
+				connection.close();
+			}
+		}
+    	// 使用JdbcClientDetailsService客户端详情服务
         clients.withClientDetails(getJdbcClientDetailsService());
     }
 

@@ -3,6 +3,8 @@ package com.hao.authcenter.utils;
 import com.hao.authcenter.auth.BaseUserDetail;
 import com.hao.common.utils.JsonUtils;
 import com.hao.user.entity.SysUser;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -32,7 +34,6 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
         baseUser.setPassword(null);
         // 将用户信息添加到token额外信息中
         defaultOAuth2AccessToken.getAdditionalInformation().put(userInfo, baseUser);
-        System.out.println(baseUser);
         return super.enhance(defaultOAuth2AccessToken, authentication);
     }
 
@@ -59,6 +60,5 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
         SysUser user = JsonUtils.serializable(json, SysUser.class);
         return user;
     }
-
 
 }
