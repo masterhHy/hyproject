@@ -13,10 +13,13 @@
 	       <groupId>org.springframework.boot</groupId>
 	       <artifactId>spring-boot-starter-jdbc</artifactId>
 	   </dependency>
-
 	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-data-jpa</artifactId>
+	  </dependency>
+	 <dependency>
 		  <groupId>com.hao</groupId>
-		  <artifactId>user-service-provider</artifactId>
+		  <artifactId>remote-api</artifactId>
 		  <version>0.0.1-SNAPSHOT</version>
 	  </dependency>
 	  <dependency>
@@ -34,12 +37,13 @@
 	       <groupId>com.alibaba</groupId>
 	       <artifactId>druid-spring-boot-starter</artifactId>
 	   </dependency>
+
 	   <dependency>
            <groupId>org.springframework.boot</groupId>
            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 	   
-	
+		<!--权限控制-->
 	   <dependency>
 	       <groupId>org.springframework.cloud</groupId>
 	       <artifactId>spring-cloud-starter-security</artifactId>
@@ -48,7 +52,20 @@
 	       <groupId>org.springframework.cloud</groupId>
 	       <artifactId>spring-cloud-starter-oauth2</artifactId>
 	   </dependency>
-	
+
+	  <!--应用健康管理 及服务注册-->
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-actuator</artifactId>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.springframework.cloud</groupId>
+		  <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+	  </dependency>
+
+
+
+
 	   <dependency>
 	       <groupId>org.springframework.boot</groupId>
 	       <artifactId>spring-boot-starter-freemarker</artifactId>
@@ -70,27 +87,12 @@
 	       <artifactId>spring-boot-starter-test</artifactId>
 	       <scope>test</scope>
 	   </dependency>
+
+
 	   
-	   
-	   <dependency>  
-            <groupId>com.alibaba</groupId>  
-            <artifactId>dubbo</artifactId>  
-            <exclusions>  
-                <exclusion>  
-                    <groupId>org.springframework</groupId>  
-                    <artifactId>spring</artifactId>  
-                </exclusion>  
-            </exclusions>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.apache.zookeeper</groupId>  
-            <artifactId>zookeeper</artifactId>  
-        </dependency>
-        <dependency>  
-            <groupId>com.github.sgroschupf</groupId>  
-            <artifactId>zkclient</artifactId>  
-        </dependency>
-  
+
+
+
   
   </dependencies>
   

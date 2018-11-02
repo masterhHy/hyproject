@@ -1,8 +1,8 @@
 package com.hao.user.service;
 
-import java.util.List;
-
 import com.hao.user.entity.SysRole;
+
+import java.util.List;
 
 public interface RoleService extends BaseService<SysRole> {
 

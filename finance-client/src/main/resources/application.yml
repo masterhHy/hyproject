@@ -8,11 +8,23 @@ server:
 spring:
   application:
     name: finance-client
+  redis:
+    database: 0
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+  cloud:
+        consul:
+          host: ${CONSUL_HOST:localhost}
+          port: ${CONSUL_PORT:8500}
+          discovery:
+            prefer-ip-address: true
+            health-check-path: ${server.servlet.context-path}/actuator/health
+            tags: management.context-path=${server.servlet.context-path}
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: haomaria
+      password: root
       driver-class-name: com.mysql.jdbc.Driver
       max-active: 20
       initial-size: 1
@@ -38,11 +50,18 @@ spring:
         login-username: sysadmin
         login-password: "000000"
 mybatis:
-  mapper-locations: classpath:com/hao/finance/dao/mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
   
-  
-  
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://${AUTH_CENTER_HOST:localhost}:${AUTH_CENTER_PORT:18001}/auth/oauth/token_key
+      id: ${spring.application.name}
+      serviceId: ${spring.application.name}
+  ignored: /actuator/**
 
 logging:
   file: logs/finance-client.log

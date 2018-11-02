@@ -15,20 +15,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.RC1</spring-cloud.version>
+		<spring-cloud.version>Finchley.RC2</spring-cloud.version>
 
-		
 		
    </properties>
   <modules>
   	<module>auth-center</module>
   	<module>common</module>
   	<module>user-service-provider</module>
-  	<module>back-support</module>
   	<module>wx-mp</module>
   	<module>splider-center</module>
       <module>time-coin-client</module>
 	  <module>finance-client</module>
+	  <module>remote-api</module>
   </modules>
   
   
@@ -98,15 +97,23 @@
 
 	<distributionManagement>
 		<repository>
-		    <id>maven-releases</id>
-		    <url>http://47.106.137.211:9090/repository/maven-releases/</url>
+		    <id>releases</id>
+		    <url>http://47.106.137.211:9090/nexus/content/repositories/releases</url>
 		  </repository>
 		 <snapshotRepository>
-		    <id>maven-snapshots</id>
-		    <url>http://47.106.137.211:9090/repository/maven-snapshots/</url>
+		    <id>snapshots</id>
+		    <url>http://47.106.137.211:9090/nexus/content/repositories/snapshots</url>
 		  </snapshotRepository>
+
 	</distributionManagement>
-	
+	<repositories>
+		<repository>
+			<id>public</id>
+			<url>http://47.106.137.211:9090/nexus/content/groups/public/</url>
+			<name>Public Repositories</name>
+		</repository>
+
+	</repositories>
 	
 
 </project>

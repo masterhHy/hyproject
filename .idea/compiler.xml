@@ -7,9 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="auth-center-provider" />
-        <module name="back-support" />
+        <module name="auth-spring-boot-autoconfigure" />
         <module name="common" />
         <module name="finance-client" />
+        <module name="remote-api" />
         <module name="splider-center" />
         <module name="time-coin-client" />
         <module name="user-service-provider" />
@@ -19,10 +20,13 @@
     <bytecodeTargetLevel>
       <module name="auth-center" target="1.8" />
       <module name="auth-center-provider" target="1.8" />
+      <module name="auth-spring-boot-autoconfigure" target="1.8" />
+      <module name="auth-spring-boot-starter" target="1.8" />
       <module name="back-support" target="1.8" />
       <module name="common" target="1.8" />
       <module name="finance-client" target="1.8" />
       <module name="hyproject" target="1.8" />
+      <module name="remote-api" target="1.8" />
       <module name="splider-center" target="1.8" />
       <module name="time-coin-client" target="1.8" />
       <module name="user-service-provider" target="1.8" />

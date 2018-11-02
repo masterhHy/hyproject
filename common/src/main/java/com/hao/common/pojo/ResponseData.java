@@ -1,12 +1,17 @@
 package com.hao.common.pojo;
 
+import com.hao.common.utils.EntityUtils;
+
+import java.util.List;
+
 public class ResponseData<T> {
 
     /**
      * 返回码
      */
     private Integer code;
-
+    public static final  Integer SUCCESS_CODE =200;
+    public static final  Integer ERROR_CODE =500;
     /**
      * 返回描述
      */
@@ -50,5 +55,16 @@ public class ResponseData<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    /**
+     * 把对象内属性转移到目标对象,(利用属性名相同转移)
+     * @param data
+     */
+    public<E> List<E> convertData(List<? extends Object> data,Class<E> t){
+       return EntityUtils.convert(data,t);
+    }
+    public<E> E convertData(Object data,Class<E> t){
+        return EntityUtils.convert(data,t);
     }
 }

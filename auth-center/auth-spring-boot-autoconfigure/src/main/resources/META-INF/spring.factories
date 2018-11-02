@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hao.auth.autoconfigure.AuthResourcesAutoConfiguration,\
+com.hao.auth.autoconfigure.config.WebSecurityConfig,\
+com.hao.auth.autoconfigure.utils.AccessTokenUtils,\
+com.hao.auth.autoconfigure.config.RedisAuthConfiguration

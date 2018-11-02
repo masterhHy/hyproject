@@ -6,14 +6,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-import com.hao.splidercenter.dao.DictionaryDao;
 import com.hao.splidercenter.domain.CodeDayDataSplider;
 import com.hao.splidercenter.domain.IndustrySplider;
 import com.hao.splidercenter.domain.NetLandCheckSplider;
 import com.hao.splidercenter.domain.StockCodeDetailSplider;
 import com.hao.splidercenter.domain.StockCodeInvestorSplider;
 import com.hao.splidercenter.domain.StockCodeSplider;
-import com.hao.splidercenter.po.Dictionary;
 
 
 @SpringBootApplication

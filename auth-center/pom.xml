@@ -8,10 +8,9 @@
   <artifactId>auth-center</artifactId>
   <packaging>pom</packaging>
   <modules>
-  	<module>auth-center-provider</module>
+  	  <module>auth-center-provider</module>
+      <module>auth-spring-boot-autoconfigure</module>
   </modules>
-  <dependencies>
 
-  </dependencies>
   
 </project>

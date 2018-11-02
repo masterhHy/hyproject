@@ -1,11 +1,14 @@
 package com.hao.splidercenter.domain;
 
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.druid.pool.DruidPooledConnection;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -146,8 +149,40 @@ class StockCodeDetailMonitor extends DefaultMonitor<StockCodeDetail>{
 
 	@Override
 	public void endToDo(List<SpliderTaskVo> error) {
-		
-		
+		//结束后汇总三年年报临时表
+		DruidPooledConnection connection =null;
+		try {
+			connection = ds.getConnection();
+			Statement ps =null;
+			try {
+				ps = connection.createStatement();
+				logger.info("正在对临时表汇总....");
+
+				ps.executeUpdate("TRUNCATE temp_stock_code_annual_report");
+				logger.info("临时表数据清除完毕....");
+				String insertSql =  "INSERT INTO temp_stock_code_annual_report " +
+									" SELECT * FROM splider_stock_code_detail s " +
+									" WHERE s.pub_date = CONCAT(SUBSTRING(NOW(),1,4)-1,'-12-31') OR s.pub_date = CONCAT(SUBSTRING(NOW(),1,4)-2,'-12-31') OR s.pub_date =CONCAT(SUBSTRING(NOW(),1,4)-3,'-12-31') ";
+				ps.execute(insertSql);
+				logger.info("汇总完成");
+
+			} catch (Exception e) {
+				logger.info("汇总失败");
+				logger.error("",e);
+			}finally{
+				if(ps!=null)
+					ps.close();
+			}
+		} catch (SQLException e) {
+			logger.error("",e);
+		} finally {
+			try {
+				if(connection!=null)
+					connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	
@@ -242,17 +277,16 @@ class StockCodeDetailHandler extends JsonHandler{
 			Double profitPercent = Double.parseDouble(json.get("sjltz").toString());
 			scd.setProfitPercent(profitPercent);
 		} catch (Exception e) {
-			logger.info("parentnetprofit出错--》"+json.get("sjltz").toString());
+			logger.info("sjltz出错--》"+json.get("sjltz").toString());
 			System.out.println("sjltz出错--》"+json.get("sjltz").toString());
 			
 		}
 		try {
 			Double profitPercentHZ = Double.parseDouble(json.get("sjlhz").toString());
-			d.setProfitPercentHuanZeng(profitPercentHZ);
+			scd.setProfitPercentHuanZeng(profitPercentHZ);
 		} catch (Exception e) {
 			logger.info("sjlhz出错--》"+json.get("sjlhz").toString());
 			System.out.println("sjlhz出错--》"+json.get("sjlhz").toString());
-
 		}
 		
 		

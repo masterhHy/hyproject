@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.finance.dao.SpliderStockCodeMapper">
+  <resultMap id="BaseResultMap" type="com.hao.finance.entity.SpliderStockCode">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="ditionary_code" jdbcType="VARCHAR" property="ditionaryCode" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="z_creat_time" jdbcType="TIMESTAMP" property="zCreatTime" />
+    <result column="z_update_time" jdbcType="TIMESTAMP" property="zUpdateTime" />
+  </resultMap>
+
+  <select id="getCodeData"  resultType="map">
+
+    SELECT ssc.id,ssc.code,ssc.name,ssc.industryName,
+            ssc.pub_date newDate,ssc.newPrice ,
+            SUBSTRING(sscda.pub_date,1,4) adate,sscda.profit aprice,
+            SUBSTRING(sscdb.pub_date,1,4) bdate,sscdb.profit bprice ,
+            SUBSTRING(sscdc.pub_date,1,4) cdate ,sscdc.profit cprice,
+            IF(ssc.newPrice > sscda.profit,(ssc.newPrice-sscda.profit)/ABS(sscda.profit)*100,0) nrate,
+            (sscda.profit-sscdb.profit)/ABS(sscdb.profit)*100 arate,
+            (sscdb.profit-sscdc.profit)/ABS(sscdc.profit)*100 brate,
+            IFNULL(si.num,0) num
+    FROM
+    (
+          SELECT ssc.id,ssc.name,ssc.code,sd.name industryName,sd.code industryCode,sscd.profit newPrice,sscd.pub_date FROM splider_stock_code ssc
+          LEFT JOIN splider_dictionary sd ON ssc.ditionary_code=sd.code
+          LEFT JOIN
+          (
+              SELECT sscd.profit ,sscd.stock_code_id,sscd.pub_date FROM splider_stock_code_detail sscd
+              INNER JOIN (
+                  SELECT MAX(sscd.pub_date) pub_date,sscd.stock_code_id FROM splider_stock_code_detail sscd
+                  WHERE sscd.pub_date LIKE CONCAT(SUBSTRING(NOW(),1,4),'%')
+                  GROUP BY sscd.stock_code_id
+              )s ON sscd.stock_code_id=s.stock_code_id AND sscd.pub_date=s.pub_date
+          )sscd ON ssc.id=sscd.stock_code_id
+    ) ssc
+    LEFT JOIN
+    (
+        SELECT * FROM temp_stock_code_annual_report sscda WHERE sscda.pub_date=CONCAT(SUBSTRING(NOW(),1,4)-1,'-12-31')
+    )sscda ON ssc.id=sscda.stock_code_id
+    LEFT JOIN
+    (
+        SELECT * FROM temp_stock_code_annual_report sscdb WHERE sscdb.pub_date = CONCAT(SUBSTRING(NOW(),1,4)-2,'-12-31')
+    )sscdb ON ssc.id=sscdb.stock_code_id
+    LEFT JOIN
+    (
+        SELECT * FROM temp_stock_code_annual_report sscdc WHERE sscdc.pub_date = CONCAT(SUBSTRING(NOW(),1,4)-3,'-12-31')
+    )sscdc ON ssc.id=sscdc.stock_code_id
+    <!--投资家数-->
+    LEFT JOIN (
+        SELECT COUNT(*) num ,ssci.splider_stock_code_id FROM splider_stock_code_investor ssci
+        INNER JOIN (
+            SELECT MAX(ssci.public_date) pub_date,ssci.splider_stock_code_id FROM splider_stock_code_investor ssci
+            WHERE ssci.public_date LIKE CONCAT(SUBSTRING(NOW(),1,4),'%')
+            GROUP BY ssci.splider_stock_code_id
+        )s ON ssci.splider_stock_code_id=s.splider_stock_code_id AND ssci.public_date=s.pub_date
+        LEFT JOIN splider_investor si ON si.id=ssci.splider_investor_id
+        WHERE 1 =1
+        <!--投资公司类型-->
+      <if test="query.investorType!=null">
+          AND si.type=#{query.investorType}
+      </if>
+      <if test="query.investorName!=null">
+        <!--投资公司名字-->
+        AND si.name LIKE #{query.investorName}
+      </if>
+      <if test="query.comment!=null">
+          <!--持股状况-->
+          AND ssci.comment LIKE #{query.comment}
+      </if>
+
+      <if test="query.investorBuy!=null">
+          <!--持股比例-->
+          AND ssci.code_percent>#{query.investorBuy}
+      </if>
+        GROUP BY ssci.splider_stock_code_id
+   ) si ON si.splider_stock_code_id=ssc.id
+   WHERE 1=1
+      <if test="query.codeProfit!=null">
+          <!--股票利润-->
+          AND ssc.newPrice>1
+      </if>
+
+      <if test="query.codeIndustry!=null">
+          <!--股票行业-->
+          and ssc.industryCode=#{query.codeIndustry}
+      </if>
+
+    <!--利润增长类型-->
+      <if test="query.profitIncreaseType==1">
+          <!--连续增长-->
+          AND sscda.profit>sscdb.profit>sscdc.profit
+      </if>
+
+      <if test="query.profitIncreaseType==2">
+          <!--扭亏为盈-->
+          AND sscda.profit>0 AND sscdb.profit &lt; 0
+      </if>
+
+      <if test="query.profitIncreaseType==3">
+          <!--利润暴增-->
+          AND ssc.newPrice > sscda.profit
+      </if>
+
+      <if test="query.profitIncreaseType==4">
+          <!--加速增长-->
+          AND (sscda.profit-sscdb.profit)/ABS(sscdb.profit)*100>0 AND IF(ssc.newPrice > sscda.profit,(ssc.newPrice-sscda.profit)/ABS(sscda.profit)*100,0)>0
+      </if>
+
+
+
+    ORDER BY IF(ssc.newPrice > sscda.profit,(ssc.newPrice-sscda.profit)/ABS(sscda.profit)*100,0) DESC ,(sscda.profit-sscdb.profit)/ABS(sscdb.profit)*100+(sscdb.profit-sscdc.profit)/ABS(sscdc.profit)*100 DESC
+
+
+
+  </select>
+
+
+ </mapper>
