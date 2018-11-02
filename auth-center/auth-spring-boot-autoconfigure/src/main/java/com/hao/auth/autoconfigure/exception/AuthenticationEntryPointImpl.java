@@ -23,10 +23,18 @@ public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {
             res.setCode(402);
             res.setMessage(e.getMessage());
             HTTPUtils.outputJSON(response,res);
-            e.printStackTrace();
-        } else if (!response.isCommitted()) {// 非AJAX请求，
 
-            //服务器资源都是异步请求
+        } else{
+            if (!response.isCommitted()){
+                //应该返回页面 暂时以json返回
+                ResponseData<Map<String,Object>> res = new ResponseData<>();
+                res.setCode(402);
+                res.setMessage(e.getMessage());
+                HTTPUtils.outputJSON(response,res);
+            }else{
+                System.out.println("没处理到异常");
+            }
+
         }
 
     }

@@ -13,10 +13,13 @@
 	       <groupId>org.springframework.boot</groupId>
 	       <artifactId>spring-boot-starter-jdbc</artifactId>
 	   </dependency>
-
 	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-data-jpa</artifactId>
+	  </dependency>
+	 <dependency>
 		  <groupId>com.hao</groupId>
-		  <artifactId>user-service-provider</artifactId>
+		  <artifactId>remote-api</artifactId>
 		  <version>0.0.1-SNAPSHOT</version>
 	  </dependency>
 	  <dependency>
@@ -60,21 +63,7 @@
 		  <artifactId>spring-cloud-starter-consul-discovery</artifactId>
 	  </dependency>
 
-	  <!--伪客户端-->
-	  <dependency>
-		  <groupId>org.springframework.cloud</groupId>
-		  <artifactId>spring-cloud-starter-openfeign</artifactId>
-	  </dependency>
 
-	  <!--负载均衡-->
-	  <dependency>
-		  <groupId>org.springframework.cloud</groupId>
-		  <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-	  </dependency>
-	  <dependency>
-		  <groupId>org.springframework.cloud</groupId>
-		  <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-	  </dependency>
 
 
 	   <dependency>

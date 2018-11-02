@@ -58,3 +58,4 @@
 /auth-center/auth-spring-boot-autoconfigure/.settings
 /user-service-provider/logs
 /auth-center/auth-center-provider/logs
+/remote-api/target

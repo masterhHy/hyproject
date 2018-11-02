@@ -8,9 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="auth-center-provider" />
         <module name="auth-spring-boot-autoconfigure" />
-        <module name="back-support" />
         <module name="common" />
         <module name="finance-client" />
+        <module name="remote-api" />
         <module name="splider-center" />
         <module name="time-coin-client" />
         <module name="user-service-provider" />
@@ -26,6 +26,7 @@
       <module name="common" target="1.8" />
       <module name="finance-client" target="1.8" />
       <module name="hyproject" target="1.8" />
+      <module name="remote-api" target="1.8" />
       <module name="splider-center" target="1.8" />
       <module name="time-coin-client" target="1.8" />
       <module name="user-service-provider" target="1.8" />

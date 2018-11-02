@@ -1,7 +1,7 @@
 package com.hao.auth.autoconfigure.utils;
 
-import com.hao.user.entity.SysAuthority;
-import com.hao.user.entity.SysUser;
+import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
+import com.hao.remote.api.userservice.entity.RemoteSysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.access.AccessDeniedException;
@@ -28,7 +28,7 @@ public class AccessTokenUtils {
 
 
     @Autowired
-    private RedisTemplate<String, SysAuthority> baseModelTemplate;
+    private RedisTemplate<String, RemoteSysAuthority> baseModelTemplate;
 
     /**
      * 生成token
@@ -43,12 +43,12 @@ public class AccessTokenUtils {
      * 从token获取用户信息
      * @return
      */
-    public SysUser getUserInfo() throws AccessDeniedException {
-        return (SysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
+    public RemoteSysUser getUserInfo() throws AccessDeniedException {
+        return (RemoteSysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
     }
 
 
-    public List<SysAuthority> getMenuInfo()throws AccessDeniedException{
+    public List<RemoteSysAuthority> getMenuInfo()throws AccessDeniedException{
         String key = getUserInfo().getId() + "-menu";
         long size = baseModelTemplate.opsForList().size(key);
         return baseModelTemplate.opsForList().range(key, 0, size);

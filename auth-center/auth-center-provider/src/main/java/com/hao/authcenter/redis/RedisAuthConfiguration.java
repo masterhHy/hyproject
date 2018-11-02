@@ -1,6 +1,6 @@
 package com.hao.authcenter.redis;
 
-import com.hao.user.entity.SysAuthority;
+import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,12 +12,13 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisAuthConfiguration {
 	@Autowired
 	private RedisConnectionFactory factory;
-	
+
 
 
     @Bean
-    public RedisTemplate<String, SysAuthority> baseModelTemplate() {
-        RedisTemplate<String, SysAuthority> template = new RedisTemplate<>();
+
+    public RedisTemplate<String, RemoteSysAuthority> baseModelTemplate() {
+        RedisTemplate<String, RemoteSysAuthority> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(new RedisObjectSerializer());

@@ -23,11 +23,11 @@
   	<module>auth-center</module>
   	<module>common</module>
   	<module>user-service-provider</module>
-  	<module>back-support</module>
   	<module>wx-mp</module>
   	<module>splider-center</module>
       <module>time-coin-client</module>
 	  <module>finance-client</module>
+	  <module>remote-api</module>
   </modules>
   
   

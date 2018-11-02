@@ -1,7 +1,7 @@
 package com.hao.auth.autoconfigure.config;
 
 import com.hao.auth.autoconfigure.utils.AccessTokenUtils;
-import com.hao.user.entity.SysAuthority;
+import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -39,6 +39,13 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
     @Override
     public void decide(Authentication authentication, Object o, Collection<ConfigAttribute> collection) throws AccessDeniedException,InsufficientAuthenticationException {
+
+        String pwd = ((FilterInvocation)o).getHttpRequest().getHeader("msClientId");
+        if("feigngetdata".equals(pwd)){
+            //微服务访问 不需要权限控制
+            return;
+        }
+
         // 请求路径
         url = getUrl(o);
         // 不拦截的请求
@@ -48,10 +55,11 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
                 return;
             }
         }
+
         // URL 鉴权
-        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
+        Iterator<RemoteSysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
         while (iterator.hasNext()){
-            SysAuthority auth = iterator.next();
+            RemoteSysAuthority auth = iterator.next();
             if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
                 return ;
             }

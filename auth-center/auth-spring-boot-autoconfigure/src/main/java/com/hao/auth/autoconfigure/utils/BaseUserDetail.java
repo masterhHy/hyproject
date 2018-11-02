@@ -1,13 +1,13 @@
 package com.hao.auth.autoconfigure.utils;
 
-import java.util.Collection;
-
+import com.hao.remote.api.userservice.entity.RemoteSysUser;
 import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.hao.user.entity.SysUser;
+import java.util.Collection;
+
 
 /**
  * springSecurity 用到的实现类
@@ -19,10 +19,10 @@ public class BaseUserDetail implements UserDetails, CredentialsContainer {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final SysUser sysUser;
+	private final RemoteSysUser sysUser;
     private final org.springframework.security.core.userdetails.User user;
 
-    public BaseUserDetail(SysUser sysUser, User user) {
+    public BaseUserDetail(RemoteSysUser sysUser, User user) {
         this.sysUser = sysUser;
         this.user = user;
     }
@@ -68,7 +68,7 @@ public class BaseUserDetail implements UserDetails, CredentialsContainer {
         return user.isEnabled();
     }
 
-    public SysUser getBaseUser() {
+    public RemoteSysUser getBaseUser() {
         return sysUser;
     }
 }
