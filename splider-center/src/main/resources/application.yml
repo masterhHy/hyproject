@@ -5,7 +5,8 @@ httpconfig:
   proxyHost: http-pro.abuyun.com
   proxyPort: 9010
   
-
+server:
+  port: 9999
 spring:
   application:
     name: splider-center
@@ -18,7 +19,7 @@ spring:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: root
+      password: haomaria
       driver-class-name: com.mysql.jdbc.Driver
       max-active: 50
       initial-size: 5
