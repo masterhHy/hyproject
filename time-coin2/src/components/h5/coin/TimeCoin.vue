@@ -20,10 +20,11 @@
                @on-cancel="onCancel"
                @on-confirm="onConfirm"
                @on-show="onShow"
-               @on-hide="onHide">
-        <label><input type="radio" name="type" value="工作" />工作</label>
-        <input type="radio" name="type" value="学习"/>学习
-        <input type="radio" name="type" value="娱乐"/>娱乐
+               @on-hide="onHide"
+               closeOnConfirm="false">
+        <label class="coin-type blue"><input type="radio"  name="type" value="工作" />工作</label>
+        <label class="coin-type green"> <input type="radio" name="type" value="学习"/>学习</label>
+        <label class="coin-type red"><input type="radio" name="type" value="娱乐"/>娱乐</label>
       </confirm>
     </div>
 
@@ -101,38 +102,13 @@
     padding: 10px;
   }
 
-  .time-coins {
-    width: 100%;
-    list-style: none;
-  }
-
-  .time-coins li {
-    width: 25%;
-    height: 93.75px;
-    padding: 1%;
-    float: left;
-    position: relative;
-  }
-
   .coins-img {
     width: 60px;
-    /*  align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-left: -30px;
-      margin-top: -30px;*/
+  }
+  .coin-type-font{
+    letter-spacing: 12px;
   }
 
-  .grid-center {
-    display: block;
-    text-align: center;
-    color: #666;
-  }
-
-  .weui-grids {
-    background-color: #fff;
-  }
 
   .flex-coin {
     margin: 5px 0;
@@ -140,6 +116,15 @@
     border: 1px solid #4E4B41;
     background-color: #615D4F;
     height: 90px;
+  }
+  .blue{
+    color:blue;
+  }
+  .green{
+    color:green;
+  }
+  .red{
+    color: red;
   }
 
   .coins-img {
@@ -150,20 +135,15 @@
     top: 50%;
     margin-top: -35px;
   }
-
-  .weui-dialog {
-    border-radius: 8px;
-    padding-bottom: 8px;
+  .coin-type{
+    display: block;
+    margin:10px;
+    width: 150px;
+    letter-spacing: 12px;
+    padding-left: 60px;
+  }
+  .coin-type input{
+    margin-right: 20px;
   }
 
-  .dialog-title {
-    line-height: 30px;
-    color: #666;
-  }
-
-  .img-box {
-    height: 250px;
-    overflow: hidden;
-    background-color: white;
-  }
 </style>

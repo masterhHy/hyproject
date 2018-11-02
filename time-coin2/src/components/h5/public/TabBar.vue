@@ -1,7 +1,7 @@
 <template>
   <div>
     <tabbar>
-      <tabbar-item selected link="/component/demo">
+      <tabbar-item selected link="/HomePage">
         <i slot="icon" class="fa fa-camera-retro  fa-2x" ></i>
         <i slot="icon-active" class="fa fa-camera-retro fa-2x"></i>
         <span slot="label">时间金币</span>

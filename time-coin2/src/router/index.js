@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import HomePage from '@/components/h5/coin/HomePage'
 import TimeCoin from '@/components/h5/coin/TimeCoin'
 import TimeCoinEdit from '@/components/h5/coin/TimeCoinEdit'
@@ -15,9 +14,9 @@ export default new Router({
       component: HomePage
     },
     {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/HomePage',
+      name: 'HomePage',
+      component: HomePage
     },
     {
       path: '/TimeCoin',
