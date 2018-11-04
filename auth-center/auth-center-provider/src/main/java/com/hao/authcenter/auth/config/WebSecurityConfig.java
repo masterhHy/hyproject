@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 
 
 /**
@@ -37,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 登出页
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/backReferer")
                 // 其余所有请求全部需要鉴权认证
-                .and().authorizeRequests().anyRequest().authenticated()
+                .and().authorizeRequests().anyRequest().hasAnyAuthority("BASE")
                 // 由于使用的是JWT，我们这里不需要csrf
                 .and().csrf().disable();
                
@@ -59,12 +60,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     			"/favicon.ico","/webjars/**",
     			"/images/**",
     			"/druid/**",
-    			"/refresh","/oauth/deleteToken","/oauth/token_key",
+    			"/refresh","/oauth/deleteToken","/oauth/token_key","/oauth/token",
     			"/backReferer","/actuator/**"
     	};
     	web.ignoring().antMatchers(arr);
     }
-
+    
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider(){

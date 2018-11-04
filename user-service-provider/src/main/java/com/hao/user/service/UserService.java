@@ -4,4 +4,5 @@ import com.hao.user.entity.SysUser;
 
 public interface UserService extends BaseService<SysUser> {
 	
+	public void initSysUser();
 }

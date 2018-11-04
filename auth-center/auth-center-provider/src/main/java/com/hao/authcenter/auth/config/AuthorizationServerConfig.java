@@ -75,7 +75,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 			if(!res.next()){//系统创建给admin客户端用的
 				clients.jdbc(dataSource).withClient("admin")
 				.authorizedGrantTypes("authorization_code","client_credentials","password", "refresh_token","implicit")
-				.scopes("read", "write")
+				.scopes("read", "write").authorities("BASE")
 				.secret("123456").autoApprove(true).and().build();
 			}
 		} catch (Exception e) {
@@ -113,6 +113,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .tokenKeyAccess("permitAll()")
                 // 开启/oauth/check_token验证端口认证权限访问
                 .checkTokenAccess("isAuthenticated()");
+        
     }
 
     /**
