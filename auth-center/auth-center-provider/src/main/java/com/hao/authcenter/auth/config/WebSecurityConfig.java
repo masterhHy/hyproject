@@ -15,7 +15,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 
 
 /**
@@ -60,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     			"/favicon.ico","/webjars/**",
     			"/images/**",
     			"/druid/**",
-    			"/refresh","/oauth/deleteToken","/oauth/token_key","/oauth/token",
+    			"/refresh","/oauth/deleteToken","/oauth/token_key",
     			"/backReferer","/actuator/**"
     	};
     	web.ignoring().antMatchers(arr);
