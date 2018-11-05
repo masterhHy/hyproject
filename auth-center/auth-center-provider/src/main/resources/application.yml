@@ -54,5 +54,6 @@ spring:
   freemarker:
       request-context-attribute: request
 
+
 logging:
   file: logs/auth-center.log

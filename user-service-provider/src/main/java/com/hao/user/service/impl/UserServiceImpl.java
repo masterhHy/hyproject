@@ -38,9 +38,15 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 
 	@PostConstruct
 	public void initSysUser() {
-		SysUser admin = userMapper.selectByPrimaryKey("1");
-		SysRole role = sysRoleMapper.selectByPrimaryKey("1");
-		SysAuthority auth = sysAuthorityMapper.selectByPrimaryKey("1");
+		SysUser admin = new SysUser();
+		admin.setId("1");
+		admin =userMapper.selectOne(admin);
+		SysRole role = new SysRole();
+		role.setId("1");
+		role = sysRoleMapper.selectOne(role);
+		SysAuthority auth = new SysAuthority();
+		auth.setId("1");
+		auth = sysAuthorityMapper.selectOne(auth);
 		if(admin==null){
 			admin = new SysUser();
 			admin.setCreatedDate(new Date());
