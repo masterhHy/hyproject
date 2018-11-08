@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/ControllerAOP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/back-support/target/" />
@@ -60,35 +55,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthCenterProviderApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthCenterProviderApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="216">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding>
+                <element signature="e#560#561#0" expanded="true" />
                 <element signature="e#635#636#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerAOP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/ControllerAOP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorizationServerConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="76" column="101" selection-start-line="76" selection-start-column="101" selection-end-line="76" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -164,13 +139,13 @@
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/BaseUserDetailService.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/web/MvcController.java" />
-        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/filter/URLFilter.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/web/AuhorityEndpoint.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/MyAOP.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/ControllerAOP.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java" />
+        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" />
       </list>
     </option>
   </component>
@@ -226,74 +201,6 @@
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -528,12 +435,12 @@
       <workItem from="1540950234178" duration="4241000" />
       <workItem from="1541126397159" duration="25149000" />
       <workItem from="1541399703392" duration="12315000" />
-      <workItem from="1541643451721" duration="18060000" />
+      <workItem from="1541643451721" duration="18297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205796000" />
+    <option name="totallyTimeSpent" value="206033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -549,7 +456,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.41498882" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.24720357" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.46308726" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
@@ -560,7 +467,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.42841163" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28218883" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28218883" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -941,10 +848,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/ControllerAOP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="474">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -953,18 +867,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="216">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
+            <element signature="e#560#561#0" expanded="true" />
             <element signature="e#635#636#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="76" column="101" selection-start-line="76" selection-start-column="101" selection-end-line="76" selection-end-column="101" />
         </state>
       </provider>
     </entry>
