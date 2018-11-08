@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finance-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/finance-client/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/back-support/target/" />
@@ -47,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,15 +57,78 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthCenterProviderApplication.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthCenterProviderApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding>
                 <element signature="e#560#561#0" expanded="true" />
                 <element signature="e#635#636#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinanceClientApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/FinanceClientApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthorizationServerConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9">
+              <caret line="134" column="4" lean-forward="true" selection-start-line="134" selection-start-column="4" selection-end-line="149" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvestorController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/InvestorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisObjectSerializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/redis/RedisObjectSerializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/WebSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring.factories" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -95,8 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/src/main/java/com/hao/common/constant/DataBaseConstant.java" />
-        <option value="$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/StockCodeController.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/table/OauthClientDetails.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/entity/SysAuthority.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/entity/SysUser.java" />
@@ -121,7 +184,6 @@
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/AuthResourcesAutoConfiguration.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/RedisAuthConfiguration.java" />
-        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/AuthResourcesAutoConfiguration.java" />
         <option value="$PROJECT_DIR$/remote-api/src/main/java/com/hao/remote/api/userservice/UserServiceRemote.java" />
@@ -146,6 +208,9 @@
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/ControllerAOP.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" />
+        <option value="$PROJECT_DIR$/finance-client/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -202,6 +267,125 @@
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="authcenter" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="finance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="finance-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="finance" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -251,7 +435,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthCenterProviderApplication">
+  <component name="RunManager" selected="Spring Boot.FinanceClientApplication">
     <configuration name="Code" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Code" />
       <module name="time-coin-client" />
@@ -435,16 +619,15 @@
       <workItem from="1540950234178" duration="4241000" />
       <workItem from="1541126397159" duration="25149000" />
       <workItem from="1541399703392" duration="12315000" />
-      <workItem from="1541643451721" duration="18297000" />
+      <workItem from="1541643451721" duration="19509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206033000" />
+    <option name="totallyTimeSpent" value="207245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50107294" side_tool="true" weight="0.30536914" />
@@ -456,7 +639,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.24720357" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.50782996" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.46308726" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
@@ -464,10 +647,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32997763" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.42841163" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.65883666" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28218883" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28218883" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -506,73 +689,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/RedisAuthConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/redis/RedisObjectSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/JwtAccessToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/utils/BaseUserDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1443">
-          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="40" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remote-api/src/main/java/com/hao/remote/api/userservice/entity/RemoteSysAuthority.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remote-api/src/main/java/com/hao/remote/api/financeservice/FinanceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="18" column="56" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -738,13 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1348">
-          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/web/MvcController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -838,23 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/aop/ControllerAOP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -868,11 +964,98 @@
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding>
             <element signature="e#560#561#0" expanded="true" />
             <element signature="e#635#636#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/time-coin-client/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-client/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/UserCenterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/FinanceClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/StockCodeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/InvestorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="134" column="4" lean-forward="true" selection-start-line="134" selection-start-column="4" selection-end-line="149" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance-client/src/main/java/com/hao/finance/controller/ExceptionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/redis/RedisObjectSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
         </state>
       </provider>
     </entry>
