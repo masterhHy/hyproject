@@ -74,7 +74,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 			if(!res.next()){//系统创建给admin客户端用的
 				clients.jdbc(dataSource).withClient("admin")
 				.authorizedGrantTypes("authorization_code","client_credentials","password", "refresh_token","implicit")
-				.scopes("read", "write").authorities("BASE")
+				.scopes("read", "write").authorities("BASE").accessTokenValiditySeconds(60*60*24*100)
 				.secret("123456").autoApprove(true).and().build();
 			}
 		} catch (Exception e) {
@@ -148,5 +148,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
+
 
 }
