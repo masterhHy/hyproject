@@ -65,8 +65,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
             }
         }
 
-
-        throw new AccessDeniedException("无权限！");
+        throw new AccessDeniedException("无权限");
 
     }
 

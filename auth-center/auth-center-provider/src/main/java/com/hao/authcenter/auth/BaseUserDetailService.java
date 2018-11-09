@@ -31,7 +31,7 @@ public class BaseUserDetailService implements UserDetailsService {
     private UserServiceClient userService;
     
     @Autowired
-    private RedisTemplate<String, RemoteSysAuthority> resourcesTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -50,6 +50,7 @@ public class BaseUserDetailService implements UserDetailsService {
         // 返回带有用户权限信息的User
         org.springframework.security.core.userdetails.User user =  new org.springframework.security.core.userdetails.User(sysUser.getUsername(),
         		sysUser.getPassword(), isActive(sysUser.getIsEnable()), true, true, true, authorities);
+        redisTemplate.opsForValue().set(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-user",sysUser);
         return new BaseUserDetail(sysUser, user);
 
     }
@@ -61,14 +62,14 @@ public class BaseUserDetailService implements UserDetailsService {
     private List<GrantedAuthority> convertToAuthorities(RemoteSysUser sysUser,List<RemoteSysAuthority> auth) {
         List<GrantedAuthority> authorities = new ArrayList<>();
         // 清除 Redis 中用户的权限
-        resourcesTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+":"+sysUser.getId()+"-menu");
+        redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu");
         auth.forEach(e -> {
 
             GrantedAuthority authority = new SimpleGrantedAuthority(e.getCode());
             authorities.add(authority);
 
             //存储权限到redis
-            resourcesTemplate.opsForList().rightPush(DataBaseConstant.REDIS_USER_NAME_PLACE+":"+sysUser.getId()+"-menu", e);
+            redisTemplate.opsForList().rightPush(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu", e);
             
         });
         return authorities;
