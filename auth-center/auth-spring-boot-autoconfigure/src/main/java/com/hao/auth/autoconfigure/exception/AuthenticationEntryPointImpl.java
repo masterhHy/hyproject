@@ -19,16 +19,17 @@ public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException, ServletException {
 
         if (HTTPUtils.isAjaxRequest(request)) {// AJAX请求,使用response发送403
-            ResponseData<Map<String,Object>> res = new ResponseData<>();
-            res.setCode(402);
-            res.setMessage(e.getMessage());
-            HTTPUtils.outputJSON(response,res);
+            if(e.getMessage().equals("没登录访问保护资源")){
+                response.sendError(402,e.getMessage());
+            }else{
+                response.sendError(403,e.getMessage());
+            }
 
         } else{
             if (!response.isCommitted()){
                 //应该返回页面 暂时以json返回
                 ResponseData<Map<String,Object>> res = new ResponseData<>();
-                res.setCode(402);
+                res.setCode(403);
                 res.setMessage(e.getMessage());
                 HTTPUtils.outputJSON(response,res);
             }else{

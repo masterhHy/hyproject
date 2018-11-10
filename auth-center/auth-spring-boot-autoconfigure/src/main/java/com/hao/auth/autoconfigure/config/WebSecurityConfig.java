@@ -1,6 +1,5 @@
 package com.hao.auth.autoconfigure.config;
 
-import com.hao.auth.autoconfigure.exception.AccessDeniedHandlerImpl;
 import com.hao.auth.autoconfigure.exception.AuthenticationEntryPointImpl;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +11,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.provider.authentication.BearerTokenExtractor;
 import org.springframework.security.oauth2.provider.authentication.TokenExtractor;
-import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -28,8 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 匹配全部请求鉴权认证
                 .anyRequest().authenticated()
                 //权限不足处理器
-                .and().exceptionHandling().accessDeniedHandler(getAccessDeniedHandler())
-                .authenticationEntryPoint(getAuthenticationEntryPointImpl())
+                .and().exceptionHandling().authenticationEntryPoint(getAuthenticationEntryPointImpl())
                 // 由于使用的是JWT，我们这里不需要csrf
                 .and().csrf().disable();
     }
@@ -43,10 +40,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public TokenExtractor getTokenExtractor() {
         return new BearerTokenExtractor();
-    }
-    @Bean
-    public AccessDeniedHandler getAccessDeniedHandler(){
-        return new AccessDeniedHandlerImpl();
     }
     @Bean
     public AuthenticationEntryPointImpl getAuthenticationEntryPointImpl(){

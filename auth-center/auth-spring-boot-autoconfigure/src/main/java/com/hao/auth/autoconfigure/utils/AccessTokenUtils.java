@@ -1,5 +1,6 @@
 package com.hao.auth.autoconfigure.utils;
 
+import com.hao.common.constant.DataBaseConstant;
 import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
 import com.hao.remote.api.userservice.entity.RemoteSysUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.security.oauth2.provider.authentication.TokenExtracto
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,7 +30,7 @@ public class AccessTokenUtils {
 
 
     @Autowired
-    private RedisTemplate<String, RemoteSysAuthority> baseModelTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 生成token
@@ -44,14 +46,24 @@ public class AccessTokenUtils {
      * @return
      */
     public RemoteSysUser getUserInfo() throws AccessDeniedException {
-        return (RemoteSysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
+        RemoteSysUser user = (RemoteSysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
+        RemoteSysUser redisUser = (RemoteSysUser) redisTemplate.opsForValue().get(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
+        if(redisUser==null){
+            throw new InsufficientAuthenticationException("没登录访问保护资源");
+        }
+        return user;
     }
 
 
     public List<RemoteSysAuthority> getMenuInfo()throws AccessDeniedException{
         String key = getUserInfo().getId() + "-menu";
-        long size = baseModelTemplate.opsForList().size(key);
-        return baseModelTemplate.opsForList().range(key, 0, size);
+        long size = redisTemplate.opsForList().size(key);
+        List<Object> list = redisTemplate.opsForList().range(key, 0, size);
+        List<RemoteSysAuthority> res = new ArrayList<>();
+        for (Object obj : list){
+            res.add((RemoteSysAuthority)obj);
+        }
+        return res;
     }
 
     private OAuth2AccessToken getAccessToken() throws AccessDeniedException {
