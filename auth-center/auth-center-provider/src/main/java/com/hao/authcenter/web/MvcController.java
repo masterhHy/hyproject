@@ -3,6 +3,7 @@ package com.hao.authcenter.web;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,9 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * Created by fp295 on 2018/5/15.
- */
 @Controller
 @SessionAttributes({"authorizationRequest"})
 public class MvcController {
@@ -57,6 +55,11 @@ public class MvcController {
         model.put("userName", userName);
         return new ModelAndView("authorize", model);
     }
+    @GetMapping(value="/login")
+    public ModelAndView login(ModelAndView model) {
+    	model.setViewName("login");
+    	return model;
+    }
 
     /**
      * 主页
@@ -66,7 +69,6 @@ public class MvcController {
     @RequestMapping("/")
     public ModelAndView indexPage(Map<String, Object> model) {
         // 获取用户名
-        System.out.println(SecurityContextHolder.getContext().getAuthentication());
         String userName = ((UserDetails) SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getPrincipal())
