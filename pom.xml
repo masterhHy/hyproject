@@ -25,7 +25,7 @@
   	<module>user-service-provider</module>
   	<module>wx-mp</module>
   	<module>splider-center</module>
-      <module>time-coin-client</module>
+      <module>client-time-coin</module>
 	  <module>finance-client</module>
 	  <module>remote-api</module>
   </modules>
