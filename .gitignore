@@ -66,3 +66,8 @@
 /client-time-coin/.project
 /client-time-coin/.classpath
 /.settings
+/client-time-coin/logs
+/client-finance/logs
+/client-finance/.classpath
+/client-finance/.project
+/client-finance/.settings

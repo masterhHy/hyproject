@@ -6,7 +6,7 @@
 		<artifactId>hyproject</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>finance-client</artifactId>
+	<artifactId>client-finance</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.hao</groupId>
