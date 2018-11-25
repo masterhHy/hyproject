@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class FeignInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        requestTemplate.header("msClientId", "feigngetdata");
+    	//权限在网关那做 所以微服务 请求不用权限
+       // requestTemplate.header("msClientId", "feigngetdata");
     }
 }

@@ -1,6 +1,4 @@
 server:
-  servlet:
-    context-path: /user
   port: 18002
 spring:
   application:
@@ -11,8 +9,8 @@ spring:
         port: ${CONSUL_PORT:8500}
         discovery:
           prefer-ip-address: true
-          health-check-path: ${server.servlet.context-path}/actuator/health
-          tags: management.context-path=${server.servlet.context-path}
+          health-check-path: /actuator/health
+          tags: management.context-path=/
   jpa:
         show-sql: false
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -52,15 +50,6 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
-security:
-  oauth2:
-    resource:
-      jwt:
-        key-uri: http://${AUTH_CENTER_HOST:localhost}:${AUTH_CENTER_PORT:18001}/auth/oauth/token_key
-      id: ${spring.application.name}
-      serviceId: ${spring.application.name}
-  ignored: /actuator/**
-
 
 logging:
   file: logs/user-service.log

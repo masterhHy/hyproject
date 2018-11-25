@@ -71,13 +71,11 @@
 		  <groupId>org.springframework.cloud</groupId>
 		  <artifactId>spring-cloud-starter-consul-discovery</artifactId>
 	  </dependency>
-	  <!--资源服务器权限控制-->
 	  <dependency>
 		  <groupId>com.hao</groupId>
-		  <artifactId>auth-spring-boot-autoconfigure</artifactId>
+		  <artifactId>remote-api</artifactId>
 		  <version>0.0.1-SNAPSHOT</version>
 	  </dependency>
-
 
 
 

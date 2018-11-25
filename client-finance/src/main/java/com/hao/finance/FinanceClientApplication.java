@@ -1,11 +1,9 @@
 package com.hao.finance;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.cloud.client.SpringCloudApplication;
 
-@EnableResourceServer
-@SpringBootApplication
+@SpringCloudApplication
 public class FinanceClientApplication {
    public static void main(String[] args){
 	   SpringApplication.run(FinanceClientApplication.class, args);

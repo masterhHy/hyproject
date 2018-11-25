@@ -1,15 +1,21 @@
 server:
   port: 9081
-  servlet:
-    context-path: /timecoin
 spring:
   application:
-    name: time-coin-client
+    name: client-time-coin
   jpa:
       show-sql: false
       database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
       hibernate:
         ddl-auto: update
+  cloud:
+        consul:
+          host: ${CONSUL_HOST:localhost}
+          port: ${CONSUL_PORT:8500}
+          discovery:
+            prefer-ip-address: true
+            health-check-path: /actuator/health
+            tags: management.context-path=/
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false

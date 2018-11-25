@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      discovery:
+        prefer-ip-address: true
+        health-check-path: ${server.servlet.context-path}actuator/health
+        tags: management.context-path=${server.servlet.context-path}
+  
+server:
+  port: 18000
+  servlet:
+    context-path: /
+zuul:
+  routes:
+    user-service:
+      #zuul连接是这样的，固定要 服务名+api+微服务连接 
+      path: /user-service-provider/api/**
+      serviceId: user-service-provider
+    finance:
+      path: /client-finance/api/**
+      serviceId: client-finance
+    client-time-coin:
+      path: /client-time-coin/api/**
+      serviceId: client-time-coin
+security:
+  appIgnore:
+    #所有资源应用的对外暴露接口 key 为应用application.name  value 为暴露接口 多个以逗号分割
+    - user-service-provider: /**
+      client-finance: /**
+      client-time-coin: /**
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://${AUTH_CENTER_HOST:localhost}:${AUTH_CENTER_PORT:18001}/auth/oauth/token_key
+      id: ${spring.application.name}
+      serviceId: ${spring.application.name}

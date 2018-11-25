@@ -2,6 +2,8 @@ package com.hao.auth.autoconfigure.config;
 
 import com.hao.auth.autoconfigure.utils.AccessTokenUtils;
 import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
+
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -28,26 +30,23 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
     private AntPathMatcher matcher = new AntPathMatcher();
 
-    private String[] ignoreds;
+    private List<String> ignoreds=new ArrayList<>();
 
-    @Value("${spring.application.name}")
-    private String applicationName;
 
-    private String url;
 
 
 
     @Override
     public void decide(Authentication authentication, Object o, Collection<ConfigAttribute> collection) throws AccessDeniedException,InsufficientAuthenticationException {
 
-        String pwd = ((FilterInvocation)o).getHttpRequest().getHeader("msClientId");
+        /*String pwd = ((FilterInvocation)o).getHttpRequest().getHeader("msClientId");
         if("feigngetdata".equals(pwd)){
             //微服务访问 不需要权限控制
             return;
-        }
+        }*/
 
         // 请求路径
-        url = getUrl(o);
+        String url = getUrl(o);
         // 不拦截的请求
         for(String path : ignoreds){
             String temp = path.trim();
@@ -60,10 +59,12 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         Iterator<RemoteSysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
         while (iterator.hasNext()){
             RemoteSysAuthority auth = iterator.next();
-            if(applicationName.equals(auth.getProjectName())&&this.matchUrl(url, auth.getUrl())){
+            //url 和该用户所有应用的的权限对比   这里开销有点大待优化，
+            if(this.matchUrl(url, auth.getUrl())){
                 return ;
             }
         }
+        System.out.println("没权限");
 
         throw new AccessDeniedException("无权限");
 
@@ -120,10 +121,20 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         return true;
     }
 
-    public void setIgnored(String ignored) {
-        if(ignored != null && !"".equals(ignored))
-            this.ignoreds = ignored.split(",");
-        else
-            this.ignoreds = new String[]{};
+    public void setAppIgnore(List<Map<String, String>> appIgnore) {
+    	ignoreds.add("/actuator/health");
+    	for (Map<String, String> map : appIgnore) {
+			for (String key : map.keySet()) {
+				String urls = map.get(key);
+				if(StringUtils.isNoneBlank(urls)){
+					String[] urlarr = urls.split(",");
+					for (String url : urlarr) {
+						ignoreds.add("/"+key+"/api"+url);// 如/user/** user应用的所有接口暴露
+					}
+				}
+				
+			}
+		}
+    	
     }
 }

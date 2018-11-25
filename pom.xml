@@ -28,6 +28,7 @@
       <module>client-time-coin</module>
 	  <module>client-finance</module>
 	  <module>remote-api</module>
+	  <module>api-gateway</module>
   </modules>
   
   

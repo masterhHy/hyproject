@@ -17,7 +17,7 @@ import java.util.List;
  */
 public interface UserServiceRemote {
 	public static final String FeignClientName="user-service-provider";
-    public static final String CONTEXT_PATH="/user";
+    public static final String CONTEXT_PATH="/";
 
     @RequestMapping("/user/getAllAuthByUserId")
     public ResponseData<List<RemoteSysAuthority>> getAllAuthorityByUserId(@RequestParam("userId") String userId);
