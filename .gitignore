@@ -74,3 +74,6 @@
 /api-gateway/.classpath
 /api-gateway/.project
 /api-gateway/.settings
+/client-chem/.settings
+/client-chem/.classpath
+/client-chem/.project

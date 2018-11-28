@@ -29,6 +29,7 @@
 	  <module>client-finance</module>
 	  <module>remote-api</module>
 	  <module>api-gateway</module>
+	  <module>client-chem</module>
   </modules>
   
   
