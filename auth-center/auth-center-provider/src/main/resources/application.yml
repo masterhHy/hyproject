@@ -53,6 +53,9 @@ spring:
             ddl-auto: update
   freemarker:
       request-context-attribute: request
+  mvc:
+    view:
+      prefix: /pages/
 
 
 logging:

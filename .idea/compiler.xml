@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
         <module name="auth-center-provider" />
         <module name="auth-spring-boot-autoconfigure" />
+        <module name="client-chem" />
+        <module name="client-finance" />
+        <module name="client-time-coin" />
         <module name="common" />
         <module name="finance-client" />
         <module name="remote-api" />
@@ -18,11 +22,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="1.8" />
       <module name="auth-center" target="1.8" />
       <module name="auth-center-provider" target="1.8" />
       <module name="auth-spring-boot-autoconfigure" target="1.8" />
       <module name="auth-spring-boot-starter" target="1.8" />
       <module name="back-support" target="1.8" />
+      <module name="client-chem" target="1.8" />
+      <module name="client-finance" target="1.8" />
+      <module name="client-time-coin" target="1.8" />
       <module name="common" target="1.8" />
       <module name="finance-client" target="1.8" />
       <module name="hyproject" target="1.8" />

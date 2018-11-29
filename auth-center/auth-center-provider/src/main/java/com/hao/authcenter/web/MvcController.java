@@ -56,9 +56,8 @@ public class MvcController {
         return new ModelAndView("authorize", model);
     }
     @GetMapping(value="/login")
-    public ModelAndView login(ModelAndView model) {
-    	model.setViewName("login");
-    	return model;
+    public String login() {
+    	return "web_login.html";
     }
 
     /**

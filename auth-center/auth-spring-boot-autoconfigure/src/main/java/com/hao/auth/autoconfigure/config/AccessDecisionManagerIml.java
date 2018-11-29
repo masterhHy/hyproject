@@ -2,10 +2,8 @@ package com.hao.auth.autoconfigure.config;
 
 import com.hao.auth.autoconfigure.utils.AccessTokenUtils;
 import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
-
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
@@ -87,6 +85,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
     private boolean matchUrl(String url, String modulePath) {
 
+
         List urls = Arrays.asList(url.split("/")).stream().filter(e -> !"".equals(e)).collect(Collectors.toList());
         Collections.reverse(urls);
 
@@ -126,7 +125,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
     	for (Map<String, String> map : appIgnore) {
 			for (String key : map.keySet()) {
 				String urls = map.get(key);
-				if(StringUtils.isNoneBlank(urls)){
+				if(StringUtils.isNotBlank(urls)){
 					String[] urlarr = urls.split(",");
 					for (String url : urlarr) {
 						ignoreds.add("/"+key+"/api"+url);// 如/user/** user应用的所有接口暴露

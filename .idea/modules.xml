@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center.iml" filepath="$PROJECT_DIR$/auth-center/auth-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" filepath="$PROJECT_DIR$/auth-center/auth-center-provider/auth-center-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" filepath="$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/auth-spring-boot-autoconfigure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-chem/client-chem.iml" filepath="$PROJECT_DIR$/client-chem/client-chem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-finance/client-finance.iml" filepath="$PROJECT_DIR$/client-finance/client-finance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-time-coin/client-time-coin.iml" filepath="$PROJECT_DIR$/client-time-coin/client-time-coin.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/finance-client/finance-client.iml" filepath="$PROJECT_DIR$/finance-client/finance-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/hyproject.iml" filepath="$PROJECT_DIR$/hyproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/remote-api/remote-api.iml" filepath="$PROJECT_DIR$/remote-api/remote-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/splider-center/splider-center.iml" filepath="$PROJECT_DIR$/splider-center/splider-center.iml" />
-      <module fileurl="file://$PROJECT_DIR$/time-coin-client/time-coin-client.iml" filepath="$PROJECT_DIR$/time-coin-client/time-coin-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service-provider/user-service-provider.iml" filepath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/wx-mp/wx-mp.iml" filepath="$PROJECT_DIR$/wx-mp/wx-mp.iml" />
     </modules>
