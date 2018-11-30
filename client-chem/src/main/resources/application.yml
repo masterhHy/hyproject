@@ -33,7 +33,12 @@ spring:
         reset-enable: false
         login-username: sysadmin
         login-password: "000000"
-  
+  thymeleaf:
+        prefix: classpath:/templates/
+        suffix: .html
+        mode: HTML5
+        encoding: UTF-8
+        cache: false
 
 
 logging:

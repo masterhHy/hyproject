@@ -126,7 +126,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 			for (String key : map.keySet()) {
 				String urls = map.get(key);
 				if(StringUtils.isNotBlank(urls)){
-				    
+
 					String[] urlarr = urls.split(",");
 					for (String url : urlarr) {
 						ignoreds.add("/"+key+"/api"+url);// 如/user/** user应用的所有接口暴露
