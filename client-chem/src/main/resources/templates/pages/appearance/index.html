@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" style="height: 100%;">
+<head >
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="keywords" content="抗黄变,抗氧剂,光稳定剂,亚磷酸酯,紫外线吸收剂,PVC环保抗氧剂,无酚亚磷酸酯,无酚无味抗氧剂,抗氧剂生产厂家">
+    <meta name="renderer" content="webkit">
+	
+
+</head>
+<body style="height: 100%;">
+    <!--头部代码 参数则为活跃选项卡-->
+    <div th:replace="pages/appearance/head::header(1)" ></div>
+
+	<!-- 轮播图 -->
+    <header id="myCarousel" class="carousel slide" >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('http://www.zhiyi-chem.com/uploadfile/2017/0503/20170503014450322.jpg');background-position: left;"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://www.zhiyi-chem.com/uploadfile/2017/0511/20170511044225909.jpg');background-position: left;"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://www.zhiyi-chem.com/uploadfile/2017/0711/20170711061324881.jpg');background-position: left;"></div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+	
+	
+
+    <div th:replace="pages/appearance/footer::footer" ></div>
+
+</body>
+
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+</html>

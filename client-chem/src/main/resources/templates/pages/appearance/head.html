@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>页头</title>
+	
+    
+</head>
+<body th:fragment="header(index)">
+	<link href="/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/agency.css" rel="stylesheet">
+	<!-- Custom Fonts -->
+    <link href="/plugin/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    	
+		@media(min-width:768px){
+			.nav-line{
+				position:absolute;
+				left:40px;
+				bottom:0;
+				height:2px;
+				line-height:2px;
+				font-size:0;
+				width:34px;
+				background:#72ae3f;
+			}
+			.nav{
+				position: relative;
+			}
+			.nav>li>a{
+	    		padding: 10px 0px 10px 0px;
+	    	} 
+			.m-l{
+				margin-left: 40px;
+			}
+		}
+		
+    </style>
+   <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                  <a class="navbar-brand page-scroll" href="#page-top">
+                  		志一化工
+                  </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right js_nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="m-l cur">
+                        <a class="page-scroll " href="#services">
+                        	首页
+                        </a>
+                    </li>
+                    <li class="m-l ">
+                        <a class="page-scroll" href="#portfolio">关于志一</a>
+                    </li>
+                    <li class="m-l">
+                        <a class="page-scroll" href="#about">产品介绍</a>
+                    </li>
+                    <li class="m-l">
+                        <a class="page-scroll" href="#team">新闻中心</a>
+                    </li>
+                    <li class="m-l">
+                        <a class="page-scroll" href="#contact">技术交流</a>
+                    </li>
+                    <li class="m-l">
+                        <a class="page-scroll" href="#contact">联系</a>
+                    </li>
+                    <div class="nav-line"></div>
+                </ul>
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+	<!-- jQuery -->
+    <script src="/plugin/bootstrap/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+    
+	<script type="text/javascript" th:inline="javascript">
+	    var index = [[${index}]];
+	    $(".js_nav").find("li").removeClass("cur");
+	    $(".js_nav").find("li").not(":hidden").eq(index-1).addClass("cur");
+		function nav(){
+			var $liCur = $("ul.navbar-nav li.cur"),
+				curP = $liCur.position().left,
+				curW = $liCur.find("a").outerWidth(true),
+				$slider = $(".nav-line"),
+				$targetEle = $("ul.navbar-nav li:not('.last') a"),
+				$navBox = $(".js_nav");
+			
+			var liml = parseInt($liCur.css("margin-left").replace("px",""));//li左外边距
+			$slider.stop(true,true).animate({"left":curP+liml,"width":curW});
+			$targetEle.mouseenter(function(){
+				var $_parent = $(this).parent(),
+					_width = $(this).outerWidth(true), 
+					posL = $_parent.position().left;
+				$slider.stop(true,true).animate({"left":posL+liml,"width":_width},"fast");
+			});
+			$navBox.mouseleave(function(cur,wid){
+				cur = curP;
+				wid = curW;
+				$slider.stop(true,true).animate({"left":cur+liml,"width":wid},"fast");
+			});
+		};
+		nav();
+		
+	</script>
+</body>
+
+
+
+</html>
