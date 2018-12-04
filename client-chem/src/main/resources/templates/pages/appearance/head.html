@@ -9,6 +9,7 @@
 <body th:fragment="header(index)">
 	<link href="/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/agency.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
 	<!-- Custom Fonts -->
     <link href="/plugin/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -35,7 +36,9 @@
 				background:#72ae3f;
 			}
 			.nav{
-				position: relative;
+                position: absolute;
+                bottom: 0px;
+                right: 0px
 			}
 			.nav>li>a{
 	    		padding: 10px 0px 10px 0px;
@@ -43,26 +46,46 @@
 			.m-l{
 				margin-left: 40px;
 			}
+            .top_blank{
+                height: 75px;
+            }
+            .nav-p{
+                padding-bottom: 15px;
+                padding-top: 10px;
+            }
 		}
-		
+
+        @media(max-width:768px){
+            .top_blank{
+                height: 70px;
+            }
+            .nav-p{
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+        }
+        .navbar-brand{
+            padding: 0px 15px;
+        }
+
     </style>
    <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top ">
-        <div class="container">
-            <div class="navbar-header page-scroll">
+        <div class="container nav-p" >
+            <div class="navbar-header ">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                  <a class="navbar-brand page-scroll" href="#page-top">
-                  		志一化工
-                  </a>
+                <a class="navbar-brand" href="#" >
+                    <img src="http://www.zhiyi-chem.com/statics/images/zy/sy/logo.png" height="50px" alt="">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="position: relative">
                 <ul class="nav navbar-nav navbar-right js_nav">
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -95,6 +118,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <div class="top_blank"></div>
 	<!-- jQuery -->
     <script src="/plugin/bootstrap/js/jquery.js"></script>
 
@@ -102,6 +126,8 @@
     <script src="/plugin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/classie.js"></script>
     <script src="/js/cbpAnimatedHeader.js"></script>
+    <script src="/js/fastclick.js"></script>
+
     
 	<script type="text/javascript" th:inline="javascript">
 	    var index = [[${index}]];

@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" style="height: 100%;">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head >
     <meta charset="UTF-8">
     <title>首页</title>
     <meta name="keywords" content="抗黄变,抗氧剂,光稳定剂,亚磷酸酯,紫外线吸收剂,PVC环保抗氧剂,无酚亚磷酸酯,无酚无味抗氧剂,抗氧剂生产厂家">
     <meta name="renderer" content="webkit">
-	
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+        .carousel-inner img{
+            min-height: 240px;
+        }
+        @media(max-width:768px){
+            .modual-heigth{
+               margin-top: 30px;
+            }
+        }
+        @media(min-width:768px){
+            .modual-heigth{
+                margin-top: 50px;
+            }
+        }
+        .cfz_p {
+            padding: 20px 0px 10px 0px;
+            font-size: 24px;
+        }
+        .sy_xwli {
+            border-bottom: 1px solid #BDC2BE;
+            margin-bottom: 10px;
+        }
+        .sy_xw_p_1 {
+            font-size: 20px;
+        }
+        .sy_xw_p_2 {
+            font-size: 14px;
+            color: #000;
+            line-height: 1.8em;
+        }
 
+
+    </style>
 </head>
-<body style="height: 100%;">
+<body >
     <!--头部代码 参数则为活跃选项卡-->
     <div th:replace="pages/appearance/head::header(1)" ></div>
 
@@ -23,13 +55,13 @@
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://www.zhiyi-chem.com/uploadfile/2017/0503/20170503014450322.jpg');background-position: left;"></div>
+                <img  src="http://www.zhiyi-chem.com/uploadfile/2017/0503/20170503014450322.jpg" />
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://www.zhiyi-chem.com/uploadfile/2017/0511/20170511044225909.jpg');background-position: left;"></div>
+                <img src="http://www.zhiyi-chem.com/uploadfile/2017/0511/20170511044225909.jpg" />
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://www.zhiyi-chem.com/uploadfile/2017/0711/20170711061324881.jpg');background-position: left;"></div>
+                <img src="http://www.zhiyi-chem.com/uploadfile/2017/0711/20170711061324881.jpg" />
             </div>
         </div>
         <!-- Controls -->
@@ -40,12 +72,57 @@
             <span class="icon-next"></span>
         </a>
     </header>
-	
-	
+    <!-- 新闻中心和关于-->
+    <div class="container modual-heigth" >
+        <div class="row">
+            <!-- 关于-->
+            <div class="col-md-6 m-b-30">
+                <img class="m-b-30" src="http://www.zhiyi-chem.com/statics/images/zy/sy/3.png" width="100%" />
+                <img src="http://www.zhiyi-chem.com/statics/images/zy/sy/444.jpg" width="100%" />
+                <div>
+                    <p class="main-color cfz_p text-center" > 稳定剂化学领域中的创新者 </p>
+                    <div >
+                        <p style="text-align: justify; line-height: 1.8em; font-size: 16px;"><span style="">广州志一化工有限公司从2001年5月开始经营抗氧化剂、紫外线吸收剂，于2006年开始在山东淄博、广东南雄建立自己的抗氧化剂生产基地。目前产品销往高分子聚合、及其下游应用领域，以及需要这些产品特殊性能的其他领域。多年以来，志一化工在高性能抗氧剂和光稳定剂技术方面一直处于领先地位。今天，我们通过提供全面解决方案以继续满足全球聚合物添加剂市场……</span></p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="javascript:;">
+                        <img src="http://www.zhiyi-chem.com/statics/images/zy/sy/10.png"  style="padding-top: 35px;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 m-b-30">
+                <img class="m-b-30" src="http://www.zhiyi-chem.com/statics/images/zy/sy/222.png" width="100%"/>
+                <!-- 新闻列表 -->
+                <ul >
+                    <li class="sy_xwli">
+                        <a href="javascript:;">
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <img src="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg" width="100%" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="sy_xw_div_2">
+                                        <p class="sy_xw_p_1">南雄志一精化举行应急救援演练</p>
+                                        <p class="sy_xw_p_2 line-clamp1">2011年7月8日上午，南雄市安监局、市消防大队联合园区消防应急救援中心在志一精细化工有限公司进行了一次消防演练，此次演练提高了我厂员工应对突发事件的处置能力。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
 
     <div th:replace="pages/appearance/footer::footer" ></div>
-
 </body>
+
 
 <script>
     $('.carousel').carousel({
