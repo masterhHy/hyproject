@@ -1,9 +1,9 @@
-package com.hao.remote.api.userservice.entity;
+package com.hao.common.entity.user;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class RemoteSysUser implements Serializable {
+public class SysUser implements Serializable {
     private String id;
 
     private String createdBy;
@@ -212,7 +212,7 @@ public class RemoteSysUser implements Serializable {
 
 	@Override
 	public String toString() {
-		return "RemoteSysUser [id=" + id + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastModifiedBy="
+		return "SysUser [id=" + id + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastModifiedBy="
 				+ lastModifiedBy + ", lastModifiedDate=" + lastModifiedDate + ", email=" + email + ", firstName="
 				+ firstName + ", sex=" + sex + ", phone=" + phone + ", password=" + password + ", username=" + username
 				+ ", isEnable=" + isEnable + "]";

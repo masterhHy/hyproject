@@ -2,8 +2,8 @@ package com.hao.authcenter.auth;
 
 import com.hao.authcenter.remote.UserServiceClient;
 import com.hao.common.constant.DataBaseConstant;
-import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
-import com.hao.remote.api.userservice.entity.RemoteSysUser;
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class BaseUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // 调用FeignClient查询用户
-        RemoteSysUser sysUser = userService.getUserByUsername(username).getData();
+        SysUser sysUser = userService.getUserByUsername(username).getData();
 
         if(sysUser == null){
             logger.error("找不到该用户，用户名：" + username);
@@ -44,7 +44,7 @@ public class BaseUserDetailService implements UserDetailsService {
             
         }
 
-        List<RemoteSysAuthority> authList = userService.getAllAuthorityByUserId(sysUser.getId()).getData();
+        List<SysAuthority> authList = userService.getAllAuthorityByUserId(sysUser.getId()).getData();
         List<GrantedAuthority> authorities = this.convertToAuthorities(sysUser, authList);
        
         // 返回带有用户权限信息的User
@@ -59,7 +59,7 @@ public class BaseUserDetailService implements UserDetailsService {
         return "Y".equals(active) ? true : false;
     }
 
-    private List<GrantedAuthority> convertToAuthorities(RemoteSysUser sysUser,List<RemoteSysAuthority> auth) {
+    private List<GrantedAuthority> convertToAuthorities(SysUser sysUser,List<SysAuthority> auth) {
         List<GrantedAuthority> authorities = new ArrayList<>();
         // 清除 Redis 中用户的权限
         redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu");

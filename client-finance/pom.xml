@@ -70,11 +70,10 @@
 			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 		<dependency>
-		  <groupId>com.hao</groupId>
-		  <artifactId>remote-api</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
-	  </dependency>
-
+			<groupId>com.hao</groupId>
+			<artifactId>remote-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 

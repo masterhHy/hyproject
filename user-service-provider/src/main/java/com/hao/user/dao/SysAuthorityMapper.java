@@ -1,6 +1,6 @@
 package com.hao.user.dao;
 
-import com.hao.user.entity.SysAuthority;
+import com.hao.common.entity.user.SysAuthority;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 

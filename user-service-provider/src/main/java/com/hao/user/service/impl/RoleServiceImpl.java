@@ -1,14 +1,12 @@
 package com.hao.user.service.impl;
 
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+import com.hao.common.entity.user.SysRole;
+import com.hao.user.dao.SysRoleMapper;
+import com.hao.user.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hao.user.dao.SysRoleMapper;
-import com.hao.user.entity.SysRole;
-import com.hao.user.service.RoleService;
+import java.util.List;
 
 @Service
 public class RoleServiceImpl extends BaseServiceImpl<SysRole> implements RoleService {

@@ -1,9 +1,9 @@
 package com.hao.remote.api.userservice;
 
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysRole;
+import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
-import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
-import com.hao.remote.api.userservice.entity.RemoteSysRole;
-import com.hao.remote.api.userservice.entity.RemoteSysUser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,9 +20,9 @@ public interface UserServiceRemote {
     public static final String CONTEXT_PATH="/";
 
     @RequestMapping("/user/getAllAuthByUserId")
-    public ResponseData<List<RemoteSysAuthority>> getAllAuthorityByUserId(@RequestParam("userId") String userId);
+    public ResponseData<List<SysAuthority>> getAllAuthorityByUserId(@RequestParam("userId") String userId);
     @RequestMapping("/user/getUserByUsername")
-    public ResponseData<RemoteSysUser> getUserByUsername(@RequestParam("userName") String userName);
+    public ResponseData<SysUser> getUserByUsername(@RequestParam("userName") String userName);
     @RequestMapping("/user/getRoleByUserId")
-    public ResponseData<List<RemoteSysRole>> getRoleByUserId(@RequestParam("userId") String userId);
+    public ResponseData<List<SysRole>> getRoleByUserId(@RequestParam("userId") String userId);
 }

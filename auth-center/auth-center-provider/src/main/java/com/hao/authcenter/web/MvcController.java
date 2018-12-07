@@ -57,7 +57,7 @@ public class MvcController {
     }
     @GetMapping(value="/login")
     public String login() {
-    	return "web_login.html";
+    	return "login";
     }
 
     /**

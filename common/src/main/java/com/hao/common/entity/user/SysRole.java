@@ -1,9 +1,9 @@
-package com.hao.remote.api.userservice.entity;
+package com.hao.common.entity.user;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class RemoteSysRole implements Serializable {
+public class SysRole implements Serializable {
     private String id;
 
     private String createdBy;

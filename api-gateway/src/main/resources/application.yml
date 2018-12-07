@@ -31,7 +31,7 @@ security:
     #所有资源应用的对外暴露接口 key 为应用application.name  value 为暴露接口 多个以逗号分割
     - user-service-provider: /**
       client-finance: /**
-      client-time-coin: /test
+      client-time-coin: /aa
   oauth2:
     resource:
       jwt:

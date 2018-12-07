@@ -1,7 +1,7 @@
 package com.hao.auth.autoconfigure.config;
 
 import com.hao.auth.autoconfigure.utils.AccessTokenUtils;
-import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
+import com.hao.common.entity.user.SysAuthority;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -54,11 +54,15 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         }
 
         // URL 鉴权
-        Iterator<RemoteSysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
+        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
+        System.out.println(accessTokenUtils.getMenuInfo());
         while (iterator.hasNext()){
-            RemoteSysAuthority auth = iterator.next();
+            SysAuthority auth = iterator.next();
             //url 和该用户所有应用的的权限对比   这里开销有点大待优化，
             if(this.matchUrl(url, auth.getUrl())){
+                //把用户信息放到request里面，好让后面服务直接使用
+                ((FilterInvocation)o).getRequest().setAttribute("user_info",accessTokenUtils.getUserInfo());
+
                 return ;
             }
         }

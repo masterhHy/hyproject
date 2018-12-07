@@ -1,11 +1,10 @@
 package com.hao.user.dao;
 
-import java.util.List;
-
+import com.hao.common.entity.user.SysRole;
 import org.apache.ibatis.annotations.Param;
-
-import com.hao.user.entity.SysRole;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 @org.apache.ibatis.annotations.Mapper
 public interface SysRoleMapper extends Mapper<SysRole> {
 	

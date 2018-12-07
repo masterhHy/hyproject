@@ -1,6 +1,8 @@
-package com.hao.user.entity.table;
+package com.hao.user.table;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity(name = "sys_user")

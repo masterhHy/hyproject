@@ -1,6 +1,7 @@
 package com.hao.user.service;
 
-import com.hao.user.entity.SysUser;
+
+import com.hao.common.entity.user.SysUser;
 
 public interface UserService extends BaseService<SysUser> {
 	

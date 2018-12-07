@@ -1,24 +1,14 @@
 package com.hao.user.service.impl;
 
-import java.util.Date;
-
-import javax.annotation.PostConstruct;
-
+import com.hao.common.entity.user.*;
+import com.hao.user.dao.*;
+import com.hao.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.hao.user.dao.SysAuthorityMapper;
-import com.hao.user.dao.SysRoleAuthoritiesMapper;
-import com.hao.user.dao.SysRoleMapper;
-import com.hao.user.dao.SysUserMapper;
-import com.hao.user.dao.SysUserRolesMapper;
-import com.hao.user.entity.SysAuthority;
-import com.hao.user.entity.SysRole;
-import com.hao.user.entity.SysRoleAuthorities;
-import com.hao.user.entity.SysUser;
-import com.hao.user.entity.SysUserRoles;
-import com.hao.user.service.UserService;
+import javax.annotation.PostConstruct;
+import java.util.Date;
 
 @Service
 public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserService {

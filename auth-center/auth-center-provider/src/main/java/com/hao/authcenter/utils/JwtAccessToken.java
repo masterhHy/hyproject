@@ -1,8 +1,8 @@
 package com.hao.authcenter.utils;
 
 import com.hao.authcenter.auth.BaseUserDetail;
+import com.hao.common.entity.user.SysUser;
 import com.hao.common.utils.JsonUtils;
-import com.hao.remote.api.userservice.entity.RemoteSysUser;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -28,7 +28,7 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
         DefaultOAuth2AccessToken defaultOAuth2AccessToken = new DefaultOAuth2AccessToken(accessToken);
 
         // 设置额外用户信息
-        RemoteSysUser baseUser = ((BaseUserDetail) authentication.getPrincipal()).getBaseUser();
+       SysUser baseUser = ((BaseUserDetail) authentication.getPrincipal()).getBaseUser();
         baseUser.setPassword(null);
         // 将用户信息添加到token额外信息中
         defaultOAuth2AccessToken.getAdditionalInformation().put(userInfo, baseUser);
@@ -53,9 +53,9 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
 
     }
 
-    private RemoteSysUser convertUserData(Object map) {
+    private SysUser convertUserData(Object map) {
         String json = JsonUtils.deserializer(map);
-        RemoteSysUser user = JsonUtils.serializable(json, RemoteSysUser.class);
+        SysUser user = JsonUtils.serializable(json, SysUser.class);
         return user;
     }
 

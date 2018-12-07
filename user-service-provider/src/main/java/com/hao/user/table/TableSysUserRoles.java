@@ -1,4 +1,4 @@
-package com.hao.user.entity.table;
+package com.hao.user.table;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

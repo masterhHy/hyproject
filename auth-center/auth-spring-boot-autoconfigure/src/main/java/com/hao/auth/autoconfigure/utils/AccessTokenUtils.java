@@ -1,8 +1,8 @@
 package com.hao.auth.autoconfigure.utils;
 
 import com.hao.common.constant.DataBaseConstant;
-import com.hao.remote.api.userservice.entity.RemoteSysAuthority;
-import com.hao.remote.api.userservice.entity.RemoteSysUser;
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.access.AccessDeniedException;
@@ -45,9 +45,9 @@ public class AccessTokenUtils {
      * 从token获取用户信息
      * @return
      */
-    public RemoteSysUser getUserInfo() throws AccessDeniedException {
-        RemoteSysUser user = (RemoteSysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
-        RemoteSysUser redisUser = (RemoteSysUser) redisTemplate.opsForValue().get(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
+    public SysUser getUserInfo() throws AccessDeniedException {
+        SysUser user = (SysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
+        SysUser redisUser = (SysUser) redisTemplate.opsForValue().get(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
         if(redisUser==null){
             throw new InsufficientAuthenticationException("没登录访问保护资源");
         }
@@ -55,13 +55,12 @@ public class AccessTokenUtils {
     }
 
 
-    public List<RemoteSysAuthority> getMenuInfo()throws AccessDeniedException{
-        String key = getUserInfo().getId() + "-menu";
-        long size = redisTemplate.opsForList().size(key);
-        List<Object> list = redisTemplate.opsForList().range(key, 0, size);
-        List<RemoteSysAuthority> res = new ArrayList<>();
+    public List<SysAuthority> getMenuInfo()throws AccessDeniedException{
+        String key = DataBaseConstant.REDIS_USER_NAME_PLACE+getUserInfo().getId() + "-menu";
+        List<Object> list = redisTemplate.opsForList().range(key, 0, -1);
+        List<SysAuthority> res = new ArrayList<>();
         for (Object obj : list){
-            res.add((RemoteSysAuthority)obj);
+            res.add((SysAuthority)obj);
         }
         return res;
     }

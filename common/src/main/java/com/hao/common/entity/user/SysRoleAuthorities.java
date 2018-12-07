@@ -1,17 +1,11 @@
-package com.hao.user.entity.table;
+package com.hao.common.entity.user;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.io.Serializable;
 
-@Entity(name = "sys_role_authorities")
-public class TableSysRoleAuthorities  {
-    @Id
+public class SysRoleAuthorities implements Serializable {
     private String id;
-    @Column(columnDefinition="varchar(255) COMMENT '角色id'")
     private String sysRoleId;
 
-    @Column(columnDefinition="varchar(255) COMMENT '权限id'")
     private String authoritiesId;
 
     public String getId() {

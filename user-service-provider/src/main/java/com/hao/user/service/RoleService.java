@@ -1,6 +1,7 @@
 package com.hao.user.service;
 
-import com.hao.user.entity.SysRole;
+
+import com.hao.common.entity.user.SysRole;
 
 import java.util.List;
 
