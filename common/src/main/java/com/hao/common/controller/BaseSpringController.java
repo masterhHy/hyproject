@@ -1,10 +1,12 @@
 package com.hao.common.controller;
 
-import com.hao.common.entity.user.SysUser;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
+import com.alibaba.fastjson.JSONObject;
+import com.hao.common.entity.user.SysUser;
 
 public class BaseSpringController {
 
@@ -13,7 +15,8 @@ public class BaseSpringController {
     }
     public SysUser getUser(){
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
-        SysUser user = (SysUser) request.getAttribute("user_info");
+        String userinfo = request.getHeader("user_info");
+        SysUser user = JSONObject.parseObject(userinfo, SysUser.class);
         return user;
     }
 }

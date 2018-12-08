@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Enumeration;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
@@ -32,7 +35,7 @@ public class TimeCoinController extends BaseSpringController {
         res.setData(timeCoinService.selectAll());
         res.setMessage("操作成功");
         res.setCode(ResponseData.SUCCESS_CODE);
-        System.out.println(this.getUserId());
+        
         return res;
     }
 

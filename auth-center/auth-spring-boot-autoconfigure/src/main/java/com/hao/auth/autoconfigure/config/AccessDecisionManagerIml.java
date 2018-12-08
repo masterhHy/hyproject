@@ -12,9 +12,13 @@ import org.springframework.security.authentication.InsufficientAuthenticationExc
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.util.AntPathMatcher;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -45,6 +49,9 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
         // 请求路径
         String url = getUrl(o);
+        if(url.contains("/api/")){
+        	url.substring(url.indexOf("/api"));
+        }
         // 不拦截的请求
         for(String path : ignoreds){
             String temp = path.trim();
@@ -55,14 +62,12 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
         // URL 鉴权
         Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
-        System.out.println(accessTokenUtils.getMenuInfo());
         while (iterator.hasNext()){
             SysAuthority auth = iterator.next();
             //url 和该用户所有应用的的权限对比   这里开销有点大待优化，
             if(this.matchUrl(url, auth.getUrl())){
-                //把用户信息放到request里面，好让后面服务直接使用
-                ((FilterInvocation)o).getRequest().setAttribute("user_info",accessTokenUtils.getUserInfo());
-
+            	HttpServletRequest request = ((FilterInvocation)o).getRequest();
+            	request.setAttribute("user_info", accessTokenUtils.getUserInfo());
                 return ;
             }
         }
