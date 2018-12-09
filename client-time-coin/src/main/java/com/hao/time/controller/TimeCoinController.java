@@ -3,6 +3,7 @@ package com.hao.time.controller;
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.pojo.ResponseData;
 import com.hao.time.entity.TimeCoin;
+import com.hao.time.remote.UserServiceClient;
 import com.hao.time.service.TimeCoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 public class TimeCoinController extends BaseSpringController {
     @Autowired
     private TimeCoinService timeCoinService;
+    @Autowired
+    private UserServiceClient userServiceClient;
 
     @RequestMapping("addOrUpdate")
     public ResponseData<TimeCoin> addOrUpdateCoin(TimeCoin coin){
@@ -35,7 +38,7 @@ public class TimeCoinController extends BaseSpringController {
         res.setData(timeCoinService.selectAll());
         res.setMessage("操作成功");
         res.setCode(ResponseData.SUCCESS_CODE);
-        
+        userServiceClient.getUserByUsername("admin");
         return res;
     }
 

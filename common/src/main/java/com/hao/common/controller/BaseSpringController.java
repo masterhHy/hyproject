@@ -11,6 +11,9 @@ import com.hao.common.entity.user.SysUser;
 public class BaseSpringController {
 
     public String getUserId(){
+    	if(this.getUser()==null){
+    		return null;
+    	}
         return this.getUser().getId();
     }
     public SysUser getUser(){

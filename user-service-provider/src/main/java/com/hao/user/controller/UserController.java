@@ -1,5 +1,6 @@
 package com.hao.user.controller;
 
+import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.SysAuthority;
 import com.hao.common.entity.user.SysRole;
 import com.hao.common.entity.user.SysUser;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class UserController implements UserServiceRemote {
+public class UserController extends BaseSpringController implements UserServiceRemote {
 
     @Autowired
     private ResourceService resourceService;
@@ -36,6 +37,7 @@ public class UserController implements UserServiceRemote {
         record.setUsername(userName);
         res.setData(userService.selectOne(record));
         res.setCode(ResponseData.SUCCESS_CODE);
+        System.out.println(this.getUserId());
         return res;
     }
 
