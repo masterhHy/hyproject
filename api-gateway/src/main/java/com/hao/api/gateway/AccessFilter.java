@@ -7,9 +7,9 @@ import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
- 
+
 import javax.servlet.http.HttpServletRequest;
- 
+
 @Component
 public class AccessFilter extends ZuulFilter {
  
@@ -39,6 +39,8 @@ public class AccessFilter extends ZuulFilter {
         HttpServletRequest request = ctx.getRequest();
         //把用户用户信息放到转发请求中， 方便微服务获取用户信息
         SysUser user = (SysUser) request.getAttribute("user_info");
+
+        //把页面请求的对象 的头部信息放到 网关 请求头上
         ctx.getZuulRequestHeaders().put("user_info", JSONObject.toJSONString(user));
         
         log.info("send {} request to {}", request.getMethod(), request.getRequestURL().toString());

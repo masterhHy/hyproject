@@ -52,11 +52,11 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		}
 		if(role==null){
 			role = new SysRole();
-			role.setCode("BASE");
+			role.setCode("ALL");
 			role.setCreatedDate(new Date());
 			role.setId("1");
 			role.setIsEnable("Y");
-			role.setName("基础权限");
+			role.setName("超级管理员特有");
 			sysRoleMapper.insertSelective(role);
 			SysUserRoles ur = new SysUserRoles();
 			ur.setId("1");
@@ -66,11 +66,11 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		}
 		if(auth==null){
 			auth = new SysAuthority();
-			auth.setCode("BASE");
+			auth.setCode("ALL");
 			auth.setId("1");
 			auth.setIsEnable("Y");
 			auth.setCreatedDate(new Date());
-			auth.setName("基础权限");
+			auth.setName("全部项目权限");
 			auth.setUrl("/");
 			auth.setProjectName("ALL");
 			sysAuthorityMapper.insertSelective(auth);

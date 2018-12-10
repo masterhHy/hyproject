@@ -12,13 +12,10 @@ import org.springframework.security.authentication.InsufficientAuthenticationExc
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.util.AntPathMatcher;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import java.util.*;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -64,6 +61,12 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
         while (iterator.hasNext()){
             SysAuthority auth = iterator.next();
+            if(auth.getUrl().equals("/")){
+                //超级管理员
+                HttpServletRequest request = ((FilterInvocation)o).getRequest();
+                request.setAttribute("user_info", accessTokenUtils.getUserInfo());
+                return ;
+            }
             //url 和该用户所有应用的的权限对比   这里开销有点大待优化，
             if(this.matchUrl(url, auth.getUrl())){
             	HttpServletRequest request = ((FilterInvocation)o).getRequest();

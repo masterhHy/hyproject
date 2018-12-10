@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 登出页
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/backReferer")
                 // 其余所有请求全部需要鉴权认证
-                .and().authorizeRequests().anyRequest().hasAnyAuthority("BASE")
+                .and().authorizeRequests().anyRequest().authenticated()
                 // 由于使用的是JWT，我们这里不需要csrf
                 .and().csrf().disable();
                

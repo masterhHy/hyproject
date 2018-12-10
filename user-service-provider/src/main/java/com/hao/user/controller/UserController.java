@@ -37,7 +37,6 @@ public class UserController extends BaseSpringController implements UserServiceR
         record.setUsername(userName);
         res.setData(userService.selectOne(record));
         res.setCode(ResponseData.SUCCESS_CODE);
-        System.out.println(this.getUserId());
         return res;
     }
 
