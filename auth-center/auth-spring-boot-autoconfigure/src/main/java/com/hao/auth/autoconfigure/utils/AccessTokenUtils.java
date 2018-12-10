@@ -15,6 +15,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class AccessTokenUtils {
@@ -54,14 +55,21 @@ public class AccessTokenUtils {
         return user;
     }
 
-
-    public List<SysAuthority> getMenuInfo()throws AccessDeniedException{
+    public List<String> getAllProjectName(){
+        List<String> res = new ArrayList<>();
         String key = DataBaseConstant.REDIS_USER_NAME_PLACE+getUserInfo().getId() + "-menu";
-        List<Object> list = redisTemplate.opsForList().range(key, 0, -1);
-        List<SysAuthority> res = new ArrayList<>();
-        for (Object obj : list){
-            res.add((SysAuthority)obj);
+        Map<Object,Object> map =redisTemplate.opsForHash().entries(key);
+
+        for (Object objKey: map.keySet()){
+            res.add(objKey.toString());
         }
+        return res;
+    }
+
+
+    public List<SysAuthority> getMenuInfo(String projectName)throws AccessDeniedException{
+        String key = DataBaseConstant.REDIS_USER_NAME_PLACE+getUserInfo().getId() + "-menu";
+        List<SysAuthority>  res= (List<SysAuthority>) redisTemplate.opsForHash().get(key,projectName);
         return res;
     }
 

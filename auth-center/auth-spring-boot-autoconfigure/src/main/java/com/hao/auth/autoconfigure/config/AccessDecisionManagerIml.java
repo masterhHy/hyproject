@@ -37,18 +37,29 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
 
     @Override
     public void decide(Authentication authentication, Object o, Collection<ConfigAttribute> collection) throws AccessDeniedException,InsufficientAuthenticationException {
-
-        /*String pwd = ((FilterInvocation)o).getHttpRequest().getHeader("msClientId");
-        if("feigngetdata".equals(pwd)){
-            //微服务访问 不需要权限控制
-            return;
-        }*/
+        //如果是超级管理员，不作限制
+        String id = accessTokenUtils.getUserInfo().getId();
+        if(id.equals("1")){
+            HttpServletRequest request = ((FilterInvocation)o).getRequest();
+            request.setAttribute("user_info", accessTokenUtils.getUserInfo());
+            return ;
+        }
 
         // 请求路径
         String url = getUrl(o);
-        if(url.contains("/api/")){
-        	url.substring(url.indexOf("/api"));
+
+        List<String> projectNameList=  accessTokenUtils.getAllProjectName();
+        String projectName="";
+        for (String name : projectNameList){
+            if(url.indexOf(name)!=-1){
+                projectName=name;
+                url = url.replace("/"+name+"/api","");
+            }
         }
+        if(StringUtils.isBlank(projectName)){
+            throw new AccessDeniedException("无权限");
+        }
+
         // 不拦截的请求
         for(String path : ignoreds){
             String temp = path.trim();
@@ -58,15 +69,10 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         }
 
         // URL 鉴权
-        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo().iterator();
+        Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo(projectName).iterator();
         while (iterator.hasNext()){
             SysAuthority auth = iterator.next();
-            if(auth.getUrl().equals("/")){
-                //超级管理员
-                HttpServletRequest request = ((FilterInvocation)o).getRequest();
-                request.setAttribute("user_info", accessTokenUtils.getUserInfo());
-                return ;
-            }
+
             //url 和该用户所有应用的的权限对比   这里开销有点大待优化，
             if(this.matchUrl(url, auth.getUrl())){
             	HttpServletRequest request = ((FilterInvocation)o).getRequest();

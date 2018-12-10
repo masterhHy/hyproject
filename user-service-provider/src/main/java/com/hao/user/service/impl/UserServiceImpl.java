@@ -15,15 +15,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 
 	@Autowired
 	private SysUserMapper userMapper;
-	@Autowired
-	private SysRoleMapper sysRoleMapper;
-	@Autowired
-	private SysUserRolesMapper sysUserRolesMapper;
-	@Autowired
-	private SysAuthorityMapper sysAuthorityMapper;
-	@Autowired
-	private SysRoleAuthoritiesMapper sysRoleAuthoritiesMapper;
-	
+
 	
 
 	@PostConstruct
@@ -31,12 +23,6 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		SysUser admin = new SysUser();
 		admin.setId("1");
 		admin =userMapper.selectOne(admin);
-		SysRole role = new SysRole();
-		role.setId("1");
-		role = sysRoleMapper.selectOne(role);
-		SysAuthority auth = new SysAuthority();
-		auth.setId("1");
-		auth = sysAuthorityMapper.selectOne(auth);
 		if(admin==null){
 			admin = new SysUser();
 			admin.setCreatedDate(new Date());
@@ -50,37 +36,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 			admin.setPassword(bc.encode("84992361"));
 			userMapper.insertSelective(admin);
 		}
-		if(role==null){
-			role = new SysRole();
-			role.setCode("ALL");
-			role.setCreatedDate(new Date());
-			role.setId("1");
-			role.setIsEnable("Y");
-			role.setName("超级管理员特有");
-			sysRoleMapper.insertSelective(role);
-			SysUserRoles ur = new SysUserRoles();
-			ur.setId("1");
-			ur.setRolesId("1");
-			ur.setSysUserId("1");
-			sysUserRolesMapper.insertSelective(ur);
-		}
-		if(auth==null){
-			auth = new SysAuthority();
-			auth.setCode("ALL");
-			auth.setId("1");
-			auth.setIsEnable("Y");
-			auth.setCreatedDate(new Date());
-			auth.setName("全部项目权限");
-			auth.setUrl("/");
-			auth.setProjectName("ALL");
-			sysAuthorityMapper.insertSelective(auth);
-			SysRoleAuthorities ra = new SysRoleAuthorities();
-			ra.setAuthoritiesId("1");
-			ra.setId("1");
-			ra.setSysRoleId("1");
-			sysRoleAuthoritiesMapper.insertSelective(ra);
-		}
-			
+
 		
 	}
 
