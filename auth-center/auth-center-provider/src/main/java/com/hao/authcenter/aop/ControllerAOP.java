@@ -28,6 +28,7 @@ public class ControllerAOP {
         if(rv!=null){
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
             String sessionId = request.getSession().getId();
+            sessionId="code";
             String path=rv.getUrl()+"&unique_code="+sessionId;
             view.setViewName("redirect:"+path);
         }
@@ -37,6 +38,7 @@ public class ControllerAOP {
         RedirectView rv = (RedirectView) result;
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String sessionId = request.getSession().getId();
+        sessionId="code";
         String path=rv.getUrl()+"&unique_code="+sessionId;
         rv.setUrl(path);
     }
