@@ -53,7 +53,7 @@
                 </div>
                 <div id="submit" class="ui fluid large teal submit button" style="margin-bottom: 20px; background-color: #32c5d2">登录</div>
             </div>
-
+            <input type="hidden" id="csrf_token" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div class="ui error message"></div>
 
         </form>

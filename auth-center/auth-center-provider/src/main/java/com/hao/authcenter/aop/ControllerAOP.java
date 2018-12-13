@@ -25,9 +25,19 @@ public class ControllerAOP {
     public void addParams(JoinPoint joinPoint,Object result){
         ModelAndView view = (ModelAndView) result;
         RedirectView rv = (RedirectView) view.getView();
+        if(rv!=null){
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            String sessionId = request.getSession().getId();
+            String path=rv.getUrl()+"&unique_code="+sessionId;
+            view.setViewName("redirect:"+path);
+        }
+    }
+    @AfterReturning(value = "execution(* org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(..))",returning = "result")
+    public void addParamsApproveOrDeny(JoinPoint joinPoint,Object result){
+        RedirectView rv = (RedirectView) result;
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String sessionId = request.getSession().getId();
         String path=rv.getUrl()+"&unique_code="+sessionId;
-        view.setViewName("redirect:"+path);
+        rv.setUrl(path);
     }
 }

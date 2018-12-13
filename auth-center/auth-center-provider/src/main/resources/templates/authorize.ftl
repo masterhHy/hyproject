@@ -36,6 +36,7 @@
     <input id="approval" name='user_oauth_approval' value='false' type='hidden'/>
     <input id="approveOrDeny" name='authorize' value='Authorize' type='hidden'/>
     <input id="scope" name='scope.user' value='true' type='hidden'/>
+    <input type="hidden" id="csrf_token" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 <div class="ui modal" id="modal">
     <div class="header title">授权中心

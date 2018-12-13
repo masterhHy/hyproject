@@ -36,7 +36,7 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
     }
 
     /**
-     * 解析token
+     * 解析token 主要吧序列化的user对象转化成正常使用对象
      * @param value
      * @param map
      * @return
