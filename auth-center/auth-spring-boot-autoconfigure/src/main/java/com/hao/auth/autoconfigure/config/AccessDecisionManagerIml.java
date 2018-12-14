@@ -73,14 +73,12 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         while (iterator.hasNext()){
             SysAuthority auth = iterator.next();
 
-            //url 和该用户所有应用的的权限对比   这里开销有点大待优化，
             if(this.matchUrl(url, auth.getUrl())){
             	HttpServletRequest request = ((FilterInvocation)o).getRequest();
             	request.setAttribute("user_info", accessTokenUtils.getUserInfo());
                 return ;
             }
         }
-        System.out.println("没权限");
 
         throw new AccessDeniedException("无权限");
 

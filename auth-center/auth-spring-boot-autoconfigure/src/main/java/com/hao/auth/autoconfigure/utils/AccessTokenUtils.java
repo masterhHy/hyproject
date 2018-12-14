@@ -59,7 +59,6 @@ public class AccessTokenUtils {
         List<String> res = new ArrayList<>();
         String key = DataBaseConstant.REDIS_USER_NAME_PLACE+getUserInfo().getId() + "-menu";
         Map<Object,Object> map =redisTemplate.opsForHash().entries(key);
-
         for (Object objKey: map.keySet()){
             res.add(objKey.toString());
         }
