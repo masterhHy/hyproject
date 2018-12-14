@@ -16,7 +16,7 @@ public class ResponseData<T> {
      * 返回描述
      */
     private String message;
-
+    private Boolean status =true;
     private T data;
 
     public ResponseData() {
@@ -31,6 +31,14 @@ public class ResponseData<T> {
         this.code = code;
         this.message = message;
         this.data = data;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Integer getCode() {

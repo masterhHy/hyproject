@@ -1,18 +1,13 @@
 package com.hao.time.entity;
 
 import java.util.Date;
-import javax.persistence.*;
 
-@Table(name = "time_bp_operate")
 public class TimeBpOperate {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
      * 创建时间
      */
-    @Column(name = "create_time")
     private Date createTime;
 
     /**
@@ -23,7 +18,6 @@ public class TimeBpOperate {
     /**
      * 积分表id
      */
-    @Column(name = "time_bp_id")
     private String timeBpId;
 
     /**

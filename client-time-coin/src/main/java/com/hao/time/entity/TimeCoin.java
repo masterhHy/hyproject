@@ -1,24 +1,18 @@
 package com.hao.time.entity;
 
 import java.util.Date;
-import javax.persistence.*;
 
-@Table(name = "time_coin")
 public class TimeCoin {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
      * 创建时间
      */
-    @Column(name = "create_time")
     private Date createTime;
 
     /**
      * 金币记录天
      */
-    @Column(name = "mark_day")
     private String markDay;
 
     /**
@@ -29,13 +23,11 @@ public class TimeCoin {
     /**
      * 修改时间
      */
-    @Column(name = "update_time")
     private Date updateTime;
 
     /**
      * 用户id
      */
-    @Column(name = "user_id")
     private String userId;
 
     /**

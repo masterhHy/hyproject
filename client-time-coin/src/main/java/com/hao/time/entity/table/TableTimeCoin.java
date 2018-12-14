@@ -8,7 +8,7 @@ import java.util.Date;
 public class TableTimeCoin {
     @Id
     private String id;
-    @Column(columnDefinition="int(3) COMMENT '金币类型'")
+    @Column(columnDefinition="int(3) COMMENT '金币类型: 1 工作 2 学习 3 娱乐 '")
     private Integer type;
     @Column(columnDefinition="text COMMENT '金币含义'")
     private String remark;

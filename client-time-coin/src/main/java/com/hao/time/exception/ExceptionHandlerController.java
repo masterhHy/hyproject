@@ -24,6 +24,7 @@ public class ExceptionHandlerController {
 	public ResponseData handler(Exception e){
 		ResponseData res = new ResponseData();
 		res.setCode(ResponseData.ERROR_CODE);
+		res.setStatus(false);
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 		e.printStackTrace(pw);
