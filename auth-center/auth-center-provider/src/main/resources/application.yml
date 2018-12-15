@@ -21,7 +21,7 @@ spring:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: root
+      password: haomaria
       driver-class-name: com.mysql.jdbc.Driver
   jpa:
           show-sql: false
@@ -30,6 +30,7 @@ spring:
             ddl-auto: update
   freemarker:
       request-context-attribute: request
+      cache: true
   mvc:
     view:
       prefix: /pages/
