@@ -9,7 +9,7 @@ spring:
         prefer-ip-address: true
         health-check-path: ${server.servlet.context-path}actuator/health
         tags: management.context-path=${server.servlet.context-path}
-  
+        
 server:
   port: 18000
   servlet:
@@ -17,7 +17,7 @@ server:
 zuul:
   routes:
     user-service:
-      #zuul连接是这样的，固定要 服务名+api+微服务连接 
+      #zuul连接是这样的，固定要 服务名+api+微服务连接
       path: /user-service-provider/api/**
       serviceId: user-service-provider
     finance:
@@ -38,3 +38,5 @@ security:
         key-uri: http://${AUTH_CENTER_HOST:localhost}:${AUTH_CENTER_PORT:18001}/auth/oauth/token_key
       id: ${spring.application.name}
       serviceId: ${spring.application.name}
+logging:
+  file: logs/api-gateway.log

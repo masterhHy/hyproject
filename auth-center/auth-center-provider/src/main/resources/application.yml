@@ -30,6 +30,7 @@ spring:
             ddl-auto: update
   freemarker:
       request-context-attribute: request
+      cache: true
   mvc:
     view:
       prefix: /pages/
