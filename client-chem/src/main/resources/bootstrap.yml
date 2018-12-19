@@ -9,6 +9,7 @@ spring:
       port: ${CONSUL_PORT:8500}
       discovery:
         prefer-ip-address: true
+        health-check-interval: 3600s
     config:
       fail-fast: true
       discovery:

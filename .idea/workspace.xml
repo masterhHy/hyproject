@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/sys-config/src/main/resources/server/api-gateway-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys-config/src/main/resources/server/auth-center-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys-config/src/main/resources/server/client-chem-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys-config/src/main/resources/server/client-finance-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys-config/src/main/resources/server/client-time-coin-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys-config/src/main/resources/server/user-service-provider.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-chem/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-chem/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys-config/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sys-config/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys-config/src/main/resources/native/client-finance-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sys-config/src/main/resources/native/client-finance-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys-config/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sys-config/target/classes/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys-config/target/classes/native/client-finance-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sys-config/target/classes/native/client-finance-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/back-support/target/" />
@@ -72,8 +68,8 @@
       <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sys-config/src/main/resources/bootstrap.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="540">
+              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -143,9 +139,7 @@
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/native/api-gateway-dev.yml" />
-        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/native/user-service-provider.yml" />
-        <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/user-service-provider/pom.xml" />
         <option value="$PROJECT_DIR$/client-time-coin/pom.xml" />
         <option value="$PROJECT_DIR$/client-finance/pom.xml" />
@@ -162,10 +156,7 @@
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/native/client-time-coin-dev.yml" />
-        <option value="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/api-gateway/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/client-chem/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/native/client-chem-dev.yml" />
         <option value="$PROJECT_DIR$/client-chem/src/main/java/com/hao/chem/ChemClientApplication.java" />
         <option value="$PROJECT_DIR$/client-chem/pom.xml" />
@@ -176,6 +167,11 @@
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/server/client-finance-dev.yml" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/server/client-time-coin-dev.yml" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/server/user-service-provider.yml" />
+        <option value="$PROJECT_DIR$/client-chem/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/bootstrap.yml" />
       </list>
     </option>
@@ -235,6 +231,58 @@
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-config" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-config" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-config" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -554,12 +602,12 @@
       <workItem from="1545118156144" duration="8197000" />
       <workItem from="1545183023737" duration="7222000" />
       <workItem from="1545191241076" duration="2103000" />
-      <workItem from="1545201591417" duration="1315000" />
+      <workItem from="1545201591417" duration="3731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411494000" />
+    <option name="totallyTimeSpent" value="413910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,10 +641,10 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49839056" weight="0.16331096" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32913166" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" visible="true" weight="0.38590604" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49892703" visible="true" weight="0.21140939" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32913166" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32913166" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24624464" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24624464" />
       <window_info anchor="bottom" id="Problems" order="15" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" sideWeight="0.5026042" side_tool="true" weight="0.2716763" />
@@ -685,20 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-config/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/coin/TimeCoin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -783,13 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-config/src/main/resources/native/client-time-coin-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -826,24 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/hao/api/gateway/ApiGatewayApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -884,13 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-chem/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -955,6 +961,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sys-config/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-chem/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -964,8 +1012,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-config/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="540">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
         </state>
       </provider>
     </entry>
