@@ -30,6 +30,7 @@
 	  <module>remote-api</module>
 	  <module>api-gateway</module>
 	  <module>client-chem</module>
+      <module>sys-config</module>
   </modules>
   
   

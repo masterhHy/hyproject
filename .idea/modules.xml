@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/hyproject.iml" filepath="$PROJECT_DIR$/hyproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/remote-api/remote-api.iml" filepath="$PROJECT_DIR$/remote-api/remote-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/splider-center/splider-center.iml" filepath="$PROJECT_DIR$/splider-center/splider-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-config/sys-config.iml" filepath="$PROJECT_DIR$/sys-config/sys-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service-provider/user-service-provider.iml" filepath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/wx-mp/wx-mp.iml" filepath="$PROJECT_DIR$/wx-mp/wx-mp.iml" />
     </modules>

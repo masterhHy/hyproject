@@ -1,9 +1,11 @@
 package com.hao.common.entity.user;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
 public class SysUser implements Serializable {
+    @Id
     private String id;
 
     private String createdBy;

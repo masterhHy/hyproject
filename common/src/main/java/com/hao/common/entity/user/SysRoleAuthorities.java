@@ -1,8 +1,10 @@
 package com.hao.common.entity.user;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 
 public class SysRoleAuthorities implements Serializable {
+    @Id
     private String id;
     private String sysRoleId;
 

@@ -16,6 +16,7 @@
         <module name="finance-client" />
         <module name="remote-api" />
         <module name="splider-center" />
+        <module name="sys-config" />
         <module name="time-coin-client" />
         <module name="user-service-provider" />
         <module name="wx-mp" />
@@ -36,6 +37,7 @@
       <module name="hyproject" target="1.8" />
       <module name="remote-api" target="1.8" />
       <module name="splider-center" target="1.8" />
+      <module name="sys-config" target="1.8" />
       <module name="time-coin-client" target="1.8" />
       <module name="user-service-provider" target="1.8" />
       <module name="wx-mp" target="1.8" />

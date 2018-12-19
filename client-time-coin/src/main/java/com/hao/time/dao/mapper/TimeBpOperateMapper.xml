@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hao.time.dao.TimeBpOperateMapper">
-  <resultMap id="BaseResultMap" type="com.hao.time.entity.TimeBpOperate">
+  <resultMap id="BaseResultMap" type="com.hao.common.entity.coin.TimeBpOperate">
     <!--
       WARNING - @mbg.generated
     -->

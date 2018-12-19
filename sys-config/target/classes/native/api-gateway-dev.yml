@@ -1,15 +1,3 @@
-spring:
-  application:
-    name: api-gateway
-  cloud:
-    consul:
-      host: ${CONSUL_HOST:localhost}
-      port: ${CONSUL_PORT:8500}
-      discovery:
-        prefer-ip-address: true
-        health-check-path: ${server.servlet.context-path}actuator/health
-        tags: management.context-path=${server.servlet.context-path}
-        
 server:
   port: 18000
   servlet:

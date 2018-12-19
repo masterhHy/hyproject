@@ -74,6 +74,11 @@
 			<artifactId>remote-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!--config-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-client</artifactId>
+		</dependency>
 
 	</dependencies>
 

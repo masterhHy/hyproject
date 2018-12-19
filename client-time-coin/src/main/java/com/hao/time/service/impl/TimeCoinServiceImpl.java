@@ -1,15 +1,14 @@
 package com.hao.time.service.impl;
 
+import com.hao.common.entity.coin.TimeCoin;
 import com.hao.common.utils.UUID;
 import com.hao.time.dao.TimeCoinMapper;
-import com.hao.time.entity.TimeCoin;
 import com.hao.time.service.TimeCoinService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class TimeCoinServiceImpl extends BaseServiceImpl<TimeCoin> implements TimeCoinService {

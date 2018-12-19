@@ -1,8 +1,10 @@
-package com.hao.time.entity;
+package com.hao.common.entity.coin;
 
+import javax.persistence.Id;
 import java.util.Date;
 
 public class TimeCoin {
+    @Id
     private String id;
 
     /**

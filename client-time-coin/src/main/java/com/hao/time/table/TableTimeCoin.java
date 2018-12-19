@@ -1,4 +1,4 @@
-package com.hao.time.entity.table;
+package com.hao.time.table;
 
 import javax.persistence.*;
 import java.util.Date;

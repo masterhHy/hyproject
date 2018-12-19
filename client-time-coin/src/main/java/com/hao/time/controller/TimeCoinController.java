@@ -1,11 +1,10 @@
 package com.hao.time.controller;
 
 import com.hao.common.controller.BaseSpringController;
+import com.hao.common.entity.coin.TimeCoin;
 import com.hao.common.pojo.ResponseData;
-import com.hao.time.entity.TimeCoin;
 import com.hao.time.service.TimeCoinService;
-
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

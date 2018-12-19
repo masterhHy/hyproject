@@ -1,6 +1,8 @@
-package com.hao.time.entity.table;
+package com.hao.time.table;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity(name="time_bp")
