@@ -20,6 +20,11 @@
 		  <artifactId>common</artifactId>
 		  <version>0.0.1-SNAPSHOT</version>
 	  </dependency>
+	  <dependency>
+		  <groupId>com.hao</groupId>
+		  <artifactId>remote-api</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+	  </dependency>
 	  
 	  <!-- Mysql 驱动 -->
 	   <dependency>
@@ -38,6 +43,15 @@
 	  <dependency>
 		  <groupId>org.springframework.boot</groupId>
 		  <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	  </dependency>
+	  <!--应用健康管理 及服务注册-->
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-actuator</artifactId>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.springframework.cloud</groupId>
+		  <artifactId>spring-cloud-starter-consul-discovery</artifactId>
 	  </dependency>
 	  <!--config-->
 	  <dependency>

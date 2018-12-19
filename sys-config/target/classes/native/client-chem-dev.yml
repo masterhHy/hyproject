@@ -1,23 +1,7 @@
 
 server:
-  port: 9080
-  
-  
+  port: 9082
 spring:
-  application:
-    name: client-finance
-  redis:
-    database: 0
-    host: ${REDIS_HOST:localhost}
-    port: ${REDIS_PORT:6379}
-  cloud:
-        consul:
-          host: ${CONSUL_HOST:localhost}
-          port: ${CONSUL_PORT:8500}
-          discovery:
-            prefer-ip-address: true
-            health-check-path: /actuator/health
-            tags: management.context-path=/
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
@@ -47,14 +31,16 @@ spring:
         reset-enable: false
         login-username: sysadmin
         login-password: "000000"
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  config-location: classpath:mybatis-config.xml
-  
+  thymeleaf:
+        prefix: classpath:/templates/
+        suffix: .html
+        mode: HTML5
+        encoding: UTF-8
+        cache: false
 
 
 logging:
-  file: logs/finance-client.log
+  file: logs/client-chem.log
   
 
     

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-gateway
+    name: client-finance
   profiles:
     active: dev
   cloud:
