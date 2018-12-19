@@ -1,12 +1,16 @@
-
 server:
-  port: 9082
+  port: 9081
 spring:
+  jpa:
+      show-sql: false
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate:
+        ddl-auto: update
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: root
+      password: haomaria
       driver-class-name: com.mysql.jdbc.Driver
       max-active: 20
       initial-size: 1
@@ -31,16 +35,16 @@ spring:
         reset-enable: false
         login-username: sysadmin
         login-password: "000000"
-  thymeleaf:
-        prefix: classpath:/templates/
-        suffix: .html
-        mode: HTML5
-        encoding: UTF-8
-        cache: false
-
+mybatis:
+  mapper-locations: classpath:com/hao/time/dao/mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+  
+  
+  
 
 logging:
-  file: logs/client-chem.log
+  file: logs/time-coin-client.log
+
   
 
     

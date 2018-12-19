@@ -23,14 +23,6 @@ spring:
           search-locations: classpath:/native/
       fail-fast: true
 
----
-spring:
-  profiles: server
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:/server/
-      fail-fast: true
+
 
 

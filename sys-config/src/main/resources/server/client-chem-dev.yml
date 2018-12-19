@@ -1,17 +1,12 @@
+
 server:
-  servlet:
-    context-path: /auth
-  port: 18001
+  port: 9082
 spring:
-  redis:
-    database: 0
-    host: ${REDIS_HOST:localhost}
-    port: ${REDIS_PORT:6379}
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: root
+      password: haomaria
       driver-class-name: com.mysql.jdbc.Driver
       max-active: 20
       initial-size: 1
@@ -26,7 +21,7 @@ spring:
       pool-prepared-statements: true
       max-open-prepared-statements: 20
       filters: stat, wall
-
+      
       # 监控配置
       web-stat-filter:
         url-pattern: /*
@@ -36,16 +31,18 @@ spring:
         reset-enable: false
         login-username: sysadmin
         login-password: "000000"
-  jpa:
-          show-sql: false
-          database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-          hibernate:
-            ddl-auto: update
-  freemarker:
-      request-context-attribute: request
-      cache: true
-  mvc:
-    view:
-      prefix: /pages/
+  thymeleaf:
+        prefix: classpath:/templates/
+        suffix: .html
+        mode: HTML5
+        encoding: UTF-8
+        cache: false
+
+
 logging:
-  file: logs/auth-center.log
+  file: logs/client-chem.log
+  
+
+    
+    
+    

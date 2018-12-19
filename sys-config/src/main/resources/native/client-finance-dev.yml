@@ -8,14 +8,6 @@ spring:
     database: 0
     host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}
-  cloud:
-        consul:
-          host: ${CONSUL_HOST:localhost}
-          port: ${CONSUL_PORT:8500}
-          discovery:
-            prefer-ip-address: true
-            health-check-path: /actuator/health
-            tags: management.context-path=/
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
