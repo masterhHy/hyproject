@@ -1,3 +1,9 @@
+httpconfig:
+  useProxy: false
+  proxyUser: HUG2FWBK5466GLCP
+  proxyPass: B0E4C55F8259D727
+  proxyHost: http-pro.abuyun.com
+  proxyPort: 9010
 spring:
   application:
     name: client-finance

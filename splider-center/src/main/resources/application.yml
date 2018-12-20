@@ -19,7 +19,7 @@ spring:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: haomaria
+      password: root
       driver-class-name: com.mysql.jdbc.Driver
       max-active: 50
       initial-size: 5
