@@ -27,7 +27,7 @@ public class ScheduledMain {
 	/表示 每隔多少执行
 	*/
 	//每隔5秒执行一次：*/5 * * * * ?
-	@Scheduled(cron="0 50 16 * * ? ")//每个星期天凌晨三点执行
+	@Scheduled(cron="0 0 3 ? * SUN ")//每个星期天凌晨三点执行
 	@Async
 	public void financeRun(){
 		financeSpliderTask.run();
