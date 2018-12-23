@@ -42,7 +42,13 @@
 		.news-bg{
 			background-image: url("/img/index/111.png");
 		}
-
+		.svg-text {
+                  stroke: #fff;
+                  stroke-width: 1;
+                  font-size: 35px;
+                  text-anchor: middle;  /* 文本水平居中 */
+                  dominant-baseline: middle; /* 文本垂直居中 */
+            }
     </style>
 </head>
 <body >
@@ -133,12 +139,117 @@
 						<img src="http://www.zhiyi-chem.com/statics/images/zy/sy/20.png" >
 					</div>
 					<div >
-						<svg id="sketchpad" style="width: 20%;" preserveAspectRatio="xMinYMin meet" viewBox="0,0,100,86">
-						    <polygon points="25,0 75,0 100,43 75,86 25,86 0,43"
-									style="fill:#cccccc;
-									stroke:#000000;stroke-width:1"/>
-
+						<svg id="sketchpad" style="width: 100%;" preserveAspectRatio="xMinYMin meet" viewBox="0,0,1600,693">
+						    <defs>
+						        <pattern id="img1" patternUnits="userSpaceOnUse" width="400" height="346" x="0" y="173">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg"  width="400" height="346" />
+						        	<g fill-opacity="0.5">
+						        		<rect width="400" height="346" fill="#009900" />
+						        		<text  x="200" y="173"  class="svg-text">受阻酚抗氧剂</text>
+						        	</g>
+						        </pattern>
+						        <pattern id="img2" patternUnits="userSpaceOnUse" width="400" height="346" x="300" y="346">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg"  width="400" height="346" />
+						        	<g fill-opacity="0.5">
+						        		<rect width="400" height="346" fill="#009900" />
+						        		<text  x="200" y="173" fill="white" class="svg-text">亚磷酸酯抗氧剂</text>
+						        	</g>
+						        </pattern>
+						        <pattern id="img3" patternUnits="userSpaceOnUse" width="400" height="346" x="300" y="0">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg"  width="400" height="346" />
+						        	<g fill-opacity="0.5">
+						        		<rect width="400" height="346" fill="#009900" />
+						        		<text  x="200" y="173" fill="white" class="svg-text">紫外线吸收剂</text>
+						        	</g>
+						        </pattern>
+						        <pattern id="img4" patternUnits="userSpaceOnUse" width="400" height="346" x="600" y="173">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg" width="400" height="346" />
+						        	
+						        </pattern>
+						        <pattern id="img5" patternUnits="userSpaceOnUse" width="400" height="346" x="900" y="346">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg"  width="400" height="346" />
+						        	<g fill-opacity="0.5">
+						        		<rect width="400" height="346" fill="#009900" />
+						        		<text  x="200" y="173" fill="white" class="svg-text">光稳定剂</text>
+						        	</g>
+						        </pattern>
+						        <pattern id="img6" patternUnits="userSpaceOnUse" width="400" height="346" x="900" y="0">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg"  width="400" height="346" />
+						        	<g fill-opacity="0.5">
+						        		<rect width="400" height="346" fill="#009900" />
+						        		<text  x="200" y="173" fill="white" class="svg-text">特殊助剂</text>
+						        	</g>
+						        </pattern>
+						        <pattern id="img7" patternUnits="userSpaceOnUse" width="400" height="346" x="1200" y="173">
+						            <image xlink:href="http://www.zhiyi-chem.com/uploadfile/2016/1210/20161210020426300.jpg"  width="400" height="346" />
+						        	<g fill-opacity="0.5">
+						        		<rect width="400" height="346" fill="#009900" />
+						        		<text  x="200" y="173" fill="white" class="svg-text">阻燃剂</text>
+						        	</g>
+						        </pattern>
+						    </defs>
+						    
+						    <g >
+							    <!-- 第一个外置 -->
+							    <polygon points="0,346 100,520 300,520 400,346 300,173 100,173"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0" />
+							    <!-- 内置 -->
+							    <a href="javascirpt:;" class="js_hover" >
+							     <polygon  points="20,346 110,503 290,503 380,346 290,190 110,190"
+										style="stroke:#fff;stroke-width:5;" fill="url(#img1)"/> 
+							    </a>
+							    
+							    <!-- 第二个外置 -->
+							    <polygon points="300,520 400,693 600,693 700,520 600,346 400,346"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0"/>
+								 <!-- 内置 -->
+								 <a href="javascirpt:;" class="js_hover" >
+								     <polygon  points="320,520 410,676 590,676 680,520 590,363 410,363"
+											style="stroke:#fff;stroke-width:5;" fill="url(#img2)"/> 
+								 </a>
+										
+							    <!-- 第三个外置 -->
+							    <polygon points="300,173 400,346 600,346 700,173 600,0 400,0"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0"/>
+								 <!-- 内置 -->
+								 <a href="javascirpt:;" class="js_hover" >
+								     <polygon  points="320,173 410,329 590,329 680,173 590,17 410,17"
+											style="stroke:#fff;stroke-width:5;" fill="url(#img3)"/> 
+							     </a>
+							    <!-- 第四个外置 -->
+							    <polygon points="600,346 700,520 900,520 1000,346 900,173 700,173"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0"/>
+							    <!-- 内置 -->
+						    	<polygon class="js_hover" points="620,346 710,503 890,503 980,346 890,190 710,190"
+									style="stroke:#fff;stroke-width:5;" fill="url(#img4)"/>
+									
+							    <!-- 第五个外置 -->
+							    <polygon points="900,520 1000,693 1200,693 1300,520 1200,346 1000,346"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0"/>
+								<!-- 内置 -->
+								<a href="javascirpt:;" class="js_hover" >
+									<polygon  points="920,520 1010,676 1190,676 1280,520 1190,363 1010,363"
+											style="stroke:#fff;stroke-width:5;" fill="url(#img5)"/>
+							    </a>
+							    <!-- 第六个外置 -->
+							    <polygon points="900,173 1000,346 1200,346 1300,173 1200,0 1000,0"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0"/>
+							    <!-- 内置 -->
+								<a href="javascirpt:;" class="js_hover" >
+								    <polygon  points="920,173 1010,329 1190,329 1280,173 1190,17 1010,17"
+											style="stroke:#fff;stroke-width:5;" fill="url(#img6)"/>
+								</a>		
+							    <!-- 第七个外置 -->
+							    <polygon points="1200,346 1300,520 1500,520 1600,346 1500,173 1300,173"
+										style="stroke:#fff;stroke-width:3;" fill-opacity="0"/> 
+								<!-- 内置 -->
+								<a href="javascirpt:;" class="js_hover" >
+									<polygon points="1220,346 1310,503 1490,503 1580,346 1490,190 1310,190"
+											style="stroke:#fff;stroke-width:5;" fill="url(#img7)"/>
+						    	</a>
+						    </g>
 						</svg>
+						
 						
 					</div>
 				</div>
@@ -148,7 +259,6 @@
 			</div>
 		</div>
 	</div>	
-		
 
     <div th:replace="pages/appearance/footer::footer" ></div>
 </body>
@@ -157,6 +267,74 @@
 <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
-    })
+    });
+    $(".js_hover").mouseenter(function(){
+    	var ix=-1;//获取第几个
+    	var _this=this;
+    	$(".js_hover").each(function(i){
+    		if(_this==this){
+    			ix=(i+1);
+    			return false;
+    		}
+    	});
+    	$("#img"+ix).find("g").find("text").attr("visibility","hidden");
+    	$("#img"+ix).find("g").attr("fill-opacity",0);
+    }).mouseleave(function(){
+    	var ix=-1;//获取第几个
+    	var _this=this;
+    	$(".js_hover").each(function(i){
+    		if(_this==this){
+    			ix=(i+1);
+    			return false;
+    		}
+    	});
+    	$("#img"+ix).find("g").find("text").attr("visibility","");
+    	$("#img"+ix).find("g").attr("fill-opacity",0.5);
+    });
+    
+   /*  var strArr=['0,346 100,520 300,520 400,346 300,173 100,173',
+                '300,520 400,693 600,693 700,520 600,346 400,346',
+                '300,173 400,346 600,346 700,173 600,0 400,0',
+                '600,346 700,520 900,520 1000,346 900,173 700,173',
+                '900,520 1000,693 1200,693 1300,520 1200,346 1000,346',
+                '900,173 1000,346 1200,346 1300,173 1200,0 1000,0',
+                '1200,346 1300,520 1500,520 1600,346 1500,173 1300,173'
+                ]
+    for(var six in strArr){
+	    var str =strArr[six];
+	    var nstr="";
+	    var arr = str.split(" ");
+	    var pad=20;
+	    var gen=Math.pow(3,0.5)/2
+	    for(var ix in arr){
+	    	var xy = arr[ix].split(",");
+	    	var x= xy[0]-0;
+	    	var y= xy[1]-0;
+	    	if(ix==0){
+	    		x=(x+pad);
+	    		y=y;
+	    	}else if(ix==1){
+	    		x=(x+pad/2);
+	    		y=(y-pad*gen);
+	    	}else if(ix==2){
+	    		x=(x-pad/2);
+	    		y=(y-pad*gen);
+	    	}else if(ix==3){
+	    		x=(x-pad);
+	    		y=(y);
+	    	}else if(ix==4){
+	    		x=(x-pad/2);
+	    		y=(y+pad*gen);
+	    	}else if(ix==5){
+	    		x=(x+pad/2);
+	    		y=(y+pad*gen);
+	    	}
+	    	x=x.toFixed(0);
+	    	y=y.toFixed(0);
+	    	nstr+=(x+","+y+" ");
+	    }
+	    console.log(nstr);
+    	
+    } */
 </script>
 </html>
