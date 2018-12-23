@@ -80,3 +80,6 @@
 /client-chem/logs
 /api-gateway/logs
 /sys-config/target
+/sys-config/.settings
+/sys-config/.classpath
+/sys-config/*.project
