@@ -1,20 +1,32 @@
 package com.hao.authcenter.web;
 
+import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.common.controller.BaseSpringController;
+import com.hao.common.entity.user.SysUser;
+import com.hao.common.pojo.ResponseData;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
-public class MvcController {
-
+public class MvcController extends BaseSpringController {
+    @Autowired
+    private UserServiceClient userServiceClient;
 
     /**
      * 登出回调
@@ -54,9 +66,82 @@ public class MvcController {
         return new ModelAndView("authorize", model);
     }
     @GetMapping(value="/login")
-    public String login() {
-    	return "login";
+    public ModelAndView login(ModelAndView model) {
+
+        model.setViewName("web_login");
+        model.addObject("isMobile",this.isMobile());
+    	return model;
     }
+
+    @RequestMapping(value="/open/checkUsername")
+    @ResponseBody
+    public ResponseData<Map<String,Object>> checkUsername(String username) {
+        ResponseData<Map<String,Object>> res = new ResponseData<>();
+        if(StringUtils.isNotBlank(username)){
+            SysUser user =userServiceClient.getUserByUsername(username).getData();
+            if(user==null){
+                res.setStatus(true);
+            }else{
+                res.setStatus(false);
+                res.setMessage("该用户已存在");
+            }
+        }else {
+            res.setStatus(false);
+            res.setMessage("用户名不能为空");
+        }
+
+
+        return res;
+    }
+    @RequestMapping(value="/open/register")
+    @ResponseBody
+    public ResponseData<Map<String,Object>> register( String username, String password, String code,String moduel) {
+        ResponseData<Map<String,Object>> res = new ResponseData<>();
+        if(StringUtils.isNotBlank(username)&&StringUtils.isNotBlank(password)){
+            ResponseData checkCode = this.checkCode(username,code,moduel);
+            if(checkCode.getStatus()){
+                SysUser user  = new SysUser();
+                user.setUsername(username);
+                BCryptPasswordEncoder bc = new BCryptPasswordEncoder(6);
+                user.setPassword(bc.encode(password));
+                userServiceClient.register(user);
+                res.setMessage("注册成功");
+            }else{
+                res.setMessage(checkCode.getMessage());
+
+            }
+            res.setStatus( checkCode.getStatus());
+
+        }else {
+            res.setStatus(false);
+            res.setMessage("用户名或密码不能为空");
+        }
+
+
+        return res;
+    }
+
+    @RequestMapping(value="/open/getCode")
+    @ResponseBody
+    public ResponseData<Map<String,Object>> getCode( String username, String moduel) {
+        ResponseData<Map<String,Object>> res = new ResponseData<>();
+        if(StringUtils.isNotBlank(username)){
+            String randomCode =(int)((Math.random()*9+1)*100000)+"";
+            //发送验证码
+
+            //.....
+            randomCode="123456";
+            this.saveCode(username,randomCode,moduel);
+            res.setStatus(true);
+        }else {
+            res.setStatus(false);
+            res.setMessage("用户名不能为空");
+        }
+
+
+        return res;
+    }
+
 
     /**
      * 主页

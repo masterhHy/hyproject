@@ -10,6 +10,7 @@ import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
 import com.hao.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -48,6 +49,14 @@ public class UserController extends BaseSpringController implements UserServiceR
         return res;
     }
 
+    public ResponseData<SysUser> register(@RequestBody SysUser user) {
+        System.out.println(user);
+        userService.registUser(user);
+        ResponseData<SysUser> res = new ResponseData<>();
+        res.setData(user);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
 
 
 }

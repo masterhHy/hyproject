@@ -1,13 +1,17 @@
 package com.hao.user.service.impl;
 
-import com.hao.common.entity.user.*;
-import com.hao.user.dao.*;
+import com.hao.common.entity.user.SysUser;
+import com.hao.common.entity.user.SysUserRoles;
+import com.hao.common.utils.UUID;
+import com.hao.user.dao.SysUserMapper;
+import com.hao.user.dao.SysUserRolesMapper;
 import com.hao.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.net.URI;
 import java.util.Date;
 
 @Service
@@ -16,7 +20,8 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 	@Autowired
 	private SysUserMapper userMapper;
 
-	
+	@Autowired
+	private SysUserRolesMapper sysUserRolesMapper;
 
 	@PostConstruct
 	public void initSysUser() {
@@ -40,7 +45,22 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		
 	}
 
-	
+	public void registUser(SysUser user) {
+		//注册用户
+		user.setId(UUID.uuid32());
+		user.setCreatedDate(new Date());
+		user.setIsEnable("Y");
+		user.setPhone(user.getUsername());
+		user.setFirstName(UUID.dealPhone(user.getUsername()));
+		userMapper.insertSelective(user);
+		//添加基础角色
+		SysUserRoles ur = new SysUserRoles();
+		ur.setId(UUID.uuid32());
+		ur.setRolesId("1");
+		ur.setSysUserId(user.getId());
+		sysUserRolesMapper.insert(ur);
+
+	}
 
 
 }

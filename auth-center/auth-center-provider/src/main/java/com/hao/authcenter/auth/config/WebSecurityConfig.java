@@ -30,7 +30,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/css/**","/js/**",
                 "/favicon.ico","/webjars/**",
                 "/images/**",
-                "/refresh","/oauth/deleteToken","/oauth/token_key",
+                "/img/**",
+                "/refresh","/oauth/deleteToken","/oauth/token_key","/open/**",
                 "/backReferer","/actuator/**"
         };
        http

@@ -8,4 +8,6 @@ import java.util.List;
 public interface RoleService extends BaseService<SysRole> {
 
 	public List<SysRole> getRoleByUserId(String userId);
+
+	public void initSysRole();
 }

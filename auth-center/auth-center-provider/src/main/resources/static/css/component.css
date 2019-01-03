@@ -1,0 +1,155 @@
+/* Header */
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+.demo-1 .large-header {
+	background-image: url('../img/demo-1-bg.jpg');
+}
+.logo_box{
+	width: 400px;
+	height: 600px;
+	padding: 35px;
+	color: #EEE;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	margin-left: -200px;
+	margin-top: -300px;
+	overflow: hidden;
+}
+.logo_box h3{
+	text-align: center;
+	height: 20px;
+	font: 20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	color: #FFFFFF;
+	height: 20px;
+	line-height: 20px;
+	padding:0 0 35px 0; 
+}
+.forms{
+	width: 280px;
+	height: 485px;
+}
+.logon_inof{
+	width: 100%;
+	min-height: 450px;
+	padding-top: 35px;
+	position: relative;
+}		
+.input_outer{
+	height: 46px;
+	padding: 0 5px;
+	margin-bottom: 30px;
+	border-radius: 50px;
+	position: relative;
+	border: rgba(255,255,255,0.2) 2px solid !important;
+}
+.u_user{
+	width: 25px;
+	height: 25px;
+	background: url(../img/login_ico.png);
+	background-position:  -125px 0;
+	position: absolute;
+	margin: 10px 13px;
+}
+.us_uer{
+	width: 25px;
+	height: 25px;
+	background-image: url(../img/login_ico.png);
+	background-position: -125px -34px;
+	position: absolute;
+	margin: 10px 13px;
+}
+.code_uer{
+	width: 25px;
+	height: 25px;
+	background-image: url(../img/login_ico.png);
+	background-position: -85px 2px;;
+	position: absolute;
+	margin: 10px 13px;
+}
+
+.l-login{
+	position: absolute;
+	z-index: 1;
+	left: 50px;
+	top: 0;
+	height: 46px;
+	font: 14px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+	line-height: 46px;
+}
+.text{
+	width: 220px;
+	height: 46px;
+	outline: none;
+	display: inline-block;
+	font: 14px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+	margin-left: 50px;
+	border: none;
+	background: none;
+	line-height: 46px;
+}
+/*///*/
+.mb2{
+	margin-bottom: 20px
+}
+.mb2 a{
+	text-decoration: none;
+	outline: none;
+}
+.submit {
+	padding: 15px;
+	margin-top: 20px;
+	display: block;
+}
+.act-but{
+	line-height: 20px;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 50px;
+	background: #0096e6;
+}
+.ui.red.message {
+	background-color: #FFE8E6;
+	color: #DB2828;
+	box-shadow: 0 0 0 1px #DB2828 inset,0 0 0 0 transparent;
+}
+.ui.message {
+	position: relative;
+	min-height: 1em;
+	margin: 1em 0;
+	margin-bottom: 1em;
+	background: #F8F8F9;
+	background-color: rgb(248, 248, 249);
+	padding: 1em 1.5em;
+	line-height: 1.4285em;
+	color: rgba(0,0,0,.87);
+	-webkit-transition: opacity .1s ease,color .1s ease,background .1s ease,box-shadow .1s ease;
+	transition: opacity .1s ease,color .1s ease,background .1s ease,box-shadow .1s ease;
+	border-radius: .28571429rem;
+	box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset,0 0 0 0 transparent;
+	font-size: 1em;
+}
+.register{
+	font-size: 16px;
+	cursor: pointer;
+	position: absolute;
+	right: 0px;
+}
+.getCode {
+	line-height: 34px;
+	position: absolute;
+	right: 22px;
+	background-color: #0096e6;
+	top: 4px;
+	padding: 0px 10px;
+	font-size: 15px;
+	cursor: pointer;
+}
