@@ -50,7 +50,6 @@ public class UserController extends BaseSpringController implements UserServiceR
     }
 
     public ResponseData<SysUser> register(@RequestBody SysUser user) {
-        System.out.println(user);
         userService.registUser(user);
         ResponseData<SysUser> res = new ResponseData<>();
         res.setData(user);

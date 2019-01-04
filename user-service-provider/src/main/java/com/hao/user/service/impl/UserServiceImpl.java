@@ -6,6 +6,7 @@ import com.hao.common.utils.UUID;
 import com.hao.user.dao.SysUserMapper;
 import com.hao.user.dao.SysUserRolesMapper;
 import com.hao.user.service.UserService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -47,7 +48,9 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 
 	public void registUser(SysUser user) {
 		//注册用户
-		user.setId(UUID.uuid32());
+		if(StringUtils.isBlank(user.getId())){
+			user.setId(UUID.uuid32());
+		}
 		user.setCreatedDate(new Date());
 		user.setIsEnable("Y");
 		user.setPhone(user.getUsername());

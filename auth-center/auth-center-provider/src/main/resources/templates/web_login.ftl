@@ -21,63 +21,75 @@
             <canvas id="demo-canvas"></canvas>
             <div class="logo_box">
                 <h3>欢迎你</h3>
-                <div class="js_loginbox" style="position: relative;top: 0px;">
-                    <form action="login" id="form" method="post" >
-                        <div class="input_outer">
-                            <span class="u_user"></span>
-                            <input id="username" name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
-                        </div>
-                        <div class="input_outer">
-                            <span class="us_uer"></span>
-                            <input id="password" name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
-                        </div>
-                        <div class="mb2" id="submit"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF">登录</a></div>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    </form>
-                    <div class="register js_go">
-                        去注册
-                    </div>
-                    <div>
-                    <#if RequestParameters.error?? && Session.SPRING_SECURITY_LAST_EXCEPTION??>
-                        <#if Session.SPRING_SECURITY_LAST_EXCEPTION.message == "Bad credentials">
-                            <div class="ui red message">
-                                密码错误
+                <div style="position: relative;width: 304px;margin: 0 auto">
+                    <div class="js_loginbox" style="position: absolute;">
+                        <form action="login" id="form" method="post" >
+                            <div class="input_outer">
+                                <span class="u_user"></span>
+                                <input id="username" name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
                             </div>
-                        <#else >
-                            <div class="ui red message">
-                                ${Session.SPRING_SECURITY_LAST_EXCEPTION.message}
+                            <div class="input_outer">
+                                <span class="us_uer"></span>
+                                <input id="password" name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+                            </div>
+                            <div class="mb2" id="submit"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF">登录</a></div>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </form>
+                        <div style="overflow: hidden">
+                            <div class="register js_go">
+                                去注册
+                            </div>
+                        </div>
+                        <#if isWX>
+                            <div >
+                                <div class="line_01">快捷登录</div>
+                                <div style="text-align: center">
+                                    <img src="img/wx.png" width="40px" class="round-img js_wxlogin"  />
+                                </div>
                             </div>
                         </#if>
-                    </#if>
+                        <div>
+                            <#if RequestParameters.error?? && Session.SPRING_SECURITY_LAST_EXCEPTION??>
+                                <#if Session.SPRING_SECURITY_LAST_EXCEPTION.message == "Bad credentials">
+                                    <div class="ui red message">
+                                        密码错误
+                                    </div>
+                                <#else >
+                                    <div class="ui red message">
+                                        ${Session.SPRING_SECURITY_LAST_EXCEPTION.message}
+                                    </div>
+                                </#if>
+                            </#if>
 
+                        </div>
                     </div>
-                </div>
-                <div class="js_registerbox" style="position: relative;top: -242px;left: -370px;" >
-                    <form action="register" id="registerForm" method="post">
-                        <div class="input_outer">
-                            <span class="u_user"></span>
-                            <input  name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入手机号">
-                        </div>
-                        <div class="input_outer">
-                            <span class="us_uer"></span>
-                            <input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
-                        </div>
-                        <div class="input_outer">
-                            <span class="us_uer"></span>
-                            <input name="repassword" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请再次输入密码">
-                        </div>
-                        <div class="input_outer">
-                            <span class="code_uer"></span>
-                            <input id="code" name="code"  class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;width: 90px;"value="" placeholder="请输入验证码"  >
-                            <div class="getCode js_getCode">获取验证码</div>
-                        </div>
-                        <div class="mb2" id="go"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF">注册</a></div>
-                        <input type="hidden"  name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <div class="js_registerbox" style="position: absolute;left: -370px;" >
+                        <form action="register" id="registerForm" method="post">
+                            <div class="input_outer">
+                                <span class="u_user"></span>
+                                <input  name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入手机号">
+                            </div>
+                            <div class="input_outer">
+                                <span class="us_uer"></span>
+                                <input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+                            </div>
+                            <div class="input_outer">
+                                <span class="us_uer"></span>
+                                <input name="repassword" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请再次输入密码">
+                            </div>
+                            <div class="input_outer">
+                                <span class="code_uer"></span>
+                                <input id="code" name="code"  class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;width: 90px;"value="" placeholder="请输入验证码"  >
+                                <div class="getCode js_getCode">获取验证码</div>
+                            </div>
+                            <div class="mb2" id="go"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF">注册</a></div>
+                            <input type="hidden"  name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                    </form>
-                    <div class="ui red message js_registerErrorMsg" style="display: none"></div>
-                    <div class="register js_back">
-                        返回
+                        </form>
+                        <div class="ui red message js_registerErrorMsg" style="display: none"></div>
+                        <div class="register js_back">
+                            返回
+                        </div>
                     </div>
                 </div>
 
@@ -85,10 +97,13 @@
 
             </div>
 
+
+
         </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 <#if isMobile >
 <script>
 
@@ -250,6 +265,13 @@
 
 
     })
+
+    //微信登录
+    $(".js_wxlogin").click(function () {
+       var url ='https://open.weixin.qq.com/connect/oauth2/authorize?appid=${wxAppId}&redirect_uri=${redirectUrl}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
+        window.location.href=url;
+    });
+
 
 
 </script>

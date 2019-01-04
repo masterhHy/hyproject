@@ -1,6 +1,7 @@
 package com.hao.authcenter.web;
 
 import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.common.constant.WxConstant;
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
@@ -70,6 +71,9 @@ public class MvcController extends BaseSpringController {
 
         model.setViewName("web_login");
         model.addObject("isMobile",this.isMobile());
+        model.addObject("wxAppId",WxConstant.APP_ID);
+        model.addObject("redirectUrl",WxConstant.REDIRECT_URL);
+        model.addObject("isWX",this.isWxClient());
     	return model;
     }
 
@@ -121,6 +125,12 @@ public class MvcController extends BaseSpringController {
         return res;
     }
 
+    /**
+     * 获取手机验证码
+     * @param username
+     * @param moduel
+     * @return
+     */
     @RequestMapping(value="/open/getCode")
     @ResponseBody
     public ResponseData<Map<String,Object>> getCode( String username, String moduel) {
@@ -141,6 +151,21 @@ public class MvcController extends BaseSpringController {
 
         return res;
     }
+
+    /**
+     * 微信二维码登录
+     * @return
+     */
+    @RequestMapping(value="/open/wxqrcodeLogin")
+    @ResponseBody
+    public ResponseData<Map<String,Object>> wxqrcodeLogin(String code ) {
+        ResponseData<Map<String,Object>> res = new ResponseData<>();
+
+
+        return res;
+    }
+
+
 
 
     /**

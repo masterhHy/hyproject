@@ -86,6 +86,17 @@ public class BaseSpringController {
         return res ;
     }
 
+    public boolean isWxClient(){
+        HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+        String ua =  request.getHeader("user-agent").toLowerCase();
+        System.out.println(ua);
+        if (ua.indexOf("micromessenger") != -1) {// 是微信浏览器
+           return true;
+        }else{
+            return false;
+        }
+    }
+
 
 
 }
