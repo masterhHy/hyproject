@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" style="height: 100%" >
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +14,10 @@
     <![endif]-->
 
 </head>
-<body>
-<div class="container demo-1">
-    <div class="content">
-        <div id="large-header" class="large-header">
+<body class="full-height">
+<div class="container demo-1 full-height">
+    <div class="content full-height">
+        <div id="large-header" class="large-header full-height">
             <canvas id="demo-canvas"></canvas>
             <div class="logo_box">
                 <h3>欢迎你</h3>
@@ -91,9 +91,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <#if isMobile >
 <script>
-    height = window.innerHeight;
-    largeHeader = document.getElementById('large-header');
-    largeHeader.style.height = height+'px';
 
 </script>
 <#else >
