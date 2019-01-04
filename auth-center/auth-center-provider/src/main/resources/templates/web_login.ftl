@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>login</title>
+    <title>登录中心</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
     <!--必要样式-->
@@ -163,7 +163,7 @@
                             $("#username").val(username);
 
                         }else{
-                            $(".js_registerErrorMsg").html(res.message);
+                            $(".js_registerErrorMsg").html(res.message||"服务器出错了~");
                             $(".js_registerErrorMsg").show();
                         }
                     }

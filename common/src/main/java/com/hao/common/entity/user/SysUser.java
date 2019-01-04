@@ -31,6 +31,26 @@ public class SysUser implements Serializable {
 
     private String username;
 
+    private Integer registerSource;
+
+    private String headImg;
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
+
+    public Integer getRegisterSource() {
+        return registerSource;
+    }
+
+    public void setRegisterSource(Integer registerSource) {
+        this.registerSource = registerSource;
+    }
+
     /**
      * Y启用 N禁用
      */

@@ -29,4 +29,8 @@ public interface UserServiceRemote {
     public ResponseData<List<SysRole>> getRoleByUserId(@RequestParam("userId") String userId);
     @RequestMapping(value = "/user/register",method = RequestMethod.POST)
     public ResponseData<SysUser> register(@RequestBody SysUser user);
+    @RequestMapping(value = "/user/getUserByRecord",method = RequestMethod.POST)
+    public ResponseData<SysUser> getUserByRecord(@RequestBody SysUser user);
+    @RequestMapping(value = "/user/updateUserById",method = RequestMethod.POST)
+    public ResponseData<SysUser> updateUserById(@RequestBody SysUser user);
 }

@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
 import com.hao.common.utils.DateHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -12,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 public class BaseSpringController {
-
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
     public String getUserId(){
     	if(this.getUser()==null){
     		return null;
@@ -89,7 +91,6 @@ public class BaseSpringController {
     public boolean isWxClient(){
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         String ua =  request.getHeader("user-agent").toLowerCase();
-        System.out.println(ua);
         if (ua.indexOf("micromessenger") != -1) {// 是微信浏览器
            return true;
         }else{

@@ -43,6 +43,29 @@ public class TableSysUser  {
     @Column(columnDefinition="varchar(2) COMMENT 'Y启用 N禁用'")
     private String isEnable;
 
+    @Column(columnDefinition="int(2) COMMENT '注册来源 1 手机注册 2 微信注册'")
+    private Integer registerSource;
+
+
+    @Column(columnDefinition="varchar(255) COMMENT '用户头像'")
+    private String headImg;
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
+
+    public Integer getRegisterSource() {
+        return registerSource;
+    }
+
+    public void setRegisterSource(Integer registerSource) {
+        this.registerSource = registerSource;
+    }
+
     /**
      * @return id
      */

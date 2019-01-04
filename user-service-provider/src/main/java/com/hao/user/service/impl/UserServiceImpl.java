@@ -54,7 +54,9 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		user.setCreatedDate(new Date());
 		user.setIsEnable("Y");
 		user.setPhone(user.getUsername());
-		user.setFirstName(UUID.dealPhone(user.getUsername()));
+		if(StringUtils.isBlank(user.getFirstName())){
+			user.setFirstName(UUID.dealPhone(user.getUsername()));
+		}
 		userMapper.insertSelective(user);
 		//添加基础角色
 		SysUserRoles ur = new SysUserRoles();
@@ -62,6 +64,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		ur.setRolesId("1");
 		ur.setSysUserId(user.getId());
 		sysUserRolesMapper.insert(ur);
+
 
 	}
 

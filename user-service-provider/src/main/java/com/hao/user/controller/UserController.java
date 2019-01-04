@@ -57,5 +57,23 @@ public class UserController extends BaseSpringController implements UserServiceR
         return res;
     }
 
+    @Override
+    public ResponseData<SysUser> getUserByRecord(@RequestBody SysUser user) {
+        ResponseData<SysUser> res = new ResponseData<>();
+        res.setData(userService.selectOne(user));
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
+
+    @Override
+    public ResponseData<SysUser> updateUserById(@RequestBody SysUser user) {
+
+        ResponseData<SysUser> res = new ResponseData<>();
+        userService.updateByPrimaryKeySelective(user);
+        res.setData(user);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
+
 
 }
