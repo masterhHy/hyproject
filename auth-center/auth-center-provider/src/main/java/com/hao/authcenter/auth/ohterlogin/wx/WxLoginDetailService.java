@@ -13,6 +13,7 @@ import com.hao.authcenter.remote.UserServiceClient;
 import com.hao.common.constant.WxConstant;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.utils.HTTPUtils;
+import com.hao.common.utils.UUID;
 
 
 @Service
@@ -72,7 +73,10 @@ public class WxLoginDetailService extends BaseUserDetailService {
 			logger.error("",e);
 			throw new UsernameNotFoundException("授权失败!请重新授权");
 		}
-		
+		if(user!=null){
+			user.setUsername("temp-"+UUID.uuid32());
+			user.setPassword("temp-"+UUID.uuid32());
+		}
 		
 		
 		// 调用FeignClient查询用户

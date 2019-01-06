@@ -37,7 +37,6 @@ public class WxLoginAuthenticationFilter extends AbstractAuthenticationProcessin
 
         // 微信验证码登陆
         String principal = obtainParameter(request, SPRING_SECURITY_RESTFUL_PHONE_KEY);
-        System.out.println(principal+"------");
         principal = principal.trim();
         authRequest = new WxAuthenticationToken(principal);
 
