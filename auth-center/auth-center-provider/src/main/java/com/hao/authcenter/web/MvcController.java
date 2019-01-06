@@ -25,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
@@ -249,6 +250,7 @@ public class MvcController extends BaseSpringController {
                 .getPrincipal())
                 .getUsername();
         model.put("userName", userName);
+        model.put("client", new ArrayList<>());
         // 获取全部客户端应用
         return new ModelAndView("index", model);
     }
