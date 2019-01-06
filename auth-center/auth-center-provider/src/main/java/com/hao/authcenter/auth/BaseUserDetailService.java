@@ -1,9 +1,8 @@
 package com.hao.authcenter.auth;
 
-import com.hao.authcenter.remote.UserServiceClient;
-import com.hao.common.constant.DataBaseConstant;
-import com.hao.common.entity.user.SysAuthority;
-import com.hao.common.entity.user.SysUser;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,31 +12,30 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.common.constant.DataBaseConstant;
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysUser;
 
 
 /**
- * springSecurity 用到的实现类
+ * springSecurity 用到的实现基类
  */
-@Service
-public class BaseUserDetailService implements UserDetailsService {
+public abstract class BaseUserDetailService implements UserDetailsService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
     private UserServiceClient userService;
+    
     
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // 调用FeignClient查询用户
-        SysUser sysUser = userService.getUserByUsername(username).getData();
-
+    	SysUser sysUser = this.loadUser(username);
+    	
         if(sysUser == null){
             logger.error("找不到该用户，用户名：" + username);
             throw new UsernameNotFoundException("找不到该用户，用户名：" + username);
@@ -54,6 +52,8 @@ public class BaseUserDetailService implements UserDetailsService {
         return new BaseUserDetail(sysUser, user);
 
     }
+    
+    protected abstract SysUser loadUser(String key);
 
     private boolean isActive(String active){
         return "Y".equals(active) ? true : false;

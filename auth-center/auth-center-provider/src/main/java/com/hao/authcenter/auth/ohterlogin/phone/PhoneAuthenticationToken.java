@@ -17,18 +17,24 @@ public class PhoneAuthenticationToken  extends AbstractAuthenticationToken {
      */
     private final Object principal;
     /**
-     * 手机号
+     * 动态验证码
      */
     private final Object credentials;
+    
+    /**
+     * 验证码存放在那个空间
+     */
+    private String module;
 
     /**
      * PhoneLoginAuthenticationFilter中构建的未认证的Authentication
      * @param mobile
      */
-    public PhoneAuthenticationToken(String mobile,String verifyCode) {
+    public PhoneAuthenticationToken(String mobile,String verifyCode,String module) {
         super(null);
         this.principal = mobile;
         this.credentials = verifyCode;
+        this.module=module;
         
         setAuthenticated(false);
     }
@@ -73,4 +79,14 @@ public class PhoneAuthenticationToken  extends AbstractAuthenticationToken {
     public void eraseCredentials() {
         super.eraseCredentials();
     }
+
+	public String getModule() {
+		return module;
+	}
+
+	public void setModule(String module) {
+		this.module = module;
+	}
+    
+    
 }

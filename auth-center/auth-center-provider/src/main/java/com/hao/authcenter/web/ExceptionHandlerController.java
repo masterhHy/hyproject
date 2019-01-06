@@ -1,4 +1,4 @@
-package com.hao.time.exception;
+package com.hao.authcenter.web;
 
 import com.hao.common.controller.BaseExceptionHandlerController;
 import com.hao.common.pojo.ResponseData;

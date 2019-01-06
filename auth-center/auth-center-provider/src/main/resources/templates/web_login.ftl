@@ -167,7 +167,7 @@
                     url:"open/register",
                     dataType:"json",
                     type:"get",
-                    data:{username:username,password:password,code:code,moduel:"regist"},
+                    data:{username:username,password:password,code:code,module:"regist"},
                     success:function(res){
                     	load.stop();
                         if(res.status){
@@ -249,7 +249,7 @@
                 url:"open/getCode",
                 dataType:"json",
                 type:"get",
-                data:{username:username,moduel:"regist"},
+                data:{username:username,module:"regist"},
                 success:function(res){
                     if(res.status){
                         $(_this).removeClass("js_getCode");

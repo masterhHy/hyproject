@@ -103,10 +103,10 @@ public class MvcController extends BaseSpringController {
     }
     @RequestMapping(value="/open/register")
     @ResponseBody
-    public ResponseData<Map<String,Object>> register( String username, String password, String code,String moduel) {
+    public ResponseData<Map<String,Object>> register( String username, String password, String code,String module) {
         ResponseData<Map<String,Object>> res = new ResponseData<>();
         if(StringUtils.isNotBlank(password)&&CheckUtils.checkPhone(username)){
-            ResponseData checkCode = this.checkCode(username,code,moduel);
+            ResponseData checkCode = this.checkCode(username,code,module);
             if(checkCode.getStatus()){
             	SysUser data = userServiceClient.getUserByUsername(username).getData();
                 if(data==null){
@@ -150,7 +150,7 @@ public class MvcController extends BaseSpringController {
      */
     @RequestMapping(value="/open/getCode")
     @ResponseBody
-    public ResponseData<Map<String,Object>> getCode( String username, String moduel) {
+    public ResponseData<Map<String,Object>> getCode( String username, String module) {
         ResponseData<Map<String,Object>> res = new ResponseData<>();
         if(StringUtils.isNotBlank(username)){
             String randomCode =(int)((Math.random()*9+1)*100000)+"";
@@ -158,7 +158,7 @@ public class MvcController extends BaseSpringController {
 
             //.....
             randomCode="123456";
-            this.saveCode(username,randomCode,moduel);
+            this.saveCode(username,randomCode,module);
             res.setStatus(true);
 
         }else {

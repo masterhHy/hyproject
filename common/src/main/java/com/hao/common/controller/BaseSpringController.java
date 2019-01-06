@@ -61,18 +61,18 @@ public class BaseSpringController {
     /**
      *  按不同模块的验证码来保存验证信息，方便后台检验验证码
      */
-    public void saveCode(String phone,String code,String moduel){
+    public void saveCode(String phone,String code,String module){
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         HttpSession session = request.getSession();
         //1分钟过期
         Date expireTime = DateHelper.add(new Date(), 5, 1);
-        session.setAttribute(phone+code+moduel,expireTime);
+        session.setAttribute(phone+code+module,expireTime);
     }
 
-    public ResponseData checkCode(String phone, String code, String moduel){
+    public ResponseData checkCode(String phone, String code, String module){
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         HttpSession session = request.getSession();
-        Date time = (Date) session.getAttribute(phone+code+moduel);
+        Date time = (Date) session.getAttribute(phone+code+module);
         ResponseData res = new ResponseData();
         if(time==null){
             res.setStatus(false);
@@ -83,7 +83,7 @@ public class BaseSpringController {
         }else{
             res.setStatus(true);
             res.setMessage("验证码正确");
-            session.removeAttribute(phone+code+moduel);
+            session.removeAttribute(phone+code+module);
         }
         return res ;
     }

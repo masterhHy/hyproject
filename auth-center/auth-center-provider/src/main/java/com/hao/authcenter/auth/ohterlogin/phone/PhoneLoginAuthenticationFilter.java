@@ -20,6 +20,7 @@ public class PhoneLoginAuthenticationFilter extends AbstractAuthenticationProces
 
     private static final String SPRING_SECURITY_RESTFUL_PHONE_KEY = "phone";
     private static final String SPRING_SECURITY_RESTFUL_VERIFY_CODE_KEY = "verifyCode";
+    private static final String SPRING_SECURITY_RESTFUL_MODULE_KEY = "module";
 
     private static final String SPRING_SECURITY_RESTFUL_LOGIN_URL = "/phoneLogin";
     private boolean postOnly = true;
@@ -37,15 +38,14 @@ public class PhoneLoginAuthenticationFilter extends AbstractAuthenticationProces
         }
 
         AbstractAuthenticationToken authRequest;
-        String principal;
-        String credentials;
 
         // 手机验证码登陆
-        principal = obtainParameter(request, SPRING_SECURITY_RESTFUL_PHONE_KEY);
-        credentials = obtainParameter(request, SPRING_SECURITY_RESTFUL_VERIFY_CODE_KEY);
+        String principal = obtainParameter(request, SPRING_SECURITY_RESTFUL_PHONE_KEY);
+        String credentials = obtainParameter(request, SPRING_SECURITY_RESTFUL_VERIFY_CODE_KEY);
+        String  module = obtainParameter(request, SPRING_SECURITY_RESTFUL_MODULE_KEY);
 
         principal = principal.trim();
-        authRequest = new PhoneAuthenticationToken(principal, credentials);
+        authRequest = new PhoneAuthenticationToken(principal, credentials,module);
 
         // Allow subclasses to set the "details" property
         setDetails(request, authRequest);

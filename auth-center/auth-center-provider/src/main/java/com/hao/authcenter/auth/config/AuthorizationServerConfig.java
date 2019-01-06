@@ -2,6 +2,7 @@ package com.hao.authcenter.auth.config;
 
 
 import com.hao.authcenter.auth.BaseUserDetailService;
+import com.hao.authcenter.auth.UsernameLoginDetailService;
 import com.hao.authcenter.utils.JwtAccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +40,7 @@ import javax.sql.DataSource;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
-    private BaseUserDetailService userDetailsService;
+    private UsernameLoginDetailService userDetailsService;
 
     @Autowired
     private AuthenticationManager authenticationManager;
