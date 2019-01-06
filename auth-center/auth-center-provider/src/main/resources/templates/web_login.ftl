@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
     <!--必要样式-->
     <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/loading/loading.css" />
+    
     <!--[if IE]>
     <script src="js/html5.js"></script>
     <![endif]-->
@@ -104,6 +106,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script src="plugins/loading/loading.js"></script>
 <#if isMobile >
 <script>
 
@@ -117,6 +120,9 @@
 <script>
     $("#submit").click(function () {
         if ($("#username").val() && $("#password").val()) {
+        	var load = new Loading();
+        	load.init();
+    		load.start();
             $("#form").submit();
         }
     });
@@ -139,29 +145,36 @@
         if(!code){
             errorMsg="验证码不能为空";
         }
-
+        if(errorMsg){
+            $(".js_registerErrorMsg").html(errorMsg);
+            $(".js_registerErrorMsg").show();
+	        return ;
+        }
         checkUniquePhone(username,function(data){
             if(!data.res){
-                errorMsg = json.msg;
+                errorMsg = data.msg;
             }
-
+			
             if(errorMsg){
                 $(".js_registerErrorMsg").html(errorMsg);
                 $(".js_registerErrorMsg").show();
             }else{
                 //提交注册信息
+                var load = new Loading();
+	        	load.init();
+	    		load.start();
                 $.ajax({
                     url:"open/register",
                     dataType:"json",
                     type:"get",
                     data:{username:username,password:password,code:code,moduel:"regist"},
                     success:function(res){
+                    	load.stop();
                         if(res.status){
                             //注册成功后
                             $("input").not(":hidden").val("");
                             $(".js_back").trigger("click");
                             $("#username").val(username);
-
                         }else{
                             $(".js_registerErrorMsg").html(res.message||"服务器出错了~");
                             $(".js_registerErrorMsg").show();

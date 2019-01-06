@@ -6,6 +6,7 @@ import com.hao.common.constant.WxConstant;
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
+import com.hao.common.utils.CheckUtils;
 import com.hao.common.utils.HTTPUtils;
 import org.apache.commons.lang.StringUtils;
 import org.omg.PortableInterceptor.USER_EXCEPTION;
@@ -104,26 +105,37 @@ public class MvcController extends BaseSpringController {
     @ResponseBody
     public ResponseData<Map<String,Object>> register( String username, String password, String code,String moduel) {
         ResponseData<Map<String,Object>> res = new ResponseData<>();
-        if(StringUtils.isNotBlank(username)&&StringUtils.isNotBlank(password)){
+        if(StringUtils.isNotBlank(password)&&CheckUtils.checkPhone(username)){
             ResponseData checkCode = this.checkCode(username,code,moduel);
             if(checkCode.getStatus()){
-                SysUser user  = new SysUser();
-                user.setUsername(username);
-                BCryptPasswordEncoder bc = new BCryptPasswordEncoder(6);
-                user.setPassword(bc.encode(password));
-                user.setRegisterSource(1);
-                userServiceClient.register(user);
+            	SysUser data = userServiceClient.getUserByUsername(username).getData();
+                if(data==null){
+                	SysUser user  = new SysUser();
+                	user.setUsername(username);
+                	BCryptPasswordEncoder bc = new BCryptPasswordEncoder(6);
+                	user.setPassword(bc.encode(password));
+                	user.setRegisterSource(1);
+                	userServiceClient.register(user);
+                	res.setMessage("注册成功");
+                	
+                	res.setStatus( checkCode.getStatus());
+                }else{
+                	res.setMessage("该用户已存在");
+                	res.setStatus(false);
+                }
 
-                res.setMessage("注册成功");
             }else{
                 res.setMessage(checkCode.getMessage());
-
+                res.setStatus( checkCode.getStatus());
             }
-            res.setStatus( checkCode.getStatus());
 
         }else {
             res.setStatus(false);
-            res.setMessage("用户名或密码不能为空");
+            if(!CheckUtils.checkPhone(username)){
+            	res.setMessage("用户名不规范");
+            }else{
+            	res.setMessage("密码不能为空");
+            }
         }
 
 

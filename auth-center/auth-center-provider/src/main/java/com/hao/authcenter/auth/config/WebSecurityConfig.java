@@ -27,10 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         String [] arr = new String []{
-                "/css/**","/js/**",
+                "/css/**","/js/**","/plugins/**","/images/**","/img/**",
                 "/favicon.ico","/webjars/**",
-                "/images/**",
-                "/img/**",
                 "/refresh","/oauth/deleteToken","/oauth/token_key","/open/**",
                 "/backReferer","/actuator/**"
         };
