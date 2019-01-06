@@ -1,16 +1,14 @@
 package com.hao.authcenter.auth.ohterlogin.wx;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationServiceException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * 微信code登陆：
@@ -24,22 +22,22 @@ public class WxLoginAuthenticationFilter extends AbstractAuthenticationProcessin
     private boolean postOnly = true;
 
     public WxLoginAuthenticationFilter() {
-        super(new AntPathRequestMatcher(SPRING_SECURITY_RESTFUL_LOGIN_URL, "POST"));
+        super(new AntPathRequestMatcher(SPRING_SECURITY_RESTFUL_LOGIN_URL, "GET"));
     }
 
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        if (postOnly && !request.getMethod().equals("POST")) {
+        if (postOnly && !request.getMethod().equals("GET")) {
             throw new AuthenticationServiceException(
                     "Authentication method not supported: " + request.getMethod());
         }
 
         AbstractAuthenticationToken authRequest;
 
-        // 手机验证码登陆
+        // 微信验证码登陆
         String principal = obtainParameter(request, SPRING_SECURITY_RESTFUL_PHONE_KEY);
-
+        System.out.println(principal+"------");
         principal = principal.trim();
         authRequest = new WxAuthenticationToken(principal);
 
