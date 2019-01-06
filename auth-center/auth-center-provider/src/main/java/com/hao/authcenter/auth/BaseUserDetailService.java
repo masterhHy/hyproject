@@ -24,7 +24,7 @@ import com.hao.common.entity.user.SysUser;
  */
 public abstract class BaseUserDetailService implements UserDetailsService {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UserServiceClient userService;
     
@@ -53,7 +53,7 @@ public abstract class BaseUserDetailService implements UserDetailsService {
 
     }
     
-    protected abstract SysUser loadUser(String key);
+    protected abstract SysUser loadUser(String key) throws UsernameNotFoundException;
 
     private boolean isActive(String active){
         return "Y".equals(active) ? true : false;

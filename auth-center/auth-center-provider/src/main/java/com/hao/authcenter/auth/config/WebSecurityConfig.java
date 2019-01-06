@@ -16,6 +16,9 @@ import com.hao.authcenter.auth.UsernameLoginDetailService;
 import com.hao.authcenter.auth.ohterlogin.phone.PhoneAuthenticationProvider;
 import com.hao.authcenter.auth.ohterlogin.phone.PhoneLoginAuthenticationFilter;
 import com.hao.authcenter.auth.ohterlogin.phone.PhoneLoginDetailService;
+import com.hao.authcenter.auth.ohterlogin.wx.WxAuthenticationProvider;
+import com.hao.authcenter.auth.ohterlogin.wx.WxLoginAuthenticationFilter;
+import com.hao.authcenter.auth.ohterlogin.wx.WxLoginDetailService;
 
 
 /**
@@ -30,6 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UsernameLoginDetailService usernameLoginDetailService;
     @Autowired
     private PhoneLoginDetailService phoneLoginDetailService;
+    @Autowired
+    private WxLoginDetailService wxLoginDetailService;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -41,6 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         };
        http
        			.addFilterBefore(getPhoneLoginAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+       			.addFilterBefore(getWxLoginAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .formLogin().loginPage("/login").permitAll()
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/backReferer")
                 .and().authorizeRequests().antMatchers(arr).permitAll()
@@ -56,10 +62,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //基本账号密码登录
     	auth.userDetailsService(usernameLoginDetailService).passwordEncoder(new BCryptPasswordEncoder(6));
         //自定义登陆  注册
-        //电话号码 登陆
-        auth.authenticationProvider(phoneAuthenticationProvider());
+    	
+    	//电话号码 登陆
+    	auth.authenticationProvider(phoneAuthenticationProvider());
+    	//wx code 登陆
+    	auth.authenticationProvider(wxAuthenticationProvider());
     }
     
+    /**********************手机验证码登陆需要的类****************************************/
     @Bean
     public PhoneAuthenticationProvider phoneAuthenticationProvider(){
         PhoneAuthenticationProvider provider = new PhoneAuthenticationProvider();
@@ -81,7 +91,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler("/login?error"));
         return filter;
     }
-
+    /**************************************************************/
+    
+    /**********************微信code登陆****************************************/
+    @Bean
+    public WxAuthenticationProvider wxAuthenticationProvider(){
+    	WxAuthenticationProvider provider = new WxAuthenticationProvider();
+    	provider.setUserDetailsService(wxLoginDetailService);
+    	return provider;
+    }
+    @Bean
+    public WxLoginAuthenticationFilter getWxLoginAuthenticationFilter() {
+    	WxLoginAuthenticationFilter filter = new WxLoginAuthenticationFilter();
+    	try {
+    		filter.setAuthenticationManager(this.authenticationManagerBean());
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler("/login?error"));
+    	return filter;
+    }
+    /**************************************************************/
 
     
 

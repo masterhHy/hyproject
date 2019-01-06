@@ -1,9 +1,8 @@
 package com.hao.authcenter.auth.config;
 
 
-import com.hao.authcenter.auth.BaseUserDetailService;
-import com.hao.authcenter.auth.UsernameLoginDetailService;
-import com.hao.authcenter.utils.JwtAccessToken;
+import javax.sql.DataSource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import javax.sql.DataSource;
+import com.hao.authcenter.auth.UsernameLoginDetailService;
+import com.hao.authcenter.utils.JwtAccessToken;
 
 
 /**
