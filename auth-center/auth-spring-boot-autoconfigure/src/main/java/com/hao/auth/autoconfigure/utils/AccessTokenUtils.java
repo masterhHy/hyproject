@@ -51,7 +51,7 @@ public class AccessTokenUtils {
         if(redisUser==null){
             throw new InsufficientAuthenticationException("没登录访问保护资源");
         }
-        return user;
+        return redisUser;
     }
 
     public List<String> getAllProjectName(){

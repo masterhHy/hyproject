@@ -25,6 +25,7 @@ public class TimeCoinController extends BaseSpringController {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String today  = sdf.format(new Date());
         coin.setMarkDay(today);
+
         coin.setUserId(this.getUserId());
         timeCoinService.addOrUpdateCoin(coin);
         res.setMessage("操作成功");
