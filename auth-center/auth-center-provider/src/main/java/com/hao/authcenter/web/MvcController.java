@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -41,8 +40,10 @@ public class MvcController extends BaseSpringController {
         try {
             SysUser user = (SysUser) request.getSession().getAttribute("online-user");
             //删除服务器token
-            redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
-            redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-menu");
+            if(user!=null){
+                redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
+                redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-menu");
+            }
             request.getSession().removeAttribute("online-user");
             request.getSession().invalidate();
             //sending back to client app

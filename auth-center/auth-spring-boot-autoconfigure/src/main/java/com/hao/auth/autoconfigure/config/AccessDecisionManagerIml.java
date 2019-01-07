@@ -48,6 +48,15 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
         // 请求路径
         String url = getUrl(o);
 
+        // 不拦截的请求
+        for(String path : ignoreds){
+            String temp = path.trim();
+            if (matcher.match(temp, url)) {
+                return;
+            }
+        }
+
+        // URL 鉴权 先找出该url对应的项目 在进行鉴权
         List<String> projectNameList=  accessTokenUtils.getAllProjectName();
         String projectName="";
         for (String name : projectNameList){
@@ -60,15 +69,7 @@ public class AccessDecisionManagerIml  implements AccessDecisionManager {
             throw new AccessDeniedException("无权限");
         }
 
-        // 不拦截的请求
-        for(String path : ignoreds){
-            String temp = path.trim();
-            if (matcher.match(temp, url)) {
-                return;
-            }
-        }
 
-        // URL 鉴权
         Iterator<SysAuthority> iterator = accessTokenUtils.getMenuInfo(projectName).iterator();
         while (iterator.hasNext()){
             SysAuthority auth = iterator.next();
