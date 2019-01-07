@@ -1,8 +1,9 @@
 package com.hao.authcenter.auth;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.common.constant.DataBaseConstant;
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.hao.authcenter.remote.UserServiceClient;
-import com.hao.common.constant.DataBaseConstant;
-import com.hao.common.entity.user.SysAuthority;
-import com.hao.common.entity.user.SysUser;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -49,6 +52,12 @@ public abstract class BaseUserDetailService implements UserDetailsService {
         org.springframework.security.core.userdetails.User user =  new org.springframework.security.core.userdetails.User(sysUser.getUsername(),
         		sysUser.getPassword(), isActive(sysUser.getIsEnable()), true, true, true, authorities);
         redisTemplate.opsForValue().set(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-user",sysUser);
+
+        //给权限登录中心用的
+        HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpSession session = request.getSession();
+        session.setAttribute("online-user",sysUser);
+
         return new BaseUserDetail(sysUser, user);
 
     }

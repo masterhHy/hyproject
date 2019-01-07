@@ -1,48 +1,50 @@
 package com.hao.authcenter.web;
 
-import com.alibaba.fastjson.JSONObject;
 import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.common.constant.DataBaseConstant;
 import com.hao.common.constant.WxConstant;
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
 import com.hao.common.utils.CheckUtils;
-import com.hao.common.utils.HTTPUtils;
 import org.apache.commons.lang.StringUtils;
-import org.omg.PortableInterceptor.USER_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 
 @Controller
 public class MvcController extends BaseSpringController {
     @Autowired
     private UserServiceClient userServiceClient;
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 登出回调
-     * @param request
-     * @param response
      */
-    @RequestMapping("/backReferer")
+    @RequestMapping(value = "/backReferer")
     public void sendBack(HttpServletRequest request, HttpServletResponse response) {
-
         try {
+            SysUser user = (SysUser) request.getSession().getAttribute("online-user");
+            //删除服务器token
+            redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
+            redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-menu");
+            request.getSession().removeAttribute("online-user");
+            request.getSession().invalidate();
             //sending back to client app
             String referer = request.getHeader("referer");
             if (referer != null) {
@@ -54,6 +56,7 @@ public class MvcController extends BaseSpringController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -146,7 +149,7 @@ public class MvcController extends BaseSpringController {
     /**
      * 获取手机验证码
      * @param username
-     * @param moduel
+     * @param module
      * @return
      */
     @RequestMapping(value="/open/getCode")
@@ -171,68 +174,6 @@ public class MvcController extends BaseSpringController {
         return res;
     }
 
-    /**
-     * 微信二维码登录
-     * @return
-     */
-    @RequestMapping(value="/open/wxqrcodeLogin")
-    @ResponseBody
-    public ResponseData<Map<String,Object>> wxqrcodeLogin(String code ) {
-        ResponseData<Map<String,Object>> res = new ResponseData<>();
-        if(StringUtils.isNotBlank(code)){
-            //利用code值获取用户信息
-            String tokenUrl="https://api.weixin.qq.com/sns/oauth2/access_token";
-            String param ="appid=#1&secret=#2&code=#3&grant_type=authorization_code";
-            param = param.replace("#1",WxConstant.APP_ID)
-                                .replace("#2",WxConstant.APP_SECRET)
-                                .replace("#3",code);
-            String backMsg = HTTPUtils.sendGet(tokenUrl,param);
-            JSONObject token = JSONObject.parseObject(backMsg);
-            String accessToken = token.get("access_token").toString();
-            String openid =token.get("openid").toString();
-            SysUser record = new SysUser();
-            record.setId(openid);
-            SysUser user = userServiceClient.getUserByRecord(record).getData();
-
-            //获取用户信息
-            String userInfoUrl="https://api.weixin.qq.com/sns/userinfo";
-            String userParam ="access_token=#1&openid=#2";
-            userParam = userParam.replace("#1",accessToken).replace("#2",openid);
-            String userMsg = HTTPUtils.sendGet(userInfoUrl,userParam);
-            JSONObject userInfo = JSONObject.parseObject(userMsg);
-            String nickname = userInfo.get("nickname").toString();
-            String headimgurl =  userInfo.get("headimgurl").toString();
-            String sex =  userInfo.get("sex").toString();
-            if(user==null){
-                //用户第一次微信登录 没有在系统里
-
-                //注册成为本系统用户
-                user = new SysUser();
-                user.setId(openid);
-                user.setRegisterSource(2);
-                user.setFirstName(nickname);
-                user.setHeadImg(headimgurl);
-                user.setSex("1".equals(sex)?0:1);
-                userServiceClient.register(user);
-            }else{
-                user.setFirstName(nickname);
-                user.setHeadImg(headimgurl);
-                user.setSex("1".equals(sex)?0:1);
-                user.setLastModifiedDate(new Date());
-                userServiceClient.updateUserById(user);
-            }
-
-
-
-
-
-
-        }else{
-            res.setStatus(false);
-            res.setMessage("code为空");
-        }
-        return res;
-    }
 
 
 

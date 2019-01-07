@@ -74,7 +74,7 @@ public class WxLoginDetailService extends BaseUserDetailService {
 			throw new UsernameNotFoundException("授权失败!请重新授权");
 		}
 		if(user!=null){
-			user.setUsername("temp-"+UUID.uuid32());
+			user.setUsername(user.getFirstName());
 			user.setPassword("temp-"+UUID.uuid32());
 		}
 		
