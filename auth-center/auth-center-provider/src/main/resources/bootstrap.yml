@@ -10,7 +10,7 @@ spring:
       discovery:
         prefer-ip-address: true
         health-check-path: /auth/actuator/health
-        health-check-interval: 3600s
+        health-check-interval: 300s
     config:
       fail-fast: true
       discovery:
