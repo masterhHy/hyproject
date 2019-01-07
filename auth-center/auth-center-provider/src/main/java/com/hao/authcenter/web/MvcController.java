@@ -39,6 +39,7 @@ public class MvcController extends BaseSpringController {
     public void sendBack(HttpServletRequest request, HttpServletResponse response) {
         try {
             SysUser user = (SysUser) request.getSession().getAttribute("online-user");
+            System.out.println(user);
             //删除服务器token
             if(user!=null){
                 redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");

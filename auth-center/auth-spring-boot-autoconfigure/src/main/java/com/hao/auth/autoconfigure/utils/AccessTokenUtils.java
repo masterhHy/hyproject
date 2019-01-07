@@ -41,7 +41,6 @@ public class AccessTokenUtils {
      */
     private final String userInfo ="user_info";
 
-
     /**
      * 从token获取用户信息
      * @return

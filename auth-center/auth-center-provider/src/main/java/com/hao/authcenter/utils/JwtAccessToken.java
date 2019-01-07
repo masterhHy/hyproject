@@ -1,8 +1,8 @@
 package com.hao.authcenter.utils;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hao.authcenter.auth.BaseUserDetail;
 import com.hao.common.entity.user.SysUser;
-import com.hao.common.utils.JsonUtils;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -31,7 +31,8 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
        SysUser baseUser = ((BaseUserDetail) authentication.getPrincipal()).getBaseUser();
         baseUser.setPassword(null);
         // 将用户信息添加到token额外信息中
-        defaultOAuth2AccessToken.getAdditionalInformation().put(userInfo, baseUser);
+
+        defaultOAuth2AccessToken.getAdditionalInformation().put(userInfo,  JSONObject.toJSONString(baseUser));
         return super.enhance(defaultOAuth2AccessToken, authentication);
     }
 
@@ -54,8 +55,7 @@ public class JwtAccessToken extends JwtAccessTokenConverter {
     }
 
     private SysUser convertUserData(Object map) {
-        String json = JsonUtils.deserializer(map);
-        SysUser user = JsonUtils.serializable(json, SysUser.class);
+        SysUser user =JSONObject.parseObject(map.toString(),SysUser.class);
         return user;
     }
 
