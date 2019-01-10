@@ -54,6 +54,15 @@ public class SysAuthority implements Serializable {
     private String isEnable;
 
     private String projectName;
+    private String signCode;
+
+    public String getSignCode() {
+        return signCode;
+    }
+
+    public void setSignCode(String signCode) {
+        this.signCode = signCode;
+    }
 
     public String getProjectName() {
         return projectName;

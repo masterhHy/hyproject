@@ -51,6 +51,17 @@ public class TableSysAuthority {
     @Column(columnDefinition="varchar(255) COMMENT '项目名字'")
     private String projectName;
 
+    @Column(columnDefinition="varchar(255) COMMENT '权限名字的i18n标识'")
+    private String signCode;
+
+    public String getSignCode() {
+        return signCode;
+    }
+
+    public void setSignCode(String signCode) {
+        this.signCode = signCode;
+    }
+
     public String getProjectName() {
         return projectName;
     }

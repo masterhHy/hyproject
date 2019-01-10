@@ -19,14 +19,19 @@
     <result column="order_num" jdbcType="INTEGER" property="orderNum" />
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="is_enable" jdbcType="CHAR" property="isEnable" />
+    <result column="sign_code" jdbcType="VARCHAR" property="signCode" />
   </resultMap>
 
-  <select id="getAllAuthorityByUserId" resultMap="BaseResultMap"  >
+  <select id="getAllAuthority" resultMap="BaseResultMap"  >
       SELECT distinct sa.* FROM sys_user u
       LEFT JOIN sys_user_roles sur ON u.id=sur.sys_user_id
       LEFT JOIN sys_role r ON sur.roles_id=r.id
       LEFT JOIN sys_role_authorities sra ON r.id=sra.sys_role_id
       LEFT JOIN sys_authority sa ON sa.id=sra.authorities_id
       WHERE u.id = #{userId} AND r.is_enable='Y' AND sa.is_enable='Y'
+      <if test="type!=null">
+        AND sa.type=#{type}
+
+      </if>
   </select>
 </mapper>

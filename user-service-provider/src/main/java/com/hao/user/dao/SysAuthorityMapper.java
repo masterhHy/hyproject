@@ -9,5 +9,5 @@ import java.util.List;
 @org.apache.ibatis.annotations.Mapper
 public interface SysAuthorityMapper extends Mapper<SysAuthority> {
 
-    public List<SysAuthority> getAllAuthorityByUserId(@Param("userId") String userId);
+    public List<SysAuthority> getAllAuthority(@Param("userId") String userId,@Param("type") Integer type);
 }
