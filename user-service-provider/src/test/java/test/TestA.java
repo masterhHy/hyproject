@@ -1,7 +1,12 @@
 package test;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hao.user.UserCenterApplication;
 import com.hao.user.service.ResourceService;
+
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +22,7 @@ public class TestA {
 
     @Test
     public void test1(){
-        resourceService.getAllMenuByUserId("1");
+        List<Map<String, Object>> allMenuByUserId = resourceService.getAllMenuByUserId("1");
+        System.out.println(JSONObject.toJSONString(allMenuByUserId));
     }
 }

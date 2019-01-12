@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +48,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
             item.put("active",1);
             item.put("moduleCode",auth.getSignCode());
             item.put("moduleIcon",auth.getIcon());
+            item.put("orderIndex",auth.getOrderNum());
             item.put("subModules",new ArrayList<>());
             if(projectMap.get(auth.getProjectName())==null){
                 List<Map<String,Object>> menuList = new ArrayList<>();
@@ -73,6 +75,12 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
             this.putHisChild(menuList,parent);
             res.add(parent);
         }
+        res.sort(new Comparator<Map<String,Object>>() {
+			@Override
+			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+				return o1.get("orderIndex").toString().compareTo(o2.get("orderIndex").toString());
+			}
+		});
         return res;
     }
     private void putHisChild( List<Map<String,Object>> menuList,Map<String,Object> parent){
@@ -83,6 +91,12 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
             }
         }
         List<Map<String,Object>> hisChild = (List<Map<String, Object>>) parent.get("subModules");
+        hisChild.sort(new Comparator<Map<String,Object>>() {
+			@Override
+			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+				return o1.get("orderIndex").toString().compareTo(o2.get("orderIndex").toString());
+			}
+		});
         for (Map<String,Object> item :hisChild ){
             this.putHisChild(menuList,item);
         }
