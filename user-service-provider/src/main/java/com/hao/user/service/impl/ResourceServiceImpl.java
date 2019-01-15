@@ -1,18 +1,19 @@
 package com.hao.user.service.impl;
 
-import com.hao.common.entity.coin.TimeCoin;
-import com.hao.common.entity.user.SysAuthority;
-import com.hao.user.dao.SysAuthorityMapper;
-import com.hao.user.service.ResourceService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.user.dao.SysAuthorityMapper;
+import com.hao.user.service.ResourceService;
+
+import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implements ResourceService {
