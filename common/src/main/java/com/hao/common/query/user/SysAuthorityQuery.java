@@ -1,4 +1,6 @@
-package com.hao.common.entity.user;
+package com.hao.common.query.user;
+
+import com.hao.common.pojo.BaseRequestPojo;
 
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -6,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SysAuthority implements Serializable {
+public class SysAuthorityQuery extends BaseRequestPojo implements Serializable {
     @Id
     private String id;
 
@@ -57,13 +59,13 @@ public class SysAuthority implements Serializable {
 
     private String projectName;
     private String signCode;
-    private List<SysAuthority> children = new ArrayList<>();
+    private List<SysAuthorityQuery> children = new ArrayList<>();
 
-    public List<SysAuthority> getChildren() {
+    public List<SysAuthorityQuery> getChildren() {
         return children;
     }
 
-    public void setChildren(List<SysAuthority> children) {
+    public void setChildren(List<SysAuthorityQuery> children) {
         this.children = children;
     }
 
@@ -285,7 +287,7 @@ public class SysAuthority implements Serializable {
 
     @Override
     public String toString() {
-        return "SysAuthority{" +
+        return "SysAuthorityQuery{" +
                 "id='" + id + '\'' +
                 ", createdBy='" + createdBy + '\'' +
                 ", createdDate=" + createdDate +

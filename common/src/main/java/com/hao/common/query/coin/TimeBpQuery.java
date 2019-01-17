@@ -1,10 +1,12 @@
-package com.hao.common.entity.coin;
+package com.hao.common.query.coin;
+
+import com.hao.common.pojo.BaseRequestPojo;
 
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TimeBp implements Serializable {
+public class TimeBpQuery  extends BaseRequestPojo implements Serializable {
     @Id
     private String id;
 

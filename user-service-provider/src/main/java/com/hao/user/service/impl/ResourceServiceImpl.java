@@ -1,7 +1,8 @@
 package com.hao.user.service.impl;
 
-import com.hao.common.entity.coin.TimeCoin;
 import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.pojo.TableData;
+import com.hao.common.query.user.SysAuthorityQuery;
 import com.hao.user.dao.SysAuthorityMapper;
 import com.hao.user.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,6 +87,41 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
         System.out.println(allAuth);
         return null;
     }
+
+    @Override
+    public TableData<SysAuthority> getSubAuthByParentId(SysAuthorityQuery query) {
+        TableData<SysAuthority> table = new TableData<>();
+        List<SysAuthority> res = new ArrayList<>();
+        this.getSubAuthByParentId(res,query.getParentId());
+        res.sort(new Comparator<SysAuthority>() {
+            @Override
+            public int compare(SysAuthority o1, SysAuthority o2) {
+                return o1.getCode().compareTo(o2.getCode());
+            }
+        });
+        List<SysAuthority> rows = new ArrayList<>();
+        Integer startIndex =query.getStartIndex();
+        Integer endIndex =query.getEndIndex();
+        for (int i=0;i<res.size();i++){
+            if(i>=startIndex&&i<=endIndex){
+                rows.add(res.get(i));
+            }
+        }
+        table.setRows(rows);
+        table.setTotal(res.size());
+
+        return table;
+    }
+    private void getSubAuthByParentId(List<SysAuthority> tar,String parentId){
+        Example record = new Example(SysAuthority.class);
+        record.createCriteria().andEqualTo("parentId",parentId);
+        List<SysAuthority> children = mapper.selectByExample(record);
+        for (SysAuthority child:children){
+            tar.add(child);
+            this.getSubAuthByParentId(tar,child.getId());
+        }
+    }
+
 
     private void putHisChild( List<Map<String,Object>> menuList,Map<String,Object> parent){
         for ( Map<String,Object> item : menuList){

@@ -20,7 +20,7 @@ public class StockCodeServiceImpl extends BaseServiceImpl<SpliderStockCode> impl
 
     @Override
     public List<Map<String, Object>> getCodeData(StockCodeQuery query) {
-        PageHelper.startPage(query.getPageNum(),query.getPageSize(),false);
+        PageHelper.startPage(query.getPageNumber(),query.getPageSize(),false);
         List<Map<String, Object>> codeData = stockCodeMapper.getCodeData(query);
         PageInfo<Map<String,Object>> page = new PageInfo<>(codeData);
         return page.getList();

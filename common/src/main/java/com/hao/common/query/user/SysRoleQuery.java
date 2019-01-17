@@ -1,10 +1,12 @@
-package com.hao.common.entity.user;
+package com.hao.common.query.user;
+
+import com.hao.common.pojo.BaseRequestPojo;
 
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
-public class SysRole implements Serializable {
+public class SysRoleQuery extends BaseRequestPojo implements Serializable {
     @Id
     private String id;
 
@@ -147,7 +149,7 @@ public class SysRole implements Serializable {
 
     @Override
     public String toString() {
-        return "SysRole{" +
+        return "SysRoleQuery{" +
                 "id='" + id + '\'' +
                 ", createdBy='" + createdBy + '\'' +
                 ", createdDate=" + createdDate +

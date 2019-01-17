@@ -5,17 +5,10 @@ import java.util.List;
 
 public class TableData<T> {
 
-    private Long total;
+    private Integer total;
 
     private List<T> rows;
 
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
-    }
 
     public List<T> getRows() {
         return rows;
@@ -23,5 +16,21 @@ public class TableData<T> {
 
     public void setRows(List<T> rows) {
         this.rows = rows;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "TableData{" +
+                "total=" + total +
+                ", rows=" + rows +
+                '}';
     }
 }
