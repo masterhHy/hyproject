@@ -79,6 +79,14 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
         });
         return res;
     }
+
+    @Override
+    public List<SysAuthority> getAllAuthorit() {
+        List<SysAuthority> allAuth = mapper.selectAll();
+        System.out.println(allAuth);
+        return null;
+    }
+
     private void putHisChild( List<Map<String,Object>> menuList,Map<String,Object> parent){
         for ( Map<String,Object> item : menuList){
             if(parent.get("id").equals(item.get("parentId"))){

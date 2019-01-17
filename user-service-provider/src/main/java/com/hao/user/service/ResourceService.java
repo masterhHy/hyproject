@@ -14,4 +14,9 @@ public interface ResourceService extends BaseService<SysAuthority> {
      * @return
      */
     public List<Map<String,Object>> getAllMenuByUserId(String userId);
+
+    /**
+     *  获取全部权限，
+     */
+    public List<SysAuthority> getAllAuthorit();
 }

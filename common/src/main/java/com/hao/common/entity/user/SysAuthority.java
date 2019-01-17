@@ -2,7 +2,9 @@ package com.hao.common.entity.user;
 
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class SysAuthority implements Serializable {
     @Id
@@ -55,6 +57,15 @@ public class SysAuthority implements Serializable {
 
     private String projectName;
     private String signCode;
+    private List<SysAuthority> children = new ArrayList<>();
+
+    public List<SysAuthority> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<SysAuthority> children) {
+        this.children = children;
+    }
 
     public String getSignCode() {
         return signCode;
