@@ -1,4 +1,4 @@
-package com.hao.user.controller;
+package com.hao.time.config;
 
 import com.hao.common.controller.BaseExceptionHandlerController;
 import org.springframework.web.bind.annotation.ControllerAdvice;
