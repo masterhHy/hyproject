@@ -3,8 +3,10 @@ package com.hao.user.service.impl;
 import com.hao.common.entity.user.SysAuthority;
 import com.hao.common.pojo.TableData;
 import com.hao.common.query.user.SysAuthorityQuery;
+import com.hao.common.utils.UUID;
 import com.hao.user.dao.SysAuthorityMapper;
 import com.hao.user.service.ResourceService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -112,6 +114,22 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
 
         return table;
     }
+
+    @Override
+    public void addOrUpdateAuth(SysAuthority authority) {
+        if(StringUtils.isNotBlank(authority.getId())){
+            //修改
+            authority.setLastModifiedDate(new Date());
+            mapper.updateByPrimaryKeySelective(authority);
+        }else{
+            //新增
+            authority.setCreatedDate(new Date());
+            authority.setCode( mapper.getMaxCode());
+            authority.setId(UUID.uuid32());
+            mapper.insert(authority);
+        }
+    }
+
     private void getSubAuthByParentId(List<SysAuthority> tar,String parentId){
         Example record = new Example(SysAuthority.class);
         record.createCriteria().andEqualTo("parentId",parentId);

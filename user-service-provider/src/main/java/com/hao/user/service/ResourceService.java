@@ -23,10 +23,12 @@ public interface ResourceService extends BaseService<SysAuthority> {
     public List<SysAuthority> getAllAuthorit();
 
     /**
-     * 根据parentId 获取 齐下所有权限
+     * 根据parentId 获取 其下所有权限
      * @param query
      * @return
      */
     public TableData<SysAuthority> getSubAuthByParentId(SysAuthorityQuery query);
+
+    public  void addOrUpdateAuth(SysAuthority authority);
 
 }

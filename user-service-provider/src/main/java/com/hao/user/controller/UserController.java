@@ -9,6 +9,7 @@ import com.hao.remote.api.userservice.UserServiceRemote;
 import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
 import com.hao.user.service.UserService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -83,6 +84,17 @@ public class UserController extends BaseSpringController implements UserServiceR
         return res;
     }
 
+    @RequestMapping("/user/addOrUpdateAuth")
+    public ResponseData addOrUpdateAuth(SysAuthority authority){
+        ResponseData res = new ResponseData<>();
+        if(StringUtils.isNotBlank(authority.getIcon())){
+            authority.setLastModifiedBy(this.getUser().getFirstName());
+        }else{
+            authority.setCreatedBy(this.getUser().getFirstName());
+        }
+        resourceService.addOrUpdateAuth(authority);
+        return res;
+    }
 
 
 

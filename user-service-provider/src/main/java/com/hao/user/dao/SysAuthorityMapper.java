@@ -10,4 +10,6 @@ import java.util.List;
 public interface SysAuthorityMapper extends Mapper<SysAuthority> {
 
     public List<SysAuthority> getAllAuthority(@Param("userId") String userId,@Param("type") Integer type);
+
+    public String getMaxCode();
 }
