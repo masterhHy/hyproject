@@ -1,17 +1,27 @@
 package com.hao.user.service.impl;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.hao.common.entity.user.SysAuthority;
 import com.hao.common.pojo.TableData;
 import com.hao.common.query.user.SysAuthorityQuery;
+import com.hao.common.utils.RecursionUtils;
 import com.hao.common.utils.UUID;
 import com.hao.user.dao.SysAuthorityMapper;
 import com.hao.user.service.ResourceService;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
-import java.util.*;
+import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implements ResourceService {
@@ -82,12 +92,17 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
         });
         return res;
     }
-
+    protected Logger logger =LoggerFactory.getLogger(this.getClass());
     @Override
-    public List<SysAuthority> getAllAuthorit() {
+    public List<SysAuthority> getAllAuthorit()  {
         List<SysAuthority> allAuth = mapper.selectAll();
-        System.out.println(allAuth);
-        return null;
+        RecursionUtils<SysAuthority> r = new RecursionUtils<>();
+        try {
+        	allAuth =r.formatterHisChild(allAuth, "parentId");
+		} catch (Exception e) {
+			logger.error("",e);
+		}
+        return allAuth;
     }
 
     @Override
@@ -124,7 +139,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
         }else{
             //新增
             authority.setCreatedDate(new Date());
-            authority.setCode( mapper.getMaxCode());
+            authority.setCode( mapper.getMaxCode().get("lastNum").toString());
             authority.setId(UUID.uuid32());
             mapper.insert(authority);
         }

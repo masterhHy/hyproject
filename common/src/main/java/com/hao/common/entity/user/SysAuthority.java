@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public class SysAuthority implements Serializable {
-    @Id
+	@Id
     private String id;
 
     private String createdBy;

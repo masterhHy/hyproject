@@ -35,7 +35,7 @@
       </if>
   </select>
     
-    <select id="getMaxCode">
+    <select id="getMaxCode" resultType="map">
         SELECT CONCAT('AUTH_',MAX(CAST(SUBSTR(sa.code,6) AS SIGNED )+1)) lastNum FROM sys_authority sa
     </select>
 </mapper>
