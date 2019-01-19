@@ -94,8 +94,10 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
     }
     protected Logger logger =LoggerFactory.getLogger(this.getClass());
     @Override
-    public List<SysAuthority> getAllAuthorit()  {
-        List<SysAuthority> allAuth = mapper.selectAll();
+    public List<SysAuthority> getAllAuthority()  {
+        Example record = new Example(SysAuthority.class);
+        record.orderBy("parentId").asc().orderBy("orderNum").asc();
+        List<SysAuthority> allAuth = mapper.selectByExample(record);
         RecursionUtils<SysAuthority> r = new RecursionUtils<>();
         try {
         	allAuth =r.formatterHisChild(allAuth, "parentId");
@@ -147,7 +149,13 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
 
     private void getSubAuthByParentId(List<SysAuthority> tar,String parentId){
         Example record = new Example(SysAuthority.class);
-        record.createCriteria().andEqualTo("parentId",parentId);
+        if(StringUtils.isBlank(parentId)){
+        	record.createCriteria().andIsNull("parentId");
+        }else{
+        	record.createCriteria().andEqualTo("parentId",parentId);
+        	
+        }
+        record.orderBy("projectName").asc().orderBy("parentId").asc().orderBy("orderNum").asc();
         List<SysAuthority> children = mapper.selectByExample(record);
         for (SysAuthority child:children){
             tar.add(child);

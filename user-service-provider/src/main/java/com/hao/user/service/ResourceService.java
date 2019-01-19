@@ -20,7 +20,7 @@ public interface ResourceService extends BaseService<SysAuthority> {
     /**
      *  获取全部权限，
      */
-    public List<SysAuthority> getAllAuthorit();
+    public List<SysAuthority> getAllAuthority();
 
     /**
      * 根据parentId 获取 其下所有权限

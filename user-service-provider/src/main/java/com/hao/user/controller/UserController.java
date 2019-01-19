@@ -5,6 +5,8 @@ import com.hao.common.entity.user.SysAuthority;
 import com.hao.common.entity.user.SysRole;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
+import com.hao.common.pojo.TableData;
+import com.hao.common.query.user.SysAuthorityQuery;
 import com.hao.remote.api.userservice.UserServiceRemote;
 import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
@@ -83,7 +85,24 @@ public class UserController extends BaseSpringController implements UserServiceR
         res.setData(menus);
         return res;
     }
+    
+    @RequestMapping("/user/getALLAuth")
+    public ResponseData<List<SysAuthority>> getALLAuth(){
+        ResponseData<List<SysAuthority>> res = new ResponseData<>();
+        List<SysAuthority> auth =  resourceService.getAllAuthority();
+        res.setData(auth);
+        return res;
+    }
+    @RequestMapping("/user/getSubAuth")
+    public ResponseData<TableData<SysAuthority>> getSubAuth(SysAuthorityQuery query){
+    	ResponseData<TableData<SysAuthority>> res = new ResponseData<>();
+    	TableData<SysAuthority> table = resourceService.getSubAuthByParentId(query);
+    	res.setData(table);
+    	return res;
+    }
+    
 
+    
     @RequestMapping("/user/addOrUpdateAuth")
     public ResponseData addOrUpdateAuth(SysAuthority authority){
         ResponseData res = new ResponseData<>();
