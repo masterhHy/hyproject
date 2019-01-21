@@ -11,6 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.net.URLDecoder;
 import java.util.Date;
 
 public class BaseSpringController {
@@ -24,6 +25,11 @@ public class BaseSpringController {
     public SysUser getUser(){
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         String userinfo = request.getHeader("user_info");
+        try {
+            userinfo = URLDecoder.decode(userinfo,"UTF-8");
+        }catch (Exception e){
+            logger.error("",e);
+        }
         SysUser user = JSONObject.parseObject(userinfo, SysUser.class);
         return user;
     }

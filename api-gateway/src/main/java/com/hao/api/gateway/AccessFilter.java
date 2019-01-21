@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URLEncoder;
 
 @Component
 public class AccessFilter extends ZuulFilter {
@@ -39,10 +40,13 @@ public class AccessFilter extends ZuulFilter {
         HttpServletRequest request = ctx.getRequest();
         //把用户用户信息放到转发请求中， 方便微服务获取用户信息
         SysUser user = (SysUser) request.getAttribute("user_info");
-
         //把页面请求的对象 的头部信息放到 网关 请求头上
-        ctx.getZuulRequestHeaders().put("user_info", JSONObject.toJSONString(user));
-        
+        try {
+            ctx.getZuulRequestHeaders().put("user_info",URLEncoder.encode(JSONObject.toJSONString(user), "UTF-8"));
+        }catch (Exception e){
+            log.error("",e);
+        }
+
         log.info("send {} request to {}", request.getMethod(), request.getRequestURL().toString());
  
         //这里return的值没有意义，zuul框架没有使用该返回值
