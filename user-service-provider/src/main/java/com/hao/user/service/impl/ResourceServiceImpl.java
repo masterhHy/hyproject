@@ -134,6 +134,9 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
         if(StringUtils.isNotBlank(authority.getId())){
             //修改
             authority.setLastModifiedDate(new Date());
+            if(StringUtils.isBlank(authority.getParentId())){
+                authority.setParentId(null);
+            }
             mapper.updateByPrimaryKeySelective(authority);
         }else{
 
