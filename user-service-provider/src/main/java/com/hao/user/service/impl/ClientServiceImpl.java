@@ -40,4 +40,38 @@ public class ClientServiceImpl extends BaseServiceImpl<OauthClientDetails> imple
         table.setTotal(Integer.parseInt(page.getTotal()+""));
         return table;
     }
+
+    @Override
+    public void addOrUpdateClient(OauthClientDetails client) {
+        if(StringUtils.isNotBlank(client.getClientId())){
+            OauthClientDetails save = mapper.selectByPrimaryKey(client.getClientId());
+            if(save==null){
+                //新增
+                save=client;
+                save.setAdditionalInformation("{}");
+                save.setAuthorities("ALL");
+                String pas ="{noop}"+save.getClientSecret().replace("{noop}","");
+                save.setClientSecret(pas);
+                save.setResourceIds("");
+                save.setScope("read,write");
+                save.setWebServerRedirectUri("");
+                save.setRefreshTokenValidity(client.getAccessTokenValidity());
+                if(!"true".equals(save.getAutoapprove())){
+                    save.setAutoapprove("");
+                }
+                mapper.insertSelective(save);
+            }else{
+                String pas ="{noop}"+client.getClientSecret().replace("{noop}","");
+                save.setClientSecret(pas);
+                save.setAccessTokenValidity(client.getAccessTokenValidity());
+                save.setRefreshTokenValidity(client.getAccessTokenValidity());
+                save.setAutoapprove(client.getAutoapprove());
+
+                if(!"true".equals(client.getAutoapprove())){
+                    save.setAutoapprove("");
+                }
+                mapper.updateByPrimaryKeySelective(save);
+            }
+        }
+    }
 }

@@ -7,4 +7,5 @@ import com.hao.common.query.user.OauthClientDetailsQuery;
 
 public interface ClientService extends BaseService<OauthClientDetails> {
 	public TableData<OauthClientDetails> getClientData(OauthClientDetailsQuery query);
+	public  void addOrUpdateClient(OauthClientDetails client);
 }

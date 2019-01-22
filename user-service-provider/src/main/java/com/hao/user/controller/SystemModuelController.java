@@ -102,6 +102,27 @@ public class SystemModuelController extends BaseSpringController  {
         return res;
     }
 
+    @RequestMapping("/client/addOrUpdateClient")
+    public ResponseData addOrUpdateClient(OauthClientDetails client){
+        ResponseData res = new ResponseData<>();
+        clientService.addOrUpdateClient(client);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
+    @RequestMapping("/client/checkClientId")
+    public ResponseData checkClientId(OauthClientDetails client){
+        ResponseData res = new ResponseData<>();
+        OauthClientDetails details =clientService.selectByPrimaryKey(client);
+        if(details==null){
+            res.setStatus(true);
+        }else{
+            res.setStatus(false);
+            res.setMessage("已经存在clientId");
+        }
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
+
 
 /***********************************************************************************************************************/
 
