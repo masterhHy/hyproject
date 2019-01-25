@@ -31,7 +31,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		admin =userMapper.selectOne(admin);
 		if(admin==null){
 			admin = new SysUser();
-			admin.setCreatedDate(new Date());
+			admin.setCreateTime(new Date());
 			admin.setFirstName("管理员");
 			admin.setId("1");
 			admin.setIsEnable("Y");
@@ -51,7 +51,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		if(StringUtils.isBlank(user.getId())){
 			user.setId(UUID.uuid32());
 		}
-		user.setCreatedDate(new Date());
+		user.setCreateTime(new Date());
 		user.setIsEnable("Y");
 		user.setPhone(user.getUsername());
 		if(StringUtils.isBlank(user.getFirstName())){

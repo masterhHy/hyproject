@@ -1,11 +1,13 @@
 package com.hao.user.table;
 
+import com.hao.common.pojo.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity(name = "sys_role_authorities")
-public class TableSysRoleAuthorities  {
+public class TableSysRoleAuthorities extends BaseEntity {
     @Id
     private String id;
     @Column(columnDefinition="varchar(255) COMMENT '角色id'")

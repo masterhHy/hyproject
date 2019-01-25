@@ -3,10 +3,12 @@ package com.hao.user.controller;
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.OauthClientDetails;
 import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysRole;
 import com.hao.common.pojo.ResponseData;
 import com.hao.common.pojo.TableData;
 import com.hao.common.query.user.OauthClientDetailsQuery;
 import com.hao.common.query.user.SysAuthorityQuery;
+import com.hao.common.query.user.SysRoleQuery;
 import com.hao.user.service.ClientService;
 import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
@@ -62,11 +64,6 @@ public class SystemModuelController extends BaseSpringController  {
     @RequestMapping("/user/addOrUpdateAuth")
     public ResponseData addOrUpdateAuth(SysAuthority authority){
         ResponseData res = new ResponseData<>();
-        if(StringUtils.isNotBlank(authority.getId())){
-            authority.setLastModifiedBy(this.getUser().getFirstName());
-        }else{
-            authority.setCreatedBy(this.getUser().getFirstName());
-        }
         resourceService.addOrUpdateAuth(authority);
         res.setCode(ResponseData.SUCCESS_CODE);
         return res;
@@ -126,5 +123,19 @@ public class SystemModuelController extends BaseSpringController  {
 
 /***********************************************************************************************************************/
 
+/****************************************角色模块*****************************************************/
+    @RequestMapping("/role/getRoleData")
+    public ResponseData<TableData<SysRole>> getRoleData(SysRoleQuery query){
+        ResponseData<TableData<SysRole>> res = new ResponseData<>();
+        TableData<SysRole> tableData =roleService.getRoleData(query);
+        res.setData(tableData);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+
+    }
+
+
+
+/***********************************************************************************************************************/
 
 }

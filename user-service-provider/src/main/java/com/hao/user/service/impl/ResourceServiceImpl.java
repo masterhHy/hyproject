@@ -133,10 +133,16 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
     public void addOrUpdateAuth(SysAuthority authority) {
         if(StringUtils.isNotBlank(authority.getId())){
             //修改
-            authority.setLastModifiedDate(new Date());
+            authority.setUpdateTime(new Date());
             if(StringUtils.isBlank(authority.getParentId())){
                 authority.setParentId(null);
             }
+
+            if(StringUtils.isBlank(authority.getIcon())){
+                authority.setIcon(null);
+            }
+
+
             mapper.updateByPrimaryKeySelective(authority);
         }else{
 
@@ -155,9 +161,13 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
             if(children.size()>0){
                 orderNum = children.get(0).getOrderNum()+1;
             }
+
+            if(StringUtils.isBlank(authority.getIcon())){
+                authority.setIcon(null);
+            }
             authority.setOrderNum(orderNum);
             authority.setIsEnable("Y");
-            authority.setCreatedDate(new Date());
+            authority.setCreateTime(new Date());
             authority.setCode( mapper.getMaxCode().get("lastNum").toString());
             authority.setId(UUID.uuid32());
             mapper.insert(authority);

@@ -10,13 +10,6 @@ public class SysAuthority implements Serializable {
 	@Id
     private String id;
 
-    private String createdBy;
-
-    private Date createdDate;
-
-    private String lastModifiedBy;
-
-    private Date lastModifiedDate;
 
     private String name;
 
@@ -59,6 +52,25 @@ public class SysAuthority implements Serializable {
     private String signCode;
     private List<SysAuthority> children = new ArrayList<>();
 
+    private Date updateTime;
+    private Date createTime;
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     public List<SysAuthority> getChildren() {
         return children;
     }
@@ -97,61 +109,7 @@ public class SysAuthority implements Serializable {
         this.id = id;
     }
 
-    /**
-     * @return created_by
-     */
-    public String getCreatedBy() {
-        return createdBy;
-    }
 
-    /**
-     * @param createdBy
-     */
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    /**
-     * @return created_date
-     */
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    /**
-     * @param createdDate
-     */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    /**
-     * @return last_modified_by
-     */
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
-
-    /**
-     * @param lastModifiedBy
-     */
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
-
-    /**
-     * @return last_modified_date
-     */
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    /**
-     * @param lastModifiedDate
-     */
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
 
     /**
      * @return name
@@ -287,10 +245,6 @@ public class SysAuthority implements Serializable {
     public String toString() {
         return "SysAuthority{" +
                 "id='" + id + '\'' +
-                ", createdBy='" + createdBy + '\'' +
-                ", createdDate=" + createdDate +
-                ", lastModifiedBy='" + lastModifiedBy + '\'' +
-                ", lastModifiedDate=" + lastModifiedDate +
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", parentId='" + parentId + '\'' +
@@ -301,6 +255,9 @@ public class SysAuthority implements Serializable {
                 ", isEnable='" + isEnable + '\'' +
                 ", projectName='" + projectName + '\'' +
                 ", signCode='" + signCode + '\'' +
+                ", children=" + children +
+                ", updateTime=" + updateTime +
+                ", createTime=" + createTime +
                 '}';
     }
 }

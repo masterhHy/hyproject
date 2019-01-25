@@ -6,10 +6,6 @@
       WARNING - @mbg.generated
     -->
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
-    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
-    <result column="last_modified_by" jdbcType="VARCHAR" property="lastModifiedBy" />
-    <result column="last_modified_date" jdbcType="TIMESTAMP" property="lastModifiedDate" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="first_name" jdbcType="VARCHAR" property="firstName" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
@@ -17,6 +13,8 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="is_enable" jdbcType="CHAR" property="isEnable" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   
   <select id="test" resultMap="BaseResultMap">

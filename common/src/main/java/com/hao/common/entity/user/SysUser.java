@@ -8,13 +8,6 @@ public class SysUser implements Serializable {
     @Id
     private String id;
 
-    private String createdBy;
-
-    private Date createdDate;
-
-    private String lastModifiedBy;
-
-    private Date lastModifiedDate;
 
     private String email;
 
@@ -34,6 +27,25 @@ public class SysUser implements Serializable {
     private Integer registerSource;
 
     private String headImg;
+
+    private Date updateTime;
+    private Date createTime;
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
     public String getHeadImg() {
         return headImg;
@@ -70,61 +82,7 @@ public class SysUser implements Serializable {
         this.id = id;
     }
 
-    /**
-     * @return created_by
-     */
-    public String getCreatedBy() {
-        return createdBy;
-    }
 
-    /**
-     * @param createdBy
-     */
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    /**
-     * @return created_date
-     */
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    /**
-     * @param createdDate
-     */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    /**
-     * @return last_modified_by
-     */
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
-
-    /**
-     * @param lastModifiedBy
-     */
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
-
-    /**
-     * @return last_modified_date
-     */
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    /**
-     * @param lastModifiedDate
-     */
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
 
     /**
      * @return email
@@ -232,15 +190,10 @@ public class SysUser implements Serializable {
         this.isEnable = isEnable;
     }
 
-
     @Override
     public String toString() {
         return "SysUser{" +
                 "id='" + id + '\'' +
-                ", createdBy='" + createdBy + '\'' +
-                ", createdDate=" + createdDate +
-                ", lastModifiedBy='" + lastModifiedBy + '\'' +
-                ", lastModifiedDate=" + lastModifiedDate +
                 ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", sex=" + sex +
@@ -249,6 +202,8 @@ public class SysUser implements Serializable {
                 ", username='" + username + '\'' +
                 ", registerSource=" + registerSource +
                 ", headImg='" + headImg + '\'' +
+                ", updateTime=" + updateTime +
+                ", createTime=" + createTime +
                 ", isEnable='" + isEnable + '\'' +
                 '}';
     }

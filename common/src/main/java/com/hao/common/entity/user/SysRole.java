@@ -8,13 +8,6 @@ public class SysRole implements Serializable {
     @Id
     private String id;
 
-    private String createdBy;
-
-    private Date createdDate;
-
-    private String lastModifiedBy;
-
-    private Date lastModifiedDate;
 
     /**
      * Y 启用 N禁用
@@ -30,6 +23,26 @@ public class SysRole implements Serializable {
      * 角色编码
      */
     private String code;
+
+
+    private Date updateTime;
+    private Date createTime;
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
     public String getIsEnable() {
         return isEnable;
@@ -53,61 +66,7 @@ public class SysRole implements Serializable {
         this.id = id;
     }
 
-    /**
-     * @return created_by
-     */
-    public String getCreatedBy() {
-        return createdBy;
-    }
 
-    /**
-     * @param createdBy
-     */
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    /**
-     * @return created_date
-     */
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    /**
-     * @param createdDate
-     */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    /**
-     * @return last_modified_by
-     */
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
-
-    /**
-     * @param lastModifiedBy
-     */
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
-
-    /**
-     * @return last_modified_date
-     */
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    /**
-     * @param lastModifiedDate
-     */
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
 
     /**
      * 获取角色名字
@@ -149,13 +108,11 @@ public class SysRole implements Serializable {
     public String toString() {
         return "SysRole{" +
                 "id='" + id + '\'' +
-                ", createdBy='" + createdBy + '\'' +
-                ", createdDate=" + createdDate +
-                ", lastModifiedBy='" + lastModifiedBy + '\'' +
-                ", lastModifiedDate=" + lastModifiedDate +
                 ", isEnable='" + isEnable + '\'' +
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' +
+                ", updateTime=" + updateTime +
+                ", createTime=" + createTime +
                 '}';
     }
 }

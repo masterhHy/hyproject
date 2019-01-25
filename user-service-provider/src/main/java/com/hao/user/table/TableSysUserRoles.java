@@ -1,12 +1,13 @@
 package com.hao.user.table;
 
+import com.hao.common.pojo.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 @Entity(name = "sys_user_roles")
-public class TableSysUserRoles implements Serializable {
+public class TableSysUserRoles extends BaseEntity {
     @Column(columnDefinition="varchar(255) COMMENT '用户表id'")
     private String sysUserId;
 

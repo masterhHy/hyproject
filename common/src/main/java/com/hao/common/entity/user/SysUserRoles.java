@@ -2,6 +2,7 @@ package com.hao.common.entity.user;
 
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Date;
 
 public class SysUserRoles implements Serializable {
     @Id
@@ -9,6 +10,24 @@ public class SysUserRoles implements Serializable {
     private String sysUserId;
 
     private String rolesId;
+    private Date updateTime;
+    private Date createTime;
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
     public String getId() {
         return id;

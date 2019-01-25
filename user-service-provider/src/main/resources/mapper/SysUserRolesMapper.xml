@@ -7,5 +7,7 @@
     -->
     <result column="sys_user_id" jdbcType="VARCHAR" property="sysUserId" />
     <result column="roles_id" jdbcType="VARCHAR" property="rolesId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
 </mapper>

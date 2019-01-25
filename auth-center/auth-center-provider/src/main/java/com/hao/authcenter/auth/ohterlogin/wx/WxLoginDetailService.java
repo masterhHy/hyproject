@@ -64,7 +64,7 @@ public class WxLoginDetailService extends BaseUserDetailService {
 					user.setFirstName(nickname);
 					user.setHeadImg(headimgurl);
 					user.setSex("1".equals(sex)?0:1);
-					user.setLastModifiedDate(new Date());
+					user.setUpdateTime(new Date());
 					userServiceClient.updateUserById(user);
 				}
 			}

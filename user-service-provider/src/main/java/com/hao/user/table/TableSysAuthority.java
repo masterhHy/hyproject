@@ -1,26 +1,16 @@
 package com.hao.user.table;
 
+import com.hao.common.pojo.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity(name = "sys_authority")
-public class TableSysAuthority {
+public class TableSysAuthority extends BaseEntity {
     @Id
     private String id;
 
-    @Column(columnDefinition="varchar(255) COMMENT '创建人'")
-    private String createdBy;
-
-    @Column(columnDefinition="datetime COMMENT '创建时间'")
-    private Date createdDate;
-
-    @Column(columnDefinition="varchar(255) COMMENT '修改人'")
-    private String lastModifiedBy;
-
-    @Column(columnDefinition="datetime COMMENT '修改时间'")
-    private Date lastModifiedDate;
 
     @Column(columnDefinition="varchar(255) COMMENT '权限名字'")
     private String name;
@@ -85,60 +75,6 @@ public class TableSysAuthority {
     }
 
     /**
-     * @return created_by
-     */
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    /**
-     * @param createdBy
-     */
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    /**
-     * @return created_date
-     */
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    /**
-     * @param createdDate
-     */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    /**
-     * @return last_modified_by
-     */
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
-
-    /**
-     * @param lastModifiedBy
-     */
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
-
-    /**
-     * @return last_modified_date
-     */
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    /**
-     * @param lastModifiedDate
-     */
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
 
     /**
      * @return name

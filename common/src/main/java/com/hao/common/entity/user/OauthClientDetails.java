@@ -1,10 +1,11 @@
 package com.hao.common.entity.user;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OauthClientDetails {
+public class OauthClientDetails implements Serializable {
     @Id
     private String clientId;
 

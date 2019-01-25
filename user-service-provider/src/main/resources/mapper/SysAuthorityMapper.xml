@@ -6,10 +6,6 @@
       WARNING - @mbg.generated
     -->
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
-    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
-    <result column="last_modified_by" jdbcType="VARCHAR" property="lastModifiedBy" />
-    <result column="last_modified_date" jdbcType="TIMESTAMP" property="lastModifiedDate" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="project_name" jdbcType="VARCHAR" property="projectName" />
     <result column="code" jdbcType="VARCHAR" property="code" />
@@ -20,6 +16,9 @@
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="is_enable" jdbcType="CHAR" property="isEnable" />
     <result column="sign_code" jdbcType="VARCHAR" property="signCode" />
+
+      <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
+      <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
 
   <select id="getAllAuthority" resultMap="BaseResultMap"  >
