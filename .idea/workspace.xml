@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/pojo/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/ohterlogin/wx/WxLoginDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/ohterlogin/wx/WxLoginDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/OauthClientDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/OauthClientDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysRoleAuthorities.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysRoleAuthorities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysUserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/SysUserRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/SystemModuelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/SystemModuelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ResourceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ResourceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysRoleAuthorities.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysRoleAuthorities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysUserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysUserRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysAuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysAuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleAuthoritiesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleAuthoritiesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserRolesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserRolesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,7 +62,38 @@
     <favorites_list name="hyproject" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="TestA.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/src/main/java/com/hao/common/controller/CommonBean.java" />
-        <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/config/CommonConfig.java" />
         <option value="$PROJECT_DIR$/client-finance/src/main/java/com/hao/finance/config/ExceptionController.java" />
         <option value="$PROJECT_DIR$/client-finance/src/main/java/com/hao/finance/config/CommonConfig.java" />
         <option value="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/config/ExceptionHandlerController.java" />
@@ -145,7 +154,6 @@
         <option value="$PROJECT_DIR$/remote-api/src/main/java/com/hao/remote/api/FeignInterceptor.java" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/web/CommonConfig.java" />
         <option value="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/controller/TimeCoinController.java" />
-        <option value="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/SysAuthorityMapper.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/UserController.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/controller/RemoteController.java" />
@@ -161,7 +169,6 @@
         <option value="$PROJECT_DIR$/common/src/main/java/com/hao/common/query/user/OauhtClintDetailQuery.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/ClientService.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ClientServiceImpl.java" />
-        <option value="$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/RoleService.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/hao/common/pojo/BaseEntity.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysRoleAuthorities.java" />
@@ -185,6 +192,10 @@
         <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysRoleMapper.xml" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserMapper.xml" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/resources/mapper/SysUserRolesMapper.xml" />
+        <option value="$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java" />
+        <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml" />
       </list>
     </option>
   </component>
@@ -230,9 +241,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="529" />
+    <option name="y" value="69" />
     <option name="width" value="1400" />
-    <option name="height" value="920" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -250,6 +261,22 @@
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-center" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -601,7 +628,7 @@
       <workItem from="1547776043648" duration="8349000" />
       <workItem from="1548034105491" duration="15944000" />
       <workItem from="1548120864188" duration="10267000" />
-      <workItem from="1548386764703" duration="6545000" />
+      <workItem from="1548386764703" duration="8029000" />
     </task>
     <servers />
   </component>
@@ -638,7 +665,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="591034000" />
+    <option name="totallyTimeSpent" value="592518000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,7 +677,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5026824" side_tool="true" weight="0.38478747" />
@@ -669,12 +696,12 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49731758" visible="true" weight="0.47091722" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49731758" weight="0.2706935" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.36017898" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" visible="true" weight="0.18791947" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32913166" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.20171674" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.20171674" />
       <window_info anchor="bottom" id="Problems" order="15" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" sideWeight="0.5026042" side_tool="true" weight="0.2716763" />
@@ -725,34 +752,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/hao/common/controller/BaseSpringController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/hao/api/gateway/AccessFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="44" column="54" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/dao/SysRoleAuthoritiesMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="75" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-config/src/main/resources/server/user-service-provider.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -855,20 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
           <caret line="70" column="61" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/test/java/test/Code.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="20" column="58" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1138,6 +1123,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="10" column="78" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/test/java/test/Code.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/test/java/test/TestA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-finance/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
         </state>
       </provider>
     </entry>
