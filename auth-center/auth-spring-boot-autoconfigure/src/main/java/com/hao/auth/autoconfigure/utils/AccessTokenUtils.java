@@ -32,7 +32,6 @@ public class AccessTokenUtils {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
-
     /**
      * 生成token
      * @param accessToken
@@ -48,9 +47,21 @@ public class AccessTokenUtils {
     public SysUser getUserInfo() throws AccessDeniedException {
         SysUser user = (SysUser) this.getAccessToken().getAdditionalInformation().get(userInfo);
         SysUser redisUser = (SysUser) redisTemplate.opsForValue().get(DataBaseConstant.REDIS_USER_NAME_PLACE+user.getId()+"-user");
+        Boolean isLogin = true;
+        String pageToken =this.getAccessToken().getValue();
+        Object token = redisTemplate.opsForValue().get("access:"+pageToken);
+        if(token==null){
+            isLogin=false;
+        }
         if(redisUser==null){
+            isLogin=false;
+        }
+
+        if(!isLogin){
             throw new InsufficientAuthenticationException("没登录访问保护资源");
         }
+
+
         return redisUser;
     }
 

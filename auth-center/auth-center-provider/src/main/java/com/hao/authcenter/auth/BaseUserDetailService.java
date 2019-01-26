@@ -46,12 +46,11 @@ public abstract class BaseUserDetailService implements UserDetailsService {
         }
 
         List<SysAuthority> authList = userService.getAllAuthorityByUserId(sysUser.getId()).getData();
-        List<GrantedAuthority> authorities = this.convertToAuthorities(sysUser, authList);
+        List<GrantedAuthority> authorities = this.convertToAuthorities(authList);
        
         // 返回带有用户权限信息的User
         org.springframework.security.core.userdetails.User user =  new org.springframework.security.core.userdetails.User(sysUser.getUsername(),
         		sysUser.getPassword(), isActive(sysUser.getIsEnable()), true, true, true, authorities);
-        redisTemplate.opsForValue().set(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-user",sysUser);
 
         //给权限登录中心用的
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
@@ -68,27 +67,12 @@ public abstract class BaseUserDetailService implements UserDetailsService {
         return "Y".equals(active) ? true : false;
     }
 
-    private List<GrantedAuthority> convertToAuthorities(SysUser sysUser,List<SysAuthority> auth) {
+    private List<GrantedAuthority> convertToAuthorities(List<SysAuthority> auth) {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        // 清除 Redis 中用户的权限
-        redisTemplate.delete(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu");
         auth.forEach(e -> {
             if(e.getUrl()!=null){
                 GrantedAuthority authority = new SimpleGrantedAuthority(e.getCode());
                 authorities.add(authority);
-
-                //存储权限到redis 以map形式存放 key为projectName value 为list
-                if(redisTemplate.opsForHash().hasKey(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu",e.getProjectName())){
-                    //如果redis有list 就拿出来 吧权限放到list 然后在把list放回redis
-                    List<SysAuthority> list = (List<SysAuthority>) redisTemplate.opsForHash().get(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu",e.getProjectName());
-                    list.add(e);
-                    redisTemplate.opsForHash().put(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu",e.getProjectName(),list);
-                }else{
-                    //如果没有list，创建一个 然后放回去
-                    List<SysAuthority> list = new ArrayList<>();
-                    list.add(e);
-                    redisTemplate.opsForHash().put(DataBaseConstant.REDIS_USER_NAME_PLACE+sysUser.getId()+"-menu",e.getProjectName(),list);
-                }
             }
         });
         return authorities;
