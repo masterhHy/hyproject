@@ -57,7 +57,7 @@ public class ClientServiceImpl extends BaseServiceImpl<OauthClientDetails> imple
                 save.setWebServerRedirectUri("");
                 save.setRefreshTokenValidity(client.getAccessTokenValidity());
                 if(!"true".equals(save.getAutoapprove())){
-                    save.setAutoapprove("");
+                    save.setAutoapprove("false");
                 }
                 mapper.insertSelective(save);
             }else{
