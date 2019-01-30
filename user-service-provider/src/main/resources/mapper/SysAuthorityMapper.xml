@@ -37,4 +37,14 @@
     <select id="getMaxCode" resultType="map">
         SELECT CONCAT('AUTH_',MAX(CAST(SUBSTR(sa.code,6) AS SIGNED )+1)) lastNum FROM sys_authority sa
     </select>
+    
+    <select id="getRoleAllAuthority" resultMap="BaseResultMap">
+    	SELECT DISTINCT sa.* FROM sys_role sr
+		INNER JOIN sys_role_authorities  sra ON sr.id=sra.sys_role_id
+		LEFT JOIN sys_authority sa ON sa.id=sra.authorities_id
+		WHERE sr.id=#{roleId}
+    
+    </select>
+    
+    
 </mapper>

@@ -4,11 +4,13 @@ import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.OauthClientDetails;
 import com.hao.common.entity.user.SysAuthority;
 import com.hao.common.entity.user.SysRole;
+import com.hao.common.entity.user.SysUser;
 import com.hao.common.pojo.ResponseData;
 import com.hao.common.pojo.TableData;
 import com.hao.common.query.user.OauthClientDetailsQuery;
 import com.hao.common.query.user.SysAuthorityQuery;
 import com.hao.common.query.user.SysRoleQuery;
+import com.hao.common.query.user.SysUserQuery;
 import com.hao.user.service.ClientService;
 import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
@@ -125,17 +127,51 @@ public class SystemModuelController extends BaseSpringController  {
 
 /****************************************角色模块*****************************************************/
     @RequestMapping("/role/getRoleData")
-    public ResponseData<TableData<SysRole>> getRoleData(SysRoleQuery query){
-        ResponseData<TableData<SysRole>> res = new ResponseData<>();
-        TableData<SysRole> tableData =roleService.getRoleData(query);
+    public ResponseData<TableData<Map<String,Object>>> getRoleData(SysRoleQuery query){
+        ResponseData<TableData<Map<String,Object>>> res = new ResponseData<>();
+        TableData<Map<String,Object>> tableData =roleService.getRoleData(query);
         res.setData(tableData);
         res.setCode(ResponseData.SUCCESS_CODE);
         return res;
 
     }
+    @RequestMapping("/role/deleteRoleById")
+    public ResponseData deleteRoleById(SysRoleQuery query){
+    	ResponseData res = new ResponseData();
+    	if(StringUtils.isNotBlank(query.getId())){
+    		roleService.deleteRoleById(query.getId());
+        }
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
+    
+    @RequestMapping("/client/addOrUpdateRole")
+    public ResponseData addOrUpdateRole(SysRole role,String auth){
+        ResponseData res = new ResponseData<>();
+        roleService.addOrUpdateRole(role,auth);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
 
 
 
 /***********************************************************************************************************************/
+    @RequestMapping("/user/getUserData")
+    public ResponseData<TableData<SysUser>> getUserData(SysUserQuery query){
+        ResponseData<TableData<SysUser>> res = new ResponseData<>();
+        TableData<SysUser> tableData =userService.getUserData(query);
+        res.setData(tableData);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
 
+    }
+    
+    
+/****************************************角色模块*****************************************************/
+   
+    
+    
+/***********************************************************************************************************************/
+   
+    
 }

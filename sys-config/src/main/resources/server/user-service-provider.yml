@@ -6,6 +6,10 @@ spring:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         hibernate:
           ddl-auto: update
+  redis:
+    database: 0
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
   datasource:
     druid:
       url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false

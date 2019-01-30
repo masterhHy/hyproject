@@ -32,5 +32,6 @@ public interface ResourceService extends BaseService<SysAuthority> {
     public  void addOrUpdateAuth(SysAuthority authority);
 
     public void deleteAuthById(String id);
+    
 
 }

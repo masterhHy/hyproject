@@ -54,7 +54,7 @@ public class ClientServiceImpl extends BaseServiceImpl<OauthClientDetails> imple
                 save.setClientSecret(pas);
                 save.setResourceIds("");
                 save.setScope("read,write");
-                save.setWebServerRedirectUri("");
+                save.setWebServerRedirectUri(client.getWebServerRedirectUri());
                 save.setRefreshTokenValidity(client.getAccessTokenValidity());
                 if(!"true".equals(save.getAutoapprove())){
                     save.setAutoapprove("false");
@@ -66,9 +66,9 @@ public class ClientServiceImpl extends BaseServiceImpl<OauthClientDetails> imple
                 save.setAccessTokenValidity(client.getAccessTokenValidity());
                 save.setRefreshTokenValidity(client.getAccessTokenValidity());
                 save.setAutoapprove(client.getAutoapprove());
-
+                save.setWebServerRedirectUri(client.getWebServerRedirectUri());
                 if(!"true".equals(client.getAutoapprove())){
-                    save.setAutoapprove("");
+                    save.setAutoapprove("false");
                 }
                 mapper.updateByPrimaryKeySelective(save);
             }

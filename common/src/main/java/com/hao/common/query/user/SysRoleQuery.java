@@ -32,8 +32,19 @@ public class SysRoleQuery extends BaseRequestPojo implements Serializable {
      * 角色编码
      */
     private String code;
+    
+    private Boolean hisUser;
+    
 
-    public String getIsEnable() {
+    public Boolean getHisUser() {
+		return hisUser;
+	}
+
+	public void setHisUser(Boolean hisUser) {
+		this.hisUser = hisUser;
+	}
+
+	public String getIsEnable() {
         return isEnable;
     }
 

@@ -11,6 +11,7 @@ import java.util.Map;
 public interface SysAuthorityMapper extends Mapper<SysAuthority> {
 
     public List<SysAuthority> getAllAuthority(@Param("userId") String userId,@Param("type") Integer type);
+    public List<SysAuthority> getRoleAllAuthority(@Param("roleId") String roleId);
 
     public Map<String,Object> getMaxCode();
 }

@@ -19,4 +19,9 @@
 	INNER JOIN sys_role r ON sur.roles_id=r.id
 	WHERE u.id=#{userId} AND u.is_enable='Y' AND r.is_enable='Y'
   </select>
+  
+  <select id="getMaxCode" resultType="map">
+  	 SELECT CONCAT('AUTH_',MAX(CAST(SUBSTR(sr.code,6) AS SIGNED )+1)) lastNum FROM sys_role sr
+  </select>
+  
 </mapper>

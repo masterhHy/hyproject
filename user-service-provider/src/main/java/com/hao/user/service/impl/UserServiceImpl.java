@@ -1,28 +1,46 @@
 package com.hao.user.service.impl;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.PostConstruct;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.hao.common.constant.DataBaseConstant;
+import com.hao.common.entity.user.SysRole;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.entity.user.SysUserRoles;
+import com.hao.common.pojo.TableData;
+import com.hao.common.query.user.SysUserQuery;
 import com.hao.common.utils.UUID;
 import com.hao.user.dao.SysUserMapper;
 import com.hao.user.dao.SysUserRolesMapper;
 import com.hao.user.service.UserService;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.net.URI;
-import java.util.Date;
+import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserService {
 
 	@Autowired
 	private SysUserMapper userMapper;
-
+	
 	@Autowired
 	private SysUserRolesMapper sysUserRolesMapper;
+	
+	@Autowired
+	private RedisTemplate<String, Object> redisTemplate;
 
 	@PostConstruct
 	public void initSysUser() {
@@ -66,6 +84,35 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		sysUserRolesMapper.insert(ur);
 
 
+	}
+
+	@Override
+	public void refreshRedisUser() {
+		String keyStr =DataBaseConstant.REDIS_USER_NAME_PLACE+"*-user";
+		Set<String> keys = redisTemplate.keys(keyStr);
+		String adminKey =DataBaseConstant.REDIS_USER_NAME_PLACE+"1-user";
+		keys.remove(adminKey);
+        if (CollectionUtils.isNotEmpty(keys)) {
+            redisTemplate.delete(keys);
+        }
+	}
+
+	@Override
+	public TableData<SysUser> getUserData(SysUserQuery query) {
+		PageHelper.startPage(query.getPageNumber(),query.getPageSize());
+		Example record = new Example(SysUser.class);
+		if(StringUtils.isNotBlank(query.getUsername())){
+			record.createCriteria().andLike("username","%"+query.getUsername()+"%");
+		}
+		PageInfo<SysUser> page = new PageInfo<>(mapper.selectByExample(record));
+		List<SysUser> list = page.getList();
+		for (SysUser sysUser : list) {
+			sysUser.setPassword(null);
+		}
+		TableData<SysUser> table = new TableData<>();
+		table.setTotal(Integer.parseInt(page.getTotal()+""));
+		table.setRows(list);
+		return table;
 	}
 
 

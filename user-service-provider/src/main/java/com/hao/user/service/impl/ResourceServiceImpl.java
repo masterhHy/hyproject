@@ -1,5 +1,18 @@
 package com.hao.user.service.impl;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.hao.common.entity.user.SysAuthority;
 import com.hao.common.entity.user.SysRoleAuthorities;
 import com.hao.common.pojo.TableData;
@@ -9,19 +22,16 @@ import com.hao.common.utils.UUID;
 import com.hao.user.dao.SysAuthorityMapper;
 import com.hao.user.dao.SysRoleAuthoritiesMapper;
 import com.hao.user.service.ResourceService;
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
+import com.hao.user.service.UserService;
 
-import java.util.*;
+import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implements ResourceService {
     @Autowired
     private SysAuthorityMapper mapper;
+    @Autowired
+    private UserService userService;
     @Autowired
     private SysRoleAuthoritiesMapper sysRoleAuthoritiesMapper;
 
@@ -144,6 +154,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
 
 
             mapper.updateByPrimaryKeySelective(authority);
+            userService.refreshRedisUser();
         }else{
 
             //新增
@@ -189,6 +200,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<SysAuthority> implement
             sysRoleAuthoritiesMapper.deleteByExample(record);
             mapper.delete(tar);
         }
+        userService.refreshRedisUser();
     }
 
     private void getSubAuthByParentId(List<SysAuthority> tar,String parentId){
