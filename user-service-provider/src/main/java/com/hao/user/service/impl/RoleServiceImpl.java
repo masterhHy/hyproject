@@ -1,8 +1,8 @@
 package com.hao.user.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +25,7 @@ import com.hao.common.utils.UUID;
 import com.hao.user.dao.SysAuthorityMapper;
 import com.hao.user.dao.SysRoleAuthoritiesMapper;
 import com.hao.user.dao.SysRoleMapper;
+import com.hao.user.dao.SysUserMapper;
 import com.hao.user.dao.SysUserRolesMapper;
 import com.hao.user.service.RoleService;
 import com.hao.user.service.UserService;
@@ -40,6 +41,8 @@ public class RoleServiceImpl extends BaseServiceImpl<SysRole> implements RoleSer
 	private SysRoleAuthoritiesMapper sysRoleAuthoritiesMapper;
 	@Autowired
 	private SysUserRolesMapper sysUserRolesMapper;
+	@Autowired
+	private SysUserMapper sysUserMapper;
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -151,8 +154,54 @@ public class RoleServiceImpl extends BaseServiceImpl<SysRole> implements RoleSer
 
 	@Override
 	public TableData<SysUser> getRoleUserData(SysRoleQuery query) {
-		// TODO Auto-generated method stub
-		return null;
+		PageHelper.startPage(query.getPageNumber(),query.getPageSize());
+		if(StringUtils.isNotBlank(query.getUsername())){
+			query.setUsername("%"+query.getUsername()+"%");
+		}else{
+			query.setUsername(null);
+		}
+		PageInfo<SysUser> page = new PageInfo<>(sysUserMapper.getRoleUserData(query.getId(), query.getHisUser(),query.getUsername()));
+		List<SysUser> list = page.getList();
+		for (SysUser sysUser : list) {
+			sysUser.setPassword(null);
+		}
+		TableData<SysUser> table = new TableData<>();
+		table.setTotal(Integer.parseInt(page.getTotal()+""));
+		table.setRows(list);
+		return table;
+	}
+
+	@Override
+	public void addUserToRole(String roleId,String userIds) {
+		if(StringUtils.isNotBlank(userIds)){
+			List<String> list = Arrays.asList(userIds.split(","));
+			for (String userId : list) {
+				SysUserRoles record = new SysUserRoles();
+				record.setRolesId(roleId);
+				record.setSysUserId(userId);
+				List<SysUserRoles> select = sysUserRolesMapper.select(record);
+				if(select.size()==0){
+					record.setCreateTime(new Date());
+					record.setId(UUID.uuid32());
+					sysUserRolesMapper.insertSelective(record);
+				}
+			}
+		}
+		
+	}
+
+	@Override
+	public void deleteUserToRole(String roleId,String userIds) {
+		if(StringUtils.isNotBlank(userIds)){
+			List<String> list = Arrays.asList(userIds.split(","));
+			for (String userId : list) {
+				SysUserRoles record = new SysUserRoles();
+				record.setRolesId(roleId);
+				record.setSysUserId(userId);
+				sysUserRolesMapper.delete(record);
+			}
+		}
+		
 	}
 
 

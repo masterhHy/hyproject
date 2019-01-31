@@ -27,4 +27,7 @@ public interface RoleService extends BaseService<SysRole> {
 	 * @return
 	 */
 	public TableData<SysUser> getRoleUserData(SysRoleQuery query);
+	
+	public void addUserToRole(String roleId,String userIds);
+	public void deleteUserToRole(String roleId,String userIds);
 }

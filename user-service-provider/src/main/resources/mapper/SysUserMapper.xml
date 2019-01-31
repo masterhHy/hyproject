@@ -17,8 +17,18 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   
-  <select id="test" resultMap="BaseResultMap">
-  	select * from sys_user
-  
+  <select id="getRoleUserData" resultMap="BaseResultMap" >
+  	SELECT DISTINCT su.* FROM sys_user su
+	LEFT JOIN sys_user_roles sur ON su.id=sur.sys_user_id AND sur.roles_id=#{roleId}
+  	WHERE 1=1 
+  	<if test="username!=null">
+  		and su.username like #{username}
+  	</if>
+  	<if test="hisUser!=null and hisUser">
+  		and sur.roles_id IS NOT NULL
+  	</if>
+  	<if test="hisUser==null or !hisUser">
+  		and sur.roles_id IS NULL
+  	</if>
   </select>
 </mapper>

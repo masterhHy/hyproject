@@ -1,14 +1,11 @@
 package com.hao.user.service.impl;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -18,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hao.common.constant.DataBaseConstant;
-import com.hao.common.entity.user.SysRole;
 import com.hao.common.entity.user.SysUser;
 import com.hao.common.entity.user.SysUserRoles;
 import com.hao.common.pojo.TableData;
@@ -81,6 +77,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		ur.setId(UUID.uuid32());
 		ur.setRolesId("1");
 		ur.setSysUserId(user.getId());
+		ur.setCreateTime(new Date());
 		sysUserRolesMapper.insert(ur);
 
 
@@ -92,7 +89,7 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		Set<String> keys = redisTemplate.keys(keyStr);
 		String adminKey =DataBaseConstant.REDIS_USER_NAME_PLACE+"1-user";
 		keys.remove(adminKey);
-        if (CollectionUtils.isNotEmpty(keys)) {
+        if (keys.size()>0) {
             redisTemplate.delete(keys);
         }
 	}

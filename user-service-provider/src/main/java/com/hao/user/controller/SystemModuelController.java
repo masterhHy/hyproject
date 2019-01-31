@@ -145,12 +145,37 @@ public class SystemModuelController extends BaseSpringController  {
     	return res;
     }
     
-    @RequestMapping("/client/addOrUpdateRole")
+    @RequestMapping("/role/addOrUpdateRole")
     public ResponseData addOrUpdateRole(SysRole role,String auth){
         ResponseData res = new ResponseData<>();
         roleService.addOrUpdateRole(role,auth);
         res.setCode(ResponseData.SUCCESS_CODE);
         return res;
+    }
+    @RequestMapping("/role/getRoleUserData")
+    public ResponseData<TableData<SysUser>> getRoleUserData(SysRoleQuery query){
+        ResponseData<TableData<SysUser>> res = new ResponseData<>();
+        TableData<SysUser> tableData =roleService.getRoleUserData(query);
+        res.setData(tableData);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+
+    }
+    @RequestMapping("/role/addUserToRole")
+    public ResponseData addUserToRole(String userIds,String roleId){
+    	ResponseData res = new ResponseData<>();
+    	roleService.addUserToRole(roleId,userIds);
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    	
+    }
+    @RequestMapping("/role/deleteUserFromRole")
+    public ResponseData deleteUserToRole(String userIds,String roleId){
+    	ResponseData res = new ResponseData<>();
+    	roleService.deleteUserToRole(roleId,userIds);
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    	
     }
 
 

@@ -6,14 +6,14 @@ import org.springframework.security.core.GrantedAuthority;
 import java.util.Collection;
 
 /**
- * 手机验证码token
+ * 微信code token
  */
 public class WxAuthenticationToken  extends AbstractAuthenticationToken {
 
 	private static final long serialVersionUID = 2383092775910246006L;
 
     /**
-     * 手机号
+     * 微信code
      */
     private final Object principal;
     

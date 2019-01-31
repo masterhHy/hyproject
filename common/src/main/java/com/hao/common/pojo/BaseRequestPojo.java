@@ -8,9 +8,30 @@ public class BaseRequestPojo {
     protected Integer pageNumber;
 
     protected Integer pageSize;
+    
+    protected String orderColumn;
+    protected String sort="ASC";
+    
 
+    
 
-    public Integer getPageSize() {
+    public String getOrderColumn() {
+		return orderColumn;
+	}
+
+	public void setOrderColumn(String orderColumn) {
+		this.orderColumn = orderColumn;
+	}
+
+	public String getSort() {
+		return sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
+
+	public Integer getPageSize() {
         return pageSize;
     }
 

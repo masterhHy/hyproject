@@ -34,9 +34,19 @@ public class SysRoleQuery extends BaseRequestPojo implements Serializable {
     private String code;
     
     private Boolean hisUser;
+    private String username;
+    
     
 
-    public Boolean getHisUser() {
+    public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Boolean getHisUser() {
 		return hisUser;
 	}
 
