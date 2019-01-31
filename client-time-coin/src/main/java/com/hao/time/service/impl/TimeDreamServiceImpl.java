@@ -22,12 +22,12 @@ public class TimeDreamServiceImpl extends BaseServiceImpl<TimeDream> implements 
 	@Override
 	public List<TimeDream> getDreamData(TimeDreamQuery query) {
 		Example record = new Example(TimeDream.class);
-		record.createCriteria().andEqualTo("userId", query.getUserId());
+		record.createCriteria().andEqualTo("userId", query.getUserId()).andEqualTo("isDelete", 0);
 		if(StringUtils.isNotBlank(query.getId())){
 			record.and().andEqualTo("id", query.getId());
 		}
 		if(StringUtils.isNotBlank(query.getOrderColumn())){
-			if(query.getOrderColumn().toLowerCase().equals("desc")){
+			if(query.getSort().toLowerCase().equals("desc")){
 				record.orderBy(query.getOrderColumn()).desc();
 			}else{
 				record.orderBy(query.getOrderColumn()).asc();
@@ -50,6 +50,7 @@ public class TimeDreamServiceImpl extends BaseServiceImpl<TimeDream> implements 
 			save=dream;
 			save.setId(UUID.uuid32());
 			save.setCreateTime(new Date());
+			save.setIsDelete(0);
 			timeDreamMapper.insertSelective(save);
 		}
 		

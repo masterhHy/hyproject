@@ -42,6 +42,16 @@ public class TimeDream implements Serializable {
      * 描述
      */
     private String description;
+    
+    private Integer isDelete;
+    
+    
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
 
     /**
      * @return id

@@ -21,6 +21,17 @@ public class TableTimeCoin {
     private Date createTime;
     @Column(columnDefinition="datetime COMMENT '创建时间'")
     private Date updateTime;
+    
+    @Column(columnDefinition="int(2) COMMENT '是否删除	0:否	1:删除'")
+    private Integer isDelete;
+    
+    
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
 
     public String getId() {
         return id;

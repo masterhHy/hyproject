@@ -24,6 +24,16 @@ public class TableTimeDream extends BaseEntity {
     private Integer priority;
     @Column(columnDefinition="varchar(255) COMMENT '用户表id'")
     private String userId;
+    @Column(columnDefinition="int(2) COMMENT '是否删除	0:否	1:删除'")
+    private Integer isDelete;
+    
+    
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
 	public String getId() {
 		return id;
 	}

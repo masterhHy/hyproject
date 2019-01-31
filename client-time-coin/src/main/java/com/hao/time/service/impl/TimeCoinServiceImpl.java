@@ -24,6 +24,7 @@ public class TimeCoinServiceImpl extends BaseServiceImpl<TimeCoin> implements Ti
             //添加操作
             coin.setId(UUID.uuid32());
             coin.setCreateTime(new Date());
+            coin.setIsDelete(0);
             timeCoinMapper.insertSelective(coin);
         }
     }

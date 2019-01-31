@@ -44,7 +44,7 @@ public class TimeCoinController extends BaseSpringController {
         }
         example.createCriteria()
                 .andEqualTo("markDay",today)
-                .andEqualTo("userId",this.getUserId());
+                .andEqualTo("userId",this.getUserId()).andEqualTo("isDelete", 0);
         example.setOrderByClause("create_time asc");
         List<TimeCoin> data = timeCoinService.selectByExample(example);
         List<Map<String,Object>> itemData= new ArrayList<>();

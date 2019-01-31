@@ -21,7 +21,6 @@ public class TimeDreamController extends BaseSpringController {
 	@RequestMapping("/dream/getDreamData")
 	public ResponseData<List<TimeDream>> getDreamData(TimeDreamQuery query){
 		ResponseData<List<TimeDream>> res = new ResponseData<>();
-		query= new TimeDreamQuery();
 		query.setUserId(this.getUserId());
 		res.setData(timeDreamService.getDreamData(query));
 		res.setCode(ResponseData.SUCCESS_CODE);
@@ -53,7 +52,9 @@ public class TimeDreamController extends BaseSpringController {
 	public ResponseData<List<TimeDream>> deleteById(TimeDream dream){
 		ResponseData<List<TimeDream>> res = new ResponseData<>();
 		if(StringUtils.isNotBlank(dream.getId())){
-			timeDreamService.deleteByPrimaryKey(dream.getId());
+			dream = timeDreamService.selectByPrimaryKey(dream);
+			dream.setIsDelete(1);
+			timeDreamService.updateByPrimaryKey(dream);
 		}
 		res.setCode(ResponseData.SUCCESS_CODE);
 		return res;

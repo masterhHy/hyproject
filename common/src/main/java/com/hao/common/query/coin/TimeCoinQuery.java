@@ -2,6 +2,7 @@ package com.hao.common.query.coin;
 
 import com.hao.common.pojo.BaseRequestPojo;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
@@ -39,6 +40,16 @@ public class TimeCoinQuery  extends BaseRequestPojo implements Serializable {
      * 金币记录天
      */
     private String remark;
+    
+    private Integer isDelete;
+    
+    
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
 
     /**
      * @return id

@@ -37,6 +37,16 @@ public class TimeCoin implements Serializable {
      * 金币记录天
      */
     private String remark;
+    
+    private Integer isDelete;
+    
+    
+   	public Integer getIsDelete() {
+   		return isDelete;
+   	}
+   	public void setIsDelete(Integer isDelete) {
+   		this.isDelete = isDelete;
+   	}
 
     /**
      * @return id
