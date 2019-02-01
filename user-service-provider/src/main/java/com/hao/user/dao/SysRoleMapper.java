@@ -11,4 +11,6 @@ public interface SysRoleMapper extends Mapper<SysRole> {
 	
 	public List<SysRole> getRoleByUserId(@Param("userId")String userId);
 	public Map<String,Object> getMaxCode();
+	
+	public List<SysRole> getUserRoleData(@Param("userId")String userId,@Param("hisRole")Boolean hisRole,@Param("name")String name);
 }

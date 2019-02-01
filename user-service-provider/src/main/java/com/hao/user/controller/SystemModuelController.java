@@ -15,6 +15,9 @@ import com.hao.user.service.ClientService;
 import com.hao.user.service.ResourceService;
 import com.hao.user.service.RoleService;
 import com.hao.user.service.UserService;
+
+import tk.mybatis.mapper.entity.Example;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -181,6 +184,10 @@ public class SystemModuelController extends BaseSpringController  {
 
 
 /***********************************************************************************************************************/
+   
+    
+/****************************************用户模块*****************************************************/
+   
     @RequestMapping("/user/getUserData")
     public ResponseData<TableData<SysUser>> getUserData(SysUserQuery query){
         ResponseData<TableData<SysUser>> res = new ResponseData<>();
@@ -190,10 +197,63 @@ public class SystemModuelController extends BaseSpringController  {
         return res;
 
     }
+    @RequestMapping("/user/getUserRoleData")
+    public ResponseData<TableData<SysRole>> getUserRoleData(SysUserQuery query){
+        ResponseData<TableData<SysRole>> res = new ResponseData<>();
+        TableData<SysRole> tableData =userService.getUserRoleData(query);
+        res.setData(tableData);
+        res.setCode(ResponseData.SUCCESS_CODE);
+        return res;
+    }
+    @RequestMapping("/user/deleteUserById")
+    public ResponseData deleteUserById(SysUserQuery query){
+    	ResponseData res = new ResponseData();
+    	if(StringUtils.isNotBlank(query.getId())){
+    		userService.deleteUserById(query);
+        }
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
+    @RequestMapping("/user/addOrUpdateUser")
+    public ResponseData addOrUpdateUser(SysUser user){
+    	ResponseData res = new ResponseData<>();
+    	userService.addOrUpdateUser(user);
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
     
+    @RequestMapping("/user/checkUsername")
+    public ResponseData checkUsername(SysUser user){
+    	ResponseData res = new ResponseData<>();
+    	Example example = new Example(SysUser.class);
+    	example.and().andEqualTo("username", user.getUsername());
+    	List<SysUser> list = userService.selectByExample(example);
+    	if(list.size()>0){
+    		res.setStatus(false);
+    		res.setMessage("该用户已存在");
+    	}else{
+    		res.setStatus(true);
+    		res.setMessage("该用户不存在");
+    	}
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
     
-/****************************************角色模块*****************************************************/
-   
+    @RequestMapping("/user/addRoleoUser")
+    public ResponseData addRoleoUser(SysUserQuery query){
+    	ResponseData res = new ResponseData<>();
+    	userService.addRoleoUser(query);
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
+    @RequestMapping("/user/deleteRoleFromUser")
+    public ResponseData deleteRoleFromUser(SysUserQuery query){
+    	ResponseData res = new ResponseData<>();
+    	userService.deleteRoleFromUser(query);
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
+    
     
     
 /***********************************************************************************************************************/

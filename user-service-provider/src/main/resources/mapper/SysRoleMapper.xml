@@ -24,4 +24,19 @@
   	 SELECT CONCAT('AUTH_',MAX(CAST(SUBSTR(sr.code,6) AS SIGNED )+1)) lastNum FROM sys_role sr
   </select>
   
+   <select id="getUserRoleData" resultMap="BaseResultMap" >
+  	SELECT DISTINCT sr.* FROM sys_role sr
+	LEFT JOIN sys_user_roles sur ON sr.id=sur.roles_id AND sur.sys_user_id=#{userId}
+	WHERE 1=1 AND sr.is_enable='Y'
+  	<if test="name!=null">
+  		and sr.name like #{name}
+  	</if>
+  	<if test="hisRole!=null and hisRole">
+  		and sur.sys_user_id IS NOT NULL
+  	</if>
+  	<if test="hisRole==null or !hisRole">
+  		and sur.sys_user_id IS NULL
+  	</if>
+  </select>
+  
 </mapper>

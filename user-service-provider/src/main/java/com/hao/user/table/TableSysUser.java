@@ -33,7 +33,7 @@ public class TableSysUser  extends BaseEntity {
     @Column(columnDefinition="varchar(2) COMMENT 'Y启用 N禁用'")
     private String isEnable;
 
-    @Column(columnDefinition="int(2) COMMENT '注册来源 1 手机注册 2 微信注册'")
+    @Column(columnDefinition="int(2) COMMENT '注册来源 0 系统注册 1 手机注册 2 微信注册'")
     private Integer registerSource;
 
 

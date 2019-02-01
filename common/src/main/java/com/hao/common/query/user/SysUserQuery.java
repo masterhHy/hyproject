@@ -36,8 +36,38 @@ public class SysUserQuery extends BaseRequestPojo implements Serializable {
     private Integer registerSource;
 
     private String headImg;
+    
+    private Boolean hisRole;
+    private String name;
+    private String roleIds;
+    
 
-    public String getHeadImg() {
+    
+    public String getRoleIds() {
+		return roleIds;
+	}
+
+	public void setRoleIds(String roleIds) {
+		this.roleIds = roleIds;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Boolean getHisRole() {
+		return hisRole;
+	}
+
+	public void setHisRole(Boolean hisRole) {
+		this.hisRole = hisRole;
+	}
+
+	public String getHeadImg() {
         return headImg;
     }
 
