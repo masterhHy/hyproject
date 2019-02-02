@@ -1,5 +1,15 @@
 package com.hao.user.controller;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.user.OauthClientDetails;
 import com.hao.common.entity.user.SysAuthority;
@@ -17,14 +27,6 @@ import com.hao.user.service.RoleService;
 import com.hao.user.service.UserService;
 
 import tk.mybatis.mapper.entity.Example;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class SystemModuelController extends BaseSpringController  {
@@ -250,6 +252,31 @@ public class SystemModuelController extends BaseSpringController  {
     public ResponseData deleteRoleFromUser(SysUserQuery query){
     	ResponseData res = new ResponseData<>();
     	userService.deleteRoleFromUser(query);
+    	res.setCode(ResponseData.SUCCESS_CODE);
+    	return res;
+    }
+    @RequestMapping("/user/modifyPassword")
+    public ResponseData modifyPassword(String newPassword,String oldPassword){
+    	ResponseData res = new ResponseData<>();
+    	if(StringUtils.isNotBlank(newPassword)&&StringUtils.isNotBlank(oldPassword)){
+    		SysUser user = new SysUser();
+    		user.setId(this.getUserId());
+    		user = userService.selectByPrimaryKey(user);
+    		BCryptPasswordEncoder bc = new BCryptPasswordEncoder(6);
+    		if(bc.matches(oldPassword, user.getPassword())){
+    			user.setPassword(bc.encode(newPassword));
+    			user.setUpdateTime(new Date());
+    			userService.updateByPrimaryKeySelective(user);
+    			res.setStatus(true);
+    		}else{
+    			res.setStatus(false);
+        		res.setMessage("密码不正确~");
+    		}
+    		
+    	}else{
+    		res.setStatus(false);
+    		res.setMessage("密码不能为空");
+    	}
     	res.setCode(ResponseData.SUCCESS_CODE);
     	return res;
     }

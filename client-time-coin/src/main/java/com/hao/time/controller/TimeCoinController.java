@@ -53,6 +53,7 @@ public class TimeCoinController extends BaseSpringController {
             item.put("id",time.getId());
             item.put("type",time.getType());
             item.put("content",time.getRemark());
+            item.put("createTime", time.getCreateTime());
             itemData.add(item);
         }
         res.setData(itemData);
