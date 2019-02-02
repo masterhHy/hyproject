@@ -12,7 +12,7 @@ spring:
     port: ${REDIS_PORT:6379}
   datasource:
     druid:
-      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
       username: root
       password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
