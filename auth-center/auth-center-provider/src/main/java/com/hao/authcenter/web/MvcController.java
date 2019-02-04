@@ -164,8 +164,9 @@ public class MvcController extends BaseSpringController {
             //发送验证码
 
             //.....
-            randomCode="123456";
+            //randomCode="123456";
             this.saveCode(username,randomCode,module);
+            res.setMessage(randomCode);
             res.setStatus(true);
 
         }else {

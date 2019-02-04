@@ -252,6 +252,10 @@
                 data:{username:username,module:"regist"},
                 success:function(res){
                     if(res.status){
+                    	if(res.message){
+                    		$(".js_registerErrorMsg").html("验证码:"+res.message);
+            				$(".js_registerErrorMsg").show();
+                    	}
                         $(_this).removeClass("js_getCode");
                         var bc = $(_this).css("background-color");
                         $(_this).css("background-color","#ccc");
