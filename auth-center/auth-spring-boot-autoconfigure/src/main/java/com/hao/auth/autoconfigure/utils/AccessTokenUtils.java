@@ -1,8 +1,11 @@
 package com.hao.auth.autoconfigure.utils;
 
-import com.hao.common.constant.DataBaseConstant;
-import com.hao.common.entity.user.SysAuthority;
-import com.hao.common.entity.user.SysUser;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.access.AccessDeniedException;
@@ -11,11 +14,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.authentication.TokenExtractor;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import com.hao.common.constant.DataBaseConstant;
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysUser;
 
 
 public class AccessTokenUtils {
@@ -50,18 +54,35 @@ public class AccessTokenUtils {
         Boolean isLogin = true;
         String pageToken =this.getAccessToken().getValue();
         Object token = redisTemplate.opsForValue().get("access:"+pageToken);
+       
         if(token==null){
             isLogin=false;
         }
         if(redisUser==null){
             isLogin=false;
         }
-
+        
+        
         if(!isLogin){
             throw new InsufficientAuthenticationException("没登录访问保护资源");
         }
-
-
+        //各个客户端标识，用作在线用户 重登陆
+        HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+        String identify = request.getHeader("Client-Identify");
+        String loginKey =DataBaseConstant.REDIS_USER_NAME_PLACE + user.getId() + "-login";
+        if(identify!=null){
+        	Boolean hasKey = redisTemplate.opsForHash().hasKey(loginKey, identify);
+        	if(!hasKey){ //1 正常登陆 2 修改密码重新登陆
+        		redisTemplate.opsForHash().put(loginKey, identify, "1");
+        	}else{
+        		String status = redisTemplate.opsForHash().get(loginKey, identify).toString();
+        		if(status.equals("2")){
+        			throw new InsufficientAuthenticationException("修改密码，重新登陆");
+        		}
+        	}
+        }
+        
+        
         return redisUser;
     }
 

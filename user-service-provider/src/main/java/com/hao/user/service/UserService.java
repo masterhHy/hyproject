@@ -13,6 +13,12 @@ public interface UserService extends BaseService<SysUser> {
 	public void registUser(SysUser user);
 	
 	public void refreshRedisUser();
+	/**
+	 * 让各端用户重新登陆
+	 * @param userId
+	 */
+
+	public void userLogout(String userId);
 	
 	public TableData<SysUser> getUserData(SysUserQuery query);
 	
@@ -27,5 +33,7 @@ public interface UserService extends BaseService<SysUser> {
 	public void addOrUpdateUser(SysUser user);
 	public void addRoleoUser(SysUserQuery query);
 	public void deleteRoleFromUser(SysUserQuery query);
+	
+	
 	
 }

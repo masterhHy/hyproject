@@ -267,6 +267,7 @@ public class SystemModuelController extends BaseSpringController  {
     			user.setPassword(bc.encode(newPassword));
     			user.setUpdateTime(new Date());
     			userService.updateByPrimaryKeySelective(user);
+    			userService.userLogout(this.getUserId());
     			res.setStatus(true);
     		}else{
     			res.setStatus(false);

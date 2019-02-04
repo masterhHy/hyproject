@@ -2,7 +2,9 @@ package com.hao.user.service.impl;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
@@ -99,6 +101,24 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
         if (keys.size()>0) {
             redisTemplate.delete(keys);
         }
+	}
+	
+	@Override
+	public void userLogout(String userId) {
+		if(StringUtils.isNotBlank(userId)){
+			String loginKey =DataBaseConstant.REDIS_USER_NAME_PLACE + userId + "-login";
+			Map<Object, Object> entries = redisTemplate.opsForHash().entries(loginKey);
+			if(entries!=null){
+				for(Object token :entries.keySet()){
+					if(!entries.get(token).toString().equals("2")){
+						redisTemplate.opsForHash().put(loginKey, token.toString(), "2");
+					}else{
+						redisTemplate.opsForHash().delete(loginKey, token.toString());
+					}
+				}
+			}
+		}
+		
 	}
 
 	@Override
@@ -202,6 +222,8 @@ public class UserServiceImpl extends BaseServiceImpl<SysUser> implements UserSer
 		}
 		
 	}
+
+	
 
 
 }

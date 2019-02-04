@@ -1,13 +1,11 @@
 package com.hao.authcenter.auth.config;
 
 
-import com.alibaba.fastjson.JSONObject;
-import com.hao.authcenter.auth.UsernameLoginDetailService;
-import com.hao.authcenter.remote.UserServiceClient;
-import com.hao.authcenter.utils.JwtAccessToken;
-import com.hao.common.constant.DataBaseConstant;
-import com.hao.common.entity.user.SysAuthority;
-import com.hao.common.entity.user.SysUser;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +35,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import javax.sql.DataSource;
-import java.util.ArrayList;
-import java.util.List;
+import com.alibaba.fastjson.JSONObject;
+import com.hao.authcenter.auth.UsernameLoginDetailService;
+import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.authcenter.utils.JwtAccessToken;
+import com.hao.common.constant.DataBaseConstant;
+import com.hao.common.entity.user.SysAuthority;
+import com.hao.common.entity.user.SysUser;
 
 
 /**
@@ -136,7 +138,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                     }
                 }
             });
-
+            
+            
+            
             super.storeAccessToken(token,authentication);
         }
     }

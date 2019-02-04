@@ -1,12 +1,12 @@
 package com.hao.authcenter.web;
 
-import com.hao.authcenter.remote.UserServiceClient;
-import com.hao.common.constant.DataBaseConstant;
-import com.hao.common.constant.WxConstant;
-import com.hao.common.controller.BaseSpringController;
-import com.hao.common.entity.user.SysUser;
-import com.hao.common.pojo.ResponseData;
-import com.hao.common.utils.CheckUtils;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,11 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
+import com.hao.authcenter.remote.UserServiceClient;
+import com.hao.common.constant.DataBaseConstant;
+import com.hao.common.constant.WxConstant;
+import com.hao.common.controller.BaseSpringController;
+import com.hao.common.entity.user.SysUser;
+import com.hao.common.pojo.ResponseData;
+import com.hao.common.utils.CheckUtils;
 
 @Controller
 public class MvcController extends BaseSpringController {
