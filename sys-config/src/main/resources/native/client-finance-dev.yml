@@ -26,7 +26,7 @@ spring:
       test-on-return: false
       pool-prepared-statements: true
       max-open-prepared-statements: 20
-      filters: stat, wall
+      filters: stat
       
       # 监控配置
       web-stat-filter:

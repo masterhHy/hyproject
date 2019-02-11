@@ -12,4 +12,11 @@ public class IndexController {
         modelAndView.setViewName("pages/appearance/index");
         return modelAndView;
     }
+    
+    @RequestMapping("/detail")
+    public ModelAndView detail(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/appearance/detail");
+        return modelAndView;
+    }
 }

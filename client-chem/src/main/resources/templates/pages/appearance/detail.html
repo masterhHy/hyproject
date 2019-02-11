@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head >
+    <meta charset="UTF-8">
+    <title>文章页</title>
+    <meta name="keywords" content="抗黄变,抗氧剂,光稳定剂,亚磷酸酯,紫外线吸收剂,PVC环保抗氧剂,无酚亚磷酸酯,无酚无味抗氧剂,抗氧剂生产厂家">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+		.min-heigth{
+			min-height: 500px;
+		}
+    </style>
+</head>
+<body >
+    <!--头部代码 参数则为活跃选项卡-->
+    <div th:replace="pages/appearance/head::header(1)" ></div>
+	<div class="container min-heigth" >
+	        <div class="row">
+	        </div>
+	</div>
+	
+    <div th:replace="pages/appearance/footer::footer" ></div>
+</body>
+
+
+<script>
+	var minHeight =0;
+	minHeight = getClientHeight()-75-170;
+	$(".min-heigth").css("min-height",minHeight+"px");
+	function getClientHeight(){
+	  var clientHeight=0;
+	  if(document.body.clientHeight&&document.documentElement.clientHeight){
+	  	clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }
+	  else{
+	  	clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }
+	  return clientHeight;
+	}
+</script>
+</html>
