@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91efb8e0-4773-4fa8-82cd-e082af5402e5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_5_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-chem/client-chem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client-chem/client-chem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/controller/TimeDreamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/controller/TimeDreamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/service/impl/TimeDreamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/service/impl/TimeDreamServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-provider/user-service-provider.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/back-support/target/" />
@@ -63,17 +68,38 @@
       <file leaf-file-name="ClientServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ClientServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state>
               <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OauthClientDetails.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OauthClientDetails.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/OauthClientDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="891">
+              <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeDreamController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/controller/TimeDreamController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeDreamServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/service/impl/TimeDreamServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysUserRoles.java" />
-        <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysRole.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysUser.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/table/TableSysAuthority.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/OauthClientDetails.java" />
@@ -181,6 +205,8 @@
         <option value="$PROJECT_DIR$/sys-config/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/config/AuthorizationServerConfig.java" />
         <option value="$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ClientServiceImpl.java" />
+        <option value="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/controller/TimeDreamController.java" />
+        <option value="$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/service/impl/TimeDreamServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -207,7 +233,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="69" />
     <option name="width" value="1400" />
     <option name="height" value="916" />
@@ -220,9 +246,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,63 +256,86 @@
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
-              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="client-time-coin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyproject-master" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service-provider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -649,7 +695,8 @@
       <workItem from="1548120864188" duration="10267000" />
       <workItem from="1548386764703" duration="16049000" />
       <workItem from="1548465957075" duration="2318000" />
-      <workItem from="1548468328391" duration="21730000" />
+      <workItem from="1548468328391" duration="21734000" />
+      <workItem from="1549943822824" duration="127000" />
     </task>
     <servers />
   </component>
@@ -686,7 +733,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624586000" />
+    <option name="totallyTimeSpent" value="624717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -698,7 +745,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -713,29 +760,29 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27740493" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49892703" weight="0.32913166" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.23825504" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.32997763" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49731758" visible="true" weight="0.36241612" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49731758" visible="true" weight="0.36241612" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.1655481" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946353" weight="0.32913166" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.20439914" />
       <window_info anchor="bottom" id="Problems" order="15" weight="0.32997763" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.20708154" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" sideWeight="0.5026042" side_tool="true" weight="0.2716763" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.502809" side_tool="true" weight="0.2716763" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32947975" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32947975" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.23825504" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -768,28 +815,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-actuator/2.0.2.RELEASE/spring-boot-starter-actuator-2.0.2.RELEASE.pom">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remote-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service-provider/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
@@ -926,13 +951,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/remote/UserServiceClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-spring-boot-autoconfigure/src/main/java/com/hao/auth/autoconfigure/remote/UserServiceClient.java" />
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/AuthCenterProviderApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -968,18 +987,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/MyTokenStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/auth/MyTokenStore.java" />
     <entry file="file://$PROJECT_DIR$/auth-center/auth-center-provider/src/main/java/com/hao/authcenter/redis/RedisAuthConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1033,9 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,15 +1123,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/ClientServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state>
           <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-provider/src/main/java/com/hao/user/config/CommonConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/hao/common/entity/user/OauthClientDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="891">
+          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/controller/TimeDreamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-time-coin/src/main/java/com/hao/time/service/impl/TimeDreamServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
