@@ -114,11 +114,11 @@ class StockCodeInvestorHandler extends HtmlHandler {
 			String pubDate = element.html();
 			List<StockCodeInvestor> haveSplider = stockCodeInvestorDao.findByPublicDateAndSpliderStockCodeId(pubDate, codeId);
 			
-			if(haveSplider.size()>0&&!OutputWriterUtils.getCurrentPublicDate().equals(pubDate)){
+			/*if(haveSplider.size()>0&&!OutputWriterUtils.getCurrentPublicDate().equals(pubDate)){
 				//已经爬取过
 				System.out.println("已经爬过了！！！");
 				continue;
-			}
+			}*/
 			String targ = element.attr("targ");//organ_1
 			Element dataTableEle = root.getElementById(targ);//获取对应table对象
 			Elements trsEle = dataTableEle.getElementsByTag("tbody").get(0).getElementsByTag("tr");
@@ -212,9 +212,13 @@ class StockCodeInvestorHandler extends HtmlHandler {
 				saveList.removeAll(remove);
 				
 			}
-			System.out.println("正在写入文件....");
-			OutputWriterUtils.outPut(saveList);
-			System.out.println("写入完成");
+			if(saveList.size()>0){
+				System.out.println("正在写入文件....");
+				OutputWriterUtils.outPut(saveList);
+				System.out.println("写入完成");
+			}else{
+				System.out.println("无需写入-->"+pubDate);
+			}
 			
 			
 			

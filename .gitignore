@@ -84,3 +84,4 @@
 /sys-config/.classpath
 /sys-config/*.project
 /client-finance/data
+/client-finance/error
