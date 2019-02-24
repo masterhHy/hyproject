@@ -1,18 +1,16 @@
 package com.hao.time.controller;
 
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.hao.common.controller.BaseSpringController;
 import com.hao.common.entity.coin.TimeDream;
 import com.hao.common.pojo.ResponseData;
 import com.hao.common.query.coin.TimeDreamQuery;
 import com.hao.time.service.TimeDreamService;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 @RestController
 public class TimeDreamController extends BaseSpringController {
 	@Autowired

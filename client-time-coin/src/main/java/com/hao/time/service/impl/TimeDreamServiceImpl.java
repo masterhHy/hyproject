@@ -1,19 +1,17 @@
 package com.hao.time.service.impl;
 
-import java.util.Date;
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.hao.common.entity.coin.TimeDream;
 import com.hao.common.query.coin.TimeDreamQuery;
 import com.hao.common.utils.UUID;
 import com.hao.time.dao.TimeDreamMapper;
 import com.hao.time.service.TimeDreamService;
-
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
+
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class TimeDreamServiceImpl extends BaseServiceImpl<TimeDream> implements TimeDreamService {
