@@ -99,6 +99,7 @@ class StockCodeInvestorHandler extends HtmlHandler {
 	private InvestorDao investorDao;
 	private StockCodeInvestorDao stockCodeInvestorDao;
 	private String codeId;
+	Logger logger = LoggerFactory.getLogger(StockCodeInvestorHandler.class);
 	public StockCodeInvestorHandler(InvestorDao investorDao, StockCodeInvestorDao stockCodeInvestorDao, String codeId) {
 		this.investorDao=investorDao;
 		this.stockCodeInvestorDao=stockCodeInvestorDao;
@@ -213,11 +214,14 @@ class StockCodeInvestorHandler extends HtmlHandler {
 				
 			}
 			if(saveList.size()>0){
+
 				System.out.println("正在写入文件....");
 				OutputWriterUtils.outPut(saveList);
 				System.out.println("写入完成");
+				logger.info("写入文件-->"+pubDate);
 			}else{
 				System.out.println("无需写入-->"+pubDate);
+				logger.info("无需写入-->"+pubDate);
 			}
 			
 			
